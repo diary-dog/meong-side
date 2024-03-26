@@ -4,8 +4,8 @@ import ReactDOM from "react-dom/client";
 
 import router from "./router/index.tsx";
 import { ThemeProvider } from "styled-components";
-import { THEME } from "./styles/theme.tsx";
-import GlobalStyle from "./styles/GlobalStyle.ts";
+import { THEME } from "./styles/theme";
+import GlobalStyle from "./styles/GlobalStyle";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
