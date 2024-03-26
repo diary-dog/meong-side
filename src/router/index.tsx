@@ -8,11 +8,13 @@ import {
   LogIn,
   RegisterDog,
   RegisterPeople,
-  Slides,
+  Slide,
   Upload,
   Verification,
   Setting,
   Home,
+  Grid,
+  Calendar,
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -42,8 +44,16 @@ const router = createBrowserRouter([
         path: ROUTE_PATH.REGISTER_DOG,
       },
       {
-        element: <Slides />,
-        path: ROUTE_PATH.SLIDES,
+        element: <Slide />,
+        path: ROUTE_PATH.SLIDE,
+      },
+      {
+        element: <Grid />,
+        path: ROUTE_PATH.GRID,
+      },
+      {
+        element: <Calendar />,
+        path: ROUTE_PATH.CALENDAR,
       },
       {
         element: <Setting />,
