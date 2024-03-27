@@ -72,7 +72,6 @@ export default Layout;
 
 const Container = styled.div`
   width: 100%;
-  position: relative;
 `;
 
 const BOTTOM = {
@@ -101,12 +100,14 @@ const BOTTOM = {
 
 const TOP = {
   Container: styled.div`
+    position: fixed;
+    width: 100%;
+    max-width: 393px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    margin-top: 20px;
-    color: white;
+    background-color: white;
 
     .blank {
       width: 30px;
