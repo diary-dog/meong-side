@@ -1,12 +1,16 @@
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import Button from "../components/common/Button";
 import { Dog, Ellipse, HeartCircle, KaKaoIcon } from "../components/Icons";
-import ROUTE_PATH from "../router/constants";
+
+const { VITE_KAKAO_REST_API_KEY, VITE_KAKAO_REDIRECT_URI } = import.meta.env;
 
 const Intro = () => {
-  const navigator = useNavigate();
+  const link = `https://kauth.kakao.com/oauth/authorize?client_id=${VITE_KAKAO_REST_API_KEY}&redirect_uri=${VITE_KAKAO_REDIRECT_URI}&response_type=code`;
+
+  const loginHandler = () => {
+    window.location.href = link;
+  };
 
   return (
     <Container>
@@ -20,10 +24,7 @@ const Intro = () => {
         <Dog className="dog" />
         <Ellipse className="ellipse" />
       </SVGWrapper>
-      <Button
-        onClick={() => navigator(ROUTE_PATH.REGISTER_DOG)}
-        color="P-BUTTON1"
-      >
+      <Button onClick={loginHandler} color="P-BUTTON1">
         <ButtonTitle>
           <KaKaoIcon />
           카카오톡으로 시작
