@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 
 import router from "./router/index.tsx";
 import { ThemeProvider } from "styled-components";
-import { THEME } from "./styles/theme.tsx";
+import { THEME } from "./styles/theme.ts";
 import GlobalStyle from "./styles/GlobalStyle.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

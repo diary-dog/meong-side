@@ -7,7 +7,7 @@ const Verification = () => {
   return (
     <>
       <TextWrapper>
-        <h2>{type} 산책하는군요!</h2>
+        <h2>{type} 목욕하는군요!</h2>
         <PWrapper>{/* 아이콘 */}</PWrapper>
         <p>인증성공!</p>
       </TextWrapper>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import ROUTE_PATH from "../../router/constants";
 
-const Upload = () => {
+const UploadEtc = () => {
   const { type } = useParams();
 
   const navigator = useNavigate();
@@ -25,20 +25,11 @@ const Upload = () => {
 
       {/* 폼 데이터 전송은 전체 필수 값으로 */}
       <TextWrapper>
-        <h2>{type} 산책 인증 순간 남기기</h2>
+        <h2>{type} 순간 포착 일상인증</h2>
         <ImgWrapper>
           <input type="file" className="imgFile" />
         </ImgWrapper>
         <InputWrapper>
-          <div className="time-input">
-            <label>
-              <span>아이는 얼마나 산책했나요?</span>
-              <input type="text" />
-              <span>시</span>
-              <input type="text" />
-              <span>분</span>
-            </label>
-          </div>
           <input type="text" placeholder="지금 이 순간을 코멘트해주세요." />
         </InputWrapper>
         <ButtonWrapper>
@@ -55,7 +46,7 @@ const Upload = () => {
   );
 };
 
-export default Upload;
+export default UploadEtc;
 
 const TextWrapper = styled.div`
   margin-top: 50px;
@@ -68,21 +59,21 @@ const TextWrapper = styled.div`
 const ImgWrapper = styled.div`
   margin: 20px auto 0;
   border: 1px solid #eee;
-  background: #d9d9d9 url(../../assets/PhotoIcon.svg) center center no-repeat;
+  background: #d9d9d9 url() center center no-repeat;
   border-radius: 16px;
   width: calc(100vw - 60px);
   max-width: 300px;
   height: calc(100vw - 60px);
   max-height: 300px;
 
-  // input[type=file]{
-  //   position: absolute;
-  //   width: 0;
-  //   height: 0;
-  //   padding: 0;
-  //   overflow: hidden;
-  //   border: 0;
-  // }
+  input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+  }
 `;
 
 const InputWrapper = styled.div`
