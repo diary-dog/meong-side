@@ -29,6 +29,12 @@ p {
 }
 * {
     box-sizing: border-box;
+    font-family: 'BinggraeMelona', sans-serif, Arial;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
   }
 button {
     background: inherit;
@@ -46,11 +52,7 @@ body {
   line-height: 1;
   font-weight: 400;
   margin: 0 auto;
-  background-color: ${(props) => props.theme.COLORS.BACKGROUND};
   color :  ${(props) => props.theme.COLORS["FONT-COLOR-A"]};
-  border: 1px solid ${(props) => props.theme.COLORS["INACTIVE-BUTTON"]};
-
-  font-family: 'BinggraeMelona', sans-serif, Arial;
 }
 `;
 
