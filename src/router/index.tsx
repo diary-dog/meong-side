@@ -5,9 +5,7 @@ import ROUTE_PATH from "./constants";
 import {
   ErrorPage,
   Intro,
-  LogIn,
-  RegisterDog,
-  RegisterPeople,
+  Register,
   Slide,
   Upload,
   Verification,
@@ -32,15 +30,7 @@ const router = createBrowserRouter([
         path: ROUTE_PATH.INTRO,
       },
       {
-        element: <LogIn />,
-        path: ROUTE_PATH.LOGIN,
-      },
-      {
-        element: <RegisterPeople />,
-        path: ROUTE_PATH.REGISTER_PEOPLE,
-      },
-      {
-        element: <RegisterDog />,
+        element: <Register />,
         path: ROUTE_PATH.REGISTER_DOG,
       },
       {
@@ -65,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         element: <Upload />,
-        path: ROUTE_PATH.VERIFICATION_UPLOAD,
+        path: ROUTE_PATH.VERIFICATION_POST,
       },
     ],
   },

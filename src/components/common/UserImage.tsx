@@ -13,7 +13,7 @@ const StyledUserImage = styled.img<{ size: keyof typeof STYLES.SIZE }>`
   width: ${({ size }) => STYLES.SIZE[size]};
   height: ${({ size }) => STYLES.SIZE[size]};
   background-color: gray;
-  border-radius: 50px;
+  border-radius: 100%;
 `;
 
 const UserImage = ({
