@@ -3,30 +3,26 @@ import styled from "styled-components";
 
 import ROUTE_PATH from "../../router/constants";
 
-const Upload = () => {
+const UploadBath = () => {
   const navigator = useNavigate();
 
   return (
     <>
       {/* 폼 데이터 전송은 전체 필수 값으로 */}
       <TextWrapper>
-        <h2>산책 인증 순간 남기기</h2>
+        <h2>목욕 인증 순간 남기기</h2>
         <ImgWrapper>
           <input type="file" className="imgFile" />
         </ImgWrapper>
         <InputWrapper>
-          <div className="time-input">
-            <label>
-              <span>아이는 얼마나 산책했나요?</span>
-              <input type="text" />
-              <span>시</span>
-              <input type="text" />
-              <span>분</span>
-            </label>
+          <div className="option-button">
+            <button>전신목욕했어요</button>
+            <button>반만닦았어요</button>
+            <button>발만 닦았어요</button>
           </div>
           <input type="text" placeholder="지금 이 순간을 코멘트해주세요." />
         </InputWrapper>
-        <Btnwrapper>
+        <ButtonWrapper>
           <button onClick={() => navigator(ROUTE_PATH.ROOT)} color="F48C29">
             전송!
           </button>
@@ -34,13 +30,13 @@ const Upload = () => {
           <button onClick={() => navigator(ROUTE_PATH.ROOT)} color="D9D9D9">
             그냥 닫기
           </button>
-        </Btnwrapper>
+        </ButtonWrapper>
       </TextWrapper>
     </>
   );
 };
 
-export default Upload;
+export default UploadBath;
 
 const TextWrapper = styled.div`
   margin-top: 50px;
@@ -53,7 +49,7 @@ const TextWrapper = styled.div`
 const ImgWrapper = styled.div`
   margin: 20px auto 0;
   border: 1px solid #eee;
-  background: #d9d9d9 url(../../assets/PhotoIcon.svg) center center no-repeat;
+  background: #d9d9d9 center center no-repeat;
   border-radius: 16px;
   width: calc(100vw - 60px);
   max-width: 300px;
@@ -93,6 +89,17 @@ const InputWrapper = styled.div`
       background: #ddd;
       border-radius: 4px;
     }
+
+    // 옵션 버튼 색상
+    .btn {
+      background-color: #fff;
+      border: 1px solid #dbdee2;
+      color: #404a5c;
+    }
+    .btn.active {
+      background-color: #505bf0;
+      color: #fff;
+    }
   }
 
   .option-button {
@@ -116,7 +123,7 @@ const InputWrapper = styled.div`
   }
 `;
 
-const Btnwrapper = styled.div`
+const ButtonWrapper = styled.div`
   width: 100%;
 
   button {

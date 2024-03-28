@@ -8,6 +8,10 @@ import {
   Register,
   Slide,
   Upload,
+  UploadBath,
+  UploadMeal,
+  UploadSnack,
+  UploadEtc,
   Verification,
   Setting,
   Home,
@@ -61,6 +65,22 @@ const router = createBrowserRouter([
       {
         element: <Upload />,
         path: ROUTE_PATH.VERIFICATION_POST,
+      },
+      {
+        element: <UploadBath />,
+        path: ROUTE_PATH.VERIFICATION_BATHPOST,
+      },
+      {
+        element: <UploadMeal />,
+        path: ROUTE_PATH.VERIFICATION_MEALPOST,
+      },
+      {
+        element: <UploadSnack />,
+        path: ROUTE_PATH.VERIFICATION_SNACKPOST,
+      },
+      {
+        element: <UploadEtc />,
+        path: ROUTE_PATH.VERIFICATION_ETCPOST,
       },
     ],
   },
