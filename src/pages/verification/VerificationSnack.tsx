@@ -1,14 +1,11 @@
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 const Verification = () => {
-  const { type } = useParams();
-
   return (
     <>
       <TextWrapper>
-        <h2>{type} 식사하는군요!</h2>
-        <PWrapper>{/* 아이콘 */}</PWrapper>
+        <h2>간식먹는군요!</h2>
+        <IconWapper>{/* 아이콘 */}</IconWapper>
         <p>인증성공!</p>
       </TextWrapper>
     </>
@@ -29,7 +26,7 @@ const TextWrapper = styled.div`
   }
 `;
 
-const PWrapper = styled.div`
+const IconWapper = styled.div`
   margin-top: 50px;
   margin: 0 auto;
   width: 200px;

@@ -11,6 +11,7 @@ export const THEME = {
     DECO1: "#3F66AB",
     DECO2: "#5B358C",
     DECO3: "#FFA9A5",
+    DECO4: "#7573FB",
     BACKGROUND: "#FFFFFF",
   },
   FONT: {

@@ -1,31 +1,16 @@
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import ROUTE_PATH from "../../router/constants";
 
 const UploadEtc = () => {
-  const { type } = useParams();
-
   const navigator = useNavigate();
-
-  // 인증 업로드 구분
-  const imgUploadpages = [
-    0, // 산책
-    1, // 식사
-    2, // 간식
-    3, // 목욕
-    4, // 순간 포착 일상
-  ];
 
   return (
     <>
-      {imgUploadpages.map((imgUploadpage) => {
-        <NavLink key={imgUploadpage} to="verification/$:type/upload" />;
-      })}
-
       {/* 폼 데이터 전송은 전체 필수 값으로 */}
       <TextWrapper>
-        <h2>{type} 순간 포착 일상인증</h2>
+        <h2>순간 포착 일상 남기기</h2>
         <ImgWrapper>
           <input type="file" className="imgFile" />
         </ImgWrapper>
@@ -33,12 +18,12 @@ const UploadEtc = () => {
           <input type="text" placeholder="지금 이 순간을 코멘트해주세요." />
         </InputWrapper>
         <ButtonWrapper>
-          <button onClick={() => navigator(ROUTE_PATH.HOME)} color="primary">
+          <button onClick={() => navigator(ROUTE_PATH.ROOT)} color="F48C29">
             전송!
           </button>
           <br />
-          <button onClick={() => navigator(ROUTE_PATH.HOME)} color="D9D9D9">
-            닫기
+          <button onClick={() => navigator(ROUTE_PATH.ROOT)} color="D9D9D9">
+            그냥 닫기
           </button>
         </ButtonWrapper>
       </TextWrapper>
@@ -59,21 +44,12 @@ const TextWrapper = styled.div`
 const ImgWrapper = styled.div`
   margin: 20px auto 0;
   border: 1px solid #eee;
-  background: #d9d9d9 url() center center no-repeat;
+  background: #d9d9d9 center center no-repeat;
   border-radius: 16px;
   width: calc(100vw - 60px);
   max-width: 300px;
   height: calc(100vw - 60px);
   max-height: 300px;
-
-  input[type="file"] {
-    position: absolute;
-    width: 0;
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-  }
 `;
 
 const InputWrapper = styled.div`
@@ -107,6 +83,17 @@ const InputWrapper = styled.div`
       height: 100%;
       background: #ddd;
       border-radius: 4px;
+    }
+
+    // 옵션 버튼 색상
+    .btn {
+      background-color: #fff;
+      border: 1px solid #dbdee2;
+      color: #404a5c;
+    }
+    .btn.active {
+      background-color: #505bf0;
+      color: #fff;
     }
   }
 
@@ -143,14 +130,19 @@ const ButtonWrapper = styled.button`
       margin: 10px auto;
       width: 265px;
       height: 52px;
-      font-size: 14px;
+      font-size: 18px;
+      margin-top: -20px;
     }
 
     &:last-of-type {
-      background: #d9d9d9 url() center center no-repeat;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+      background: #d9d9d9;
+      border-radius: 30px;
+      border: none;
+      text-align: center;
+      margin: 10px auto;
+      width: 265px;
+      height: 52px;
+      font-size: 18px;
     }
   }
 `;
