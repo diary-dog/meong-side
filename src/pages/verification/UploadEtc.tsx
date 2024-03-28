@@ -17,16 +17,9 @@ const UploadEtc = () => {
           <input type="text" placeholder="지금 이 순간을 코멘트해주세요." />
         </InputWrapper>
         <ButtonWrapper>
-          <button onClick={() => navigator(ROUTE_PATH.ROOT)} color="P-BUTTON1">
-            전송!
-          </button>
+          <button onClick={() => navigator(ROUTE_PATH.ROOT)}>전송!</button>
           <br />
-          <button
-            onClick={() => navigator(ROUTE_PATH.ROOT)}
-            color="INACTIVE-BUTTON"
-          >
-            그냥 닫기
-          </button>
+          <button onClick={() => navigator(ROUTE_PATH.ROOT)}>그냥 닫기</button>
         </ButtonWrapper>
       </TextWrapper>
     </>

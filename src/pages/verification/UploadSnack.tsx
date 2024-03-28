@@ -25,9 +25,7 @@ const UploadSnack = () => {
           <input type="text" placeholder="지금 이 순간을 코멘트해주세요." />
         </InputWrapper>
         <ButtonWrapper>
-          <button onClick={() => navigator(ROUTE_PATH.ROOT)} color="P-BUTTON1">
-            전송!
-          </button>
+          <button onClick={() => navigator(ROUTE_PATH.ROOT)}>전송!</button>
           <br />
           <button
             onClick={() => navigator(ROUTE_PATH.ROOT)}
