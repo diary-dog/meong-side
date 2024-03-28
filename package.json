@@ -13,7 +13,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --write",
-      "eslint --quiet --fix"
+      "eslint --quiet --fix --max-errors=0"
     ]
   },
   "dependencies": {
