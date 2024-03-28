@@ -5,10 +5,8 @@ import ROUTE_PATH from "./constants";
 import {
   ErrorPage,
   Intro,
-  LogIn,
-  RegisterDog,
-  RegisterPeople,
-  Slides,
+  Register,
+  Slide,
   Upload,
   UploadMeal,
   UploadBath,
@@ -17,7 +15,10 @@ import {
   Verification,
   Setting,
   Home,
+  Grid,
+  Calendar,
 } from "../pages";
+import KakaoLogIn from "../pages/auth/KakaoLogIn";
 
 const router = createBrowserRouter([
   {
@@ -34,20 +35,24 @@ const router = createBrowserRouter([
         path: ROUTE_PATH.INTRO,
       },
       {
-        element: <LogIn />,
-        path: ROUTE_PATH.LOGIN,
+        element: <KakaoLogIn />,
+        path: ROUTE_PATH.KAKAO_LOGIN,
       },
       {
-        element: <RegisterPeople />,
-        path: ROUTE_PATH.REGISTER_PEOPLE,
+        element: <Register />,
+        path: ROUTE_PATH.REGISTER_PET,
       },
       {
-        element: <RegisterDog />,
-        path: ROUTE_PATH.REGISTER_DOG,
+        element: <Slide />,
+        path: ROUTE_PATH.SLIDE,
       },
       {
-        element: <Slides />,
-        path: ROUTE_PATH.SLIDES,
+        element: <Grid />,
+        path: ROUTE_PATH.GRID,
+      },
+      {
+        element: <Calendar />,
+        path: ROUTE_PATH.CALENDAR,
       },
       {
         element: <Setting />,
@@ -59,7 +64,7 @@ const router = createBrowserRouter([
       },
       {
         element: <Upload />,
-        path: ROUTE_PATH.VERIFICATION_UPLOAD,
+        path: ROUTE_PATH.VERIFICATION_POST,
       },
       {
         element: <UploadMeal />,
