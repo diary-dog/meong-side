@@ -8,7 +8,6 @@ const UploadBath = () => {
 
   return (
     <>
-      {/* 폼 데이터 전송은 전체 필수 값으로 */}
       <TextWrapper>
         <h2>목욕 인증 순간 남기기</h2>
         <ImgWrapper>
@@ -23,11 +22,14 @@ const UploadBath = () => {
           <input type="text" placeholder="지금 이 순간을 코멘트해주세요." />
         </InputWrapper>
         <ButtonWrapper>
-          <button onClick={() => navigator(ROUTE_PATH.ROOT)} color="F48C29">
+          <button onClick={() => navigator(ROUTE_PATH.ROOT)} color="P-BUTTON1">
             전송!
           </button>
           <br />
-          <button onClick={() => navigator(ROUTE_PATH.ROOT)} color="D9D9D9">
+          <button
+            onClick={() => navigator(ROUTE_PATH.ROOT)}
+            color="INACTIVE-BUTTON"
+          >
             그냥 닫기
           </button>
         </ButtonWrapper>

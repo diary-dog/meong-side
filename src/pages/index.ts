@@ -1,11 +1,11 @@
 export { default as Register } from "./auth/Register";
 
-export { default as Upload } from "./verification/Upload";
+export { default as UploadWalk } from "./verification/UploadWalk";
 export { default as UploadBath } from "./verification/UploadBath";
 export { default as UploadMeal } from "./verification/UploadMeal";
 export { default as UploadSnack } from "./verification/UploadSnack";
 export { default as UploadEtc } from "./verification/UploadEtc";
-export { default as Verification } from "./verification/Verification";
+export { default as VerificationWalk } from "./verification/VerificationWalk";
 
 export { default as Intro } from "./Intro";
 export { default as Home } from "./Home";

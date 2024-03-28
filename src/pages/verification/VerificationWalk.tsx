@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Verification = () => {
+const VerificationWalk = () => {
   return (
     <>
       <TextWrapper>
@@ -12,7 +12,7 @@ const Verification = () => {
   );
 };
 
-export default Verification;
+export default VerificationWalk;
 
 const TextWrapper = styled.div`
   margin-top: 50px;
