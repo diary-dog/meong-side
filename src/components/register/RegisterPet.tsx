@@ -35,6 +35,8 @@ const RegisterPet = ({ onPrevious }: { onPrevious: () => void }) => {
     name: ['imageUrl', 'name', 'bornOfYear'],
     control,
   });
+  const previewImageURL =
+    previewImage && previewImage[0] ? URL.createObjectURL(previewImage[0]) : '';
 
   return (
     <Container onSubmit={handleSubmit(onSubmit)}>
@@ -50,12 +52,9 @@ const RegisterPet = ({ onPrevious }: { onPrevious: () => void }) => {
           accept="image/*"
           {...register('imageUrl')}
         />
-        {previewImage ? (
+        {previewImageURL ? (
           <label htmlFor="imageUrl">
-            <UserImage
-              size="XL"
-              imageUrl={URL.createObjectURL(previewImage[0])}
-            />
+            <UserImage size="XL" imageUrl={previewImageURL} />
           </label>
         ) : (
           <DefaultImage>
