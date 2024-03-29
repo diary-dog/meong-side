@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { Button } from "../../components";
+import styled from 'styled-components';
+import { Button } from '../../components';
 
-import UserImage from "../../components/common/UserImage";
-import { Title } from "../../pages/auth/Auth.styled";
+import UserImage from '../../components/common/UserImage';
+import { Title } from './Auth.styled';
 
 const ConfirmPeople = () => {
-  const imageUrl = "";
+  const imageUrl = '';
   return (
     <Container>
       <Title className="title">계정확인</Title>
