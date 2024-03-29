@@ -1,24 +1,27 @@
-import { ButtonHTMLAttributes, PropsWithChildren } from "react";
-import styled from "styled-components";
-import { THEME } from "../../styles/theme";
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
+import styled from 'styled-components';
+import { THEME } from '../../styles/theme';
 
 const Button = ({
   onClick,
-  color = "INACTIVE-BUTTON",
-  textColor = "FONT-COLOR-A",
+  color = 'INACTIVE-BUTTON',
+  textColor = 'FONT-COLOR-A',
+  type = 'button',
   children,
   ...props
 }: PropsWithChildren<{
-  onClick: () => void;
+  onClick?: () => void;
   color: keyof typeof THEME.COLORS;
   textColor?: keyof typeof THEME.COLORS;
+  type?: 'button' | 'submit';
   props?: ButtonHTMLAttributes<Element>;
 }>) => {
   return (
     <ButtonContainer
-      textColor={textColor}
+      $textColor={textColor}
       color={color}
       onClick={onClick}
+      type={type}
       {...props}
     >
       {children}
@@ -30,7 +33,7 @@ export default Button;
 
 const ButtonContainer = styled.button<{
   color: keyof typeof THEME.COLORS;
-  textColor: keyof typeof THEME.COLORS;
+  $textColor: keyof typeof THEME.COLORS;
 }>`
   width: 265px;
   height: 52px;
@@ -39,7 +42,7 @@ const ButtonContainer = styled.button<{
   border-radius: 30px;
   border: none;
   opacity: 0px;
-  color: ${({ theme, textColor }) => theme.COLORS[textColor] || textColor};
+  color: ${({ theme, $textColor }) => theme.COLORS[$textColor] || $textColor};
   background-color: ${({ theme, color }) => theme.COLORS[color] || color};
   font-size: 20px;
 `;

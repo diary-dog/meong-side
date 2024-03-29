@@ -1,10 +1,10 @@
-import { PropsWithChildren, ReactNode } from "react";
-import styled from "styled-components";
-import { useLocation, useNavigate } from "react-router-dom";
+import { PropsWithChildren, ReactNode } from 'react';
+import styled from 'styled-components';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import { CalendarIcon, HomeIcon, SettingIcon, TotalIcon } from "../Icons";
-import ROUTE_PATH from "../../router/constants";
-import { THEME } from "../../styles/theme";
+import { CalendarIcon, HomeIcon, SettingIcon, TotalIcon } from '../Icons';
+import ROUTE_PATH from '../../router/constants';
+import { THEME } from '../../styles/theme';
 
 const LayoutRoot = ({ children }: { children: ReactNode }) => {
   return <Container>{children}</Container>;
@@ -32,9 +32,9 @@ const activeStyling = (currentPath: string, ...routePath: string[]) => {
       ? routePath.includes(currentPath)
       : currentPath === routePath
   ) {
-    return THEME.COLORS["P-BUTTON1"];
+    return THEME.COLORS['P-BUTTON1'];
   } else {
-    return THEME.COLORS["INACTIVE-BUTTON"];
+    return THEME.COLORS['INACTIVE-BUTTON'];
   }
 };
 
@@ -76,7 +76,7 @@ const Container = styled.div`
 
 const BOTTOM = {
   Container: styled.div`
-    height: 90px;
+    height: 100px;
     position: fixed;
     display: flex;
     justify-content: space-around;
@@ -101,6 +101,7 @@ const BOTTOM = {
 const TOP = {
   Container: styled.div`
     position: fixed;
+    height: 50px;
     width: 100%;
     max-width: 393px;
     display: flex;
@@ -118,7 +119,7 @@ const TOP = {
   `,
   Title: styled.h2`
     text-align: center;
-    color: ${({ theme }) => theme.COLORS["FONT-COLOR-A"]};
+    color: ${({ theme }) => theme.COLORS['FONT-COLOR-A']};
     font-size: ${({ theme }) => theme.FONT.LG};
   `,
 };
