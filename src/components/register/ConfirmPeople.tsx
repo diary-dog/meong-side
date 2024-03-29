@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Button } from '../../components';
+import { Button } from '..';
 
-import UserImage from '../../components/common/UserImage';
-import { Title } from './Auth.styled';
+import UserImage from '../common/UserImage';
+import { Title } from './register.styled';
 
 const ConfirmPeople = () => {
   const imageUrl = '';

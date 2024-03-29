@@ -1,8 +1,8 @@
 import { useForm, useWatch } from 'react-hook-form';
 
-import { Button, Input } from '../../components';
-import UserImage from '../../components/common/UserImage';
-import { CameraIcon, Female, Male } from '../../components/Icons';
+import { Button, Input } from '..';
+import UserImage from '../common/UserImage';
+import { CameraIcon, Female, Male } from '../Icons';
 
 import {
   Container,
@@ -14,7 +14,7 @@ import {
   ErrorMessage,
   ButtonWrapper,
 } from './RegisterPet.styled';
-import { Title } from './Auth.styled';
+import { Title } from './register.styled';
 interface PetInformation {
   name: string;
   bornOfYear: number;

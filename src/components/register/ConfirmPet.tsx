@@ -1,5 +1,5 @@
-import { Button } from '../../components';
-import UserImage from '../../components/common/UserImage';
+import { Button } from '..';
+import UserImage from '../common/UserImage';
 
 import { ConTainer, ButtonWrapper, IconWrapper } from './ConfirmPet.styled';
 

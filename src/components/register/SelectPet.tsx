@@ -1,4 +1,4 @@
-import { InvitationIcon, RegisterPetIcon } from '../../components/Icons';
+import { InvitationIcon, RegisterPetIcon } from '../Icons';
 import { Container, Title, ButtonItem } from './SelectPet.styled';
 
 const SelectPet = ({

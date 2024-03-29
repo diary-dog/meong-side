@@ -3,7 +3,7 @@ import {
   RegisterPet,
   SelectPet,
   InputInvitationLink,
-} from '../../components/Auth';
+} from '../../components/register';
 import { useFunnel } from '../../hooks/useFunnel';
 
 interface Pet {
