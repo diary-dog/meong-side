@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-import BinggraeMelona from "../assets/fonts/BinggraeMelona.ttf";
+import BinggraeMelona from '../assets/fonts/BinggraeMelona.ttf';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -26,10 +26,10 @@ p {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+  font-family: 'BinggraeMelona', sans-serif, Arial;
 }
 * {
-    box-sizing: border-box;
-    font-family: 'BinggraeMelona', sans-serif, Arial;
+  box-sizing: border-box;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
@@ -52,7 +52,7 @@ body {
   line-height: 1;
   font-weight: 400;
   margin: 0 auto;
-  color :  ${(props) => props.theme.COLORS["FONT-COLOR-A"]};
+  color :  ${(props) => props.theme.COLORS['FONT-COLOR-A']};
 }
 `;
 
