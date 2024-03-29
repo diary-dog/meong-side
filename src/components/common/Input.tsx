@@ -1,18 +1,18 @@
-import { InputHTMLAttributes } from "react";
-import styled from "styled-components";
-import { DoubleCheck } from "../Icons";
+import { InputHTMLAttributes, forwardRef } from 'react';
+import styled from 'styled-components';
+import { DoubleCheck } from '../Icons';
 
-const Input = ({
-  isValid,
-  ...props
-}: InputHTMLAttributes<HTMLInputElement> & { isValid: boolean }) => {
+const Input = forwardRef<
+  HTMLInputElement,
+  InputHTMLAttributes<HTMLInputElement> & { isValid: boolean }
+>(({ isValid, ...props }, ref) => {
   return (
     <Container>
-      <InputItem {...props} />
-      <ValidDoubleCheck isValid={isValid} className="check" />
+      <InputItem ref={ref} {...props} />
+      <ValidDoubleCheck $isValid={isValid} className="check" />
     </Container>
   );
-};
+});
 
 export default Input;
 const Container = styled.div`
@@ -34,11 +34,11 @@ const InputItem = styled.input`
   text-align: left;
 
   &::placeholder {
-    color: ${({ theme }) => theme.COLORS["INACTIVE-BUTTON"]};
+    color: ${({ theme }) => theme.COLORS['INACTIVE-BUTTON']};
   }
 `;
 
-const ValidDoubleCheck = styled(DoubleCheck)<{ isValid: boolean }>`
-  color: ${({ theme, isValid }) =>
-    isValid ? theme.COLORS["P-BUTTON1"] : theme.COLORS["INACTIVE-BUTTON"]};
+const ValidDoubleCheck = styled(DoubleCheck)<{ $isValid: boolean }>`
+  color: ${({ theme, $isValid }) =>
+    $isValid ? theme.COLORS['P-BUTTON1'] : theme.COLORS['INACTIVE-BUTTON']};
 `;
