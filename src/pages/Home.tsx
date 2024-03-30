@@ -1,62 +1,19 @@
 import { useNavigate } from 'react-router-dom';
 
 import ROUTE_PATH from '../router/constants';
-import UserImage from '../components/common/UserImage';
 import { Layout } from '../components';
-import { Bath, Female, Male, Meal, Snack, Walk } from '../components/Icons';
+import { Bath, Meal, Snack, Walk } from '../components/Icons';
+import VerificationField from '../components/verification/VerificationField';
+import { pet } from '../utils/mockData';
 
 import * as S from './Home.styled';
-
-interface Pet {
-  petId: number;
-  name: string;
-  bonsOfYear: number;
-  imageUrl: string;
-  gender: '남아' | '여아';
-  walkCount: number;
-  mealCount: number;
-  bathCount: number;
-  treatsCount: number;
-}
-
-const pet: Pet = {
-  petId: 1,
-  name: '월이',
-  bonsOfYear: 2019,
-  imageUrl: '',
-  gender: '남아',
-  walkCount: 2,
-  mealCount: 3,
-  treatsCount: 1,
-  bathCount: 0,
-};
-const getAge = (bonsOfYear: number) =>
-  new Date().getFullYear() - bonsOfYear + 1;
 
 const Home = () => {
   const navigate = useNavigate();
   return (
     <Layout>
       <S.Container>
-        <S.Information>
-          <S.PetInformation>
-            <UserImage size="MD" imageUrl="" />
-            <span id="name">{pet.name}</span>
-            <span id="age">
-              {getAge(pet.bonsOfYear)}살{' '}
-              {pet.gender === '남아' ? <Male /> : <Female />}
-            </span>
-          </S.PetInformation>
-          <S.VerificationInformation>
-            <h3 id="title">오늘의 횟수</h3>
-            <S.VerificationCount>
-              <span id="walk">산책 {pet.walkCount}번</span>
-              <span id="meal">식사 {pet.walkCount}번</span>
-              <span id="treat">간식 {pet.treatsCount}번</span>
-              <span id="bath">목욕 {pet.walkCount}번</span>
-            </S.VerificationCount>
-          </S.VerificationInformation>
-        </S.Information>
+        <VerificationField pet={pet} />
         <S.VerificationContainer>
           <S.VerificationWrapper>
             <S.VerificationItem
