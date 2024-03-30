@@ -19,6 +19,8 @@ import {
   Calendar,
   KakaoLogIn,
   GridByUser,
+  SendingInvitation,
+  FamilyList,
 } from '../pages';
 
 const router = createBrowserRouter([
@@ -62,6 +64,14 @@ const router = createBrowserRouter([
       {
         element: <Setting />,
         path: ROUTE_PATH.SETTING,
+      },
+      {
+        element: <SendingInvitation />,
+        path: ROUTE_PATH.SENDING_INVITATION,
+      },
+      {
+        element: <FamilyList />,
+        path: ROUTE_PATH.FAMILY,
       },
       {
         element: <VerificationWalk />,

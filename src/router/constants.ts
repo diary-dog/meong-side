@@ -16,6 +16,8 @@ const ROUTE_PATH = {
   GRID_BY_TYPE: '/grid/:type',
   GRID_BY_USER: '/grid/uploader/:userId',
   SETTING: '/setting',
+  SENDING_INVITATION: '/setting/invitation',
+  FAMILY: '/setting/family',
   CALENDAR: '/calendar',
 } as const;
 
