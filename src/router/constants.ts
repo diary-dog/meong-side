@@ -17,6 +17,8 @@ const ROUTE_PATH = {
   VERIFICATION_ETCPOST: '/verification/etcpost',
   SLIDE: '/slide',
   GRID: '/grid',
+  GRID_BY_TYPE: '/grid/:type',
+  GRID_BY_USER: '/grid/uploader/:userId',
   SETTING: '/setting',
   CALENDAR: '/calendar',
 } as const;

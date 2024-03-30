@@ -21,8 +21,10 @@ import {
   Home,
   Grid,
   Calendar,
+  KakaoLogIn,
+  GridByUser,
 } from '../pages';
-import KakaoLogIn from '../pages/auth/KakaoLogIn';
+
 
 const router = createBrowserRouter([
   {
@@ -52,7 +54,11 @@ const router = createBrowserRouter([
       },
       {
         element: <Grid />,
-        path: ROUTE_PATH.GRID,
+        path: ROUTE_PATH.GRID_BY_TYPE,
+      },
+      {
+        element: <GridByUser />,
+        path: ROUTE_PATH.GRID_BY_USER,
       },
       {
         element: <Calendar />,
