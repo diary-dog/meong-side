@@ -9,13 +9,14 @@ const Button = ({
   type = 'button',
   children,
   ...props
-}: PropsWithChildren<{
-  onClick?: () => void;
-  color: keyof typeof THEME.COLORS;
-  textColor?: keyof typeof THEME.COLORS;
-  type?: 'button' | 'submit';
-  props?: ButtonHTMLAttributes<Element>;
-}>) => {
+}: PropsWithChildren<
+  ButtonHTMLAttributes<Element> & {
+    onClick?: () => void;
+    color: keyof typeof THEME.COLORS;
+    textColor?: keyof typeof THEME.COLORS;
+    type?: 'button' | 'submit';
+  }
+>) => {
   return (
     <ButtonContainer
       $textColor={textColor}
