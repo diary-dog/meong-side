@@ -20,3 +20,8 @@ export const GridWrapper = styled.div`
     object-fit: cover;
   }
 `;
+
+export const ClickedImage = styled.img`
+  width: 100%;
+  cursor: pointer;
+`;
