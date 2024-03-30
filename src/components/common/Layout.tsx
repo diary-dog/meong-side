@@ -27,10 +27,11 @@ const TopBar = ({
   );
 };
 const activeStyling = (currentPath: string, ...routePath: string[]) => {
+  const splitPath = currentPath.split('/').filter((path: string) => path);
   if (
-    Array.isArray(routePath)
-      ? routePath.includes(currentPath)
-      : currentPath === routePath
+    splitPath.length > 1
+      ? routePath.join('').includes(splitPath[0])
+      : routePath.includes(currentPath)
   ) {
     return THEME.COLORS['P-BUTTON1'];
   } else {
