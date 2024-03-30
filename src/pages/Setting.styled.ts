@@ -31,6 +31,7 @@ export const FamilyTitle = styled.div`
 
   font-size: ${({ theme }) => theme.FONT.LG};
   line-height: 25.6px;
+  margin-top: 10px;
 `;
 
 export const FamilyWrapper = styled.div`
@@ -59,5 +60,20 @@ export const MessageItem = styled.div`
     width: 190px;
     font-size: ${({ theme }) => theme.FONT.SM};
     line-height: 17.92px;
+  }
+`;
+
+export const SwitchWrapper = styled.div<{ $isAlarm: boolean }>`
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: ${({ theme }) => theme.FONT.XS};
+  #on {
+    color: ${({ theme, $isAlarm }) =>
+      $isAlarm ? 'black' : theme.COLORS['INACTIVE-BUTTON']};
+  }
+  #off {
+    color: ${({ theme, $isAlarm }) =>
+      $isAlarm ? theme.COLORS['INACTIVE-BUTTON'] : 'black'};
   }
 `;
