@@ -969,3 +969,42 @@ export const NextIcon = (props: SVGAttributes<SVGElement>) => {
     </svg>
   );
 };
+
+export const PlusIcon = (props: SVGAttributes<SVGElement>) => {
+  return (
+    <svg
+      width="50"
+      height="50"
+      viewBox="0 0 50 50"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M26.7444 18.0235C26.7444 17.0602 25.9635 16.2793 25.0002 16.2793C24.037 16.2793 23.256 17.0602 23.256 18.0235V23.256H18.0235C17.0602 23.256 16.2793 24.037 16.2793 25.0002C16.2793 25.9635 17.0602 26.7444 18.0235 26.7444H23.256V31.977C23.256 32.9402 24.037 33.7212 25.0002 33.7212C25.9635 33.7212 26.7444 32.9402 26.7444 31.977V26.7444H31.977C32.9402 26.7444 33.7212 25.9635 33.7212 25.0002C33.7212 24.037 32.9402 23.256 31.977 23.256H26.7444V18.0235Z"
+        fill="#68CFDE"
+      />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M25 0C11.1929 0 0 11.1929 0 25C0 38.8072 11.1929 50 25 50C38.8072 50 50 38.8072 50 25C50 11.1929 38.8072 0 25 0ZM3.48837 25C3.48837 13.1195 13.1195 3.48837 25 3.48837C36.8805 3.48837 46.5116 13.1195 46.5116 25C46.5116 36.8805 36.8805 46.5116 25 46.5116C13.1195 46.5116 3.48837 36.8805 3.48837 25Z"
+        fill="#68CFDE"
+      />
+    </svg>
+  );
+};
+export const Message = (props: SVGAttributes<SVGElement>) => {
+  return (
+    <svg
+      width="208"
+      height="53"
+      viewBox="0 0 208 53"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect x="18" width="190" height="50" rx="20" fill="#FFFFE1" />
+      <path d="M0 53L20.5 34L38 48.5L0 53Z" fill="#FFFFE1" />
+    </svg>
+  );
+};
