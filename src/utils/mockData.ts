@@ -1,3 +1,27 @@
+export interface Pet {
+  petId: number;
+  name: string;
+  bonsOfYear: number;
+  imageUrl: string;
+  gender: '남아' | '여아';
+  walkCount: number;
+  mealCount: number;
+  bathCount: number;
+  treatsCount: number;
+}
+
+export const pet: Pet = {
+  petId: 1,
+  name: '월이',
+  bonsOfYear: 2019,
+  imageUrl: '',
+  gender: '남아',
+  walkCount: 2,
+  mealCount: 3,
+  treatsCount: 1,
+  bathCount: 0,
+};
+
 export interface Data {
   createdAt: number;
   category?: string;
