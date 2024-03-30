@@ -6,7 +6,7 @@ import { AllGrid } from '../components/grid';
 import { LeftArrowIcon, SlideIcon } from '../components/Icons';
 import { Sort } from './Grid';
 
-import { BackButton, Container } from './GridByUser.styled';
+import * as S from './GridByUser.styled';
 
 const GridByUser = () => {
   const navigate = useNavigate();
@@ -21,13 +21,15 @@ const GridByUser = () => {
         title="그리드"
         rightButton={<SlideIcon onClick={() => navigate(ROUTE_PATH.SLIDE)} />}
       />
-      <Container>
-        <BackButton onClick={() => navigate('/grid/uploader')}>
+      <S.Container>
+        <S.BackButton onClick={() => navigate('/grid/uploader')}>
           <LeftArrowIcon />
           <div>뒤로가기</div>
-        </BackButton>
-      </Container>
-      <AllGrid sortType={sortType as Sort} /> <Layout.BottomBar />
+        </S.BackButton>
+        <S.Uploader>둘쨰딸</S.Uploader>
+      </S.Container>
+      <AllGrid sortType={sortType as Sort} />
+      <Layout.BottomBar />
     </Layout>
   );
 };
