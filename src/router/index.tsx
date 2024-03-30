@@ -1,7 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom';
 
-import App from "../App";
-import ROUTE_PATH from "./constants";
+import App from '../App';
+import ROUTE_PATH from './constants';
 import {
   ErrorPage,
   Intro,
@@ -17,8 +17,9 @@ import {
   Home,
   Grid,
   Calendar,
-} from "../pages";
-import KakaoLogIn from "../pages/auth/KakaoLogIn";
+  KakaoLogIn,
+  GridByUser,
+} from '../pages';
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
       },
       {
         element: <Grid />,
-        path: ROUTE_PATH.GRID,
+        path: ROUTE_PATH.GRID_BY_TYPE,
+      },
+      {
+        element: <GridByUser />,
+        path: ROUTE_PATH.GRID_BY_USER,
       },
       {
         element: <Calendar />,

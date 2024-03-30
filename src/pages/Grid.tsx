@@ -1,17 +1,29 @@
-import { useNavigate } from "react-router-dom";
-import { Layout } from "../components";
-import { SlideIcon } from "../components/Icons";
-import ROUTE_PATH from "../router/constants";
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+
+import ROUTE_PATH from '../router/constants';
+import { Layout } from '../components';
+import { SlideIcon } from '../components/Icons';
+import { AllGrid, GridLayout, UploaderGrid } from '../components/grid';
+
+export type Grid = 'all' | 'uploader';
+export type Sort = 'descending' | 'descending';
 
 const Grid = () => {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
+  const { type } = useParams<{ type: Grid }>();
+  const { search } = useLocation();
+  const searchParams = new URLSearchParams(search);
+  const sortType = searchParams.get('sortType') || 'ascending';
+
   return (
     <Layout>
       <Layout.TopBar
         title="그리드"
-        rightButton={<SlideIcon onClick={() => navigation(ROUTE_PATH.SLIDE)} />}
+        rightButton={<SlideIcon onClick={() => navigate(ROUTE_PATH.SLIDE)} />}
       />
-      <div>그리드</div>
+      <GridLayout type={type ?? 'all'} />
+      {type === 'all' && <AllGrid sortType={sortType as Sort} />}
+      {type === 'uploader' && <UploaderGrid />}
       <Layout.BottomBar />
     </Layout>
   );
