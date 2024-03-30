@@ -1,6 +1,20 @@
-import styled from "styled-components";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Verification = () => {
+import styled from 'styled-components';
+
+const VerificationSnack = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // 페이지가 렌더링되면 2초 후에 리디렉션을 수행
+    const redirectTimer = setTimeout(() => {
+      navigate('/verification/snackpost'); // 리디렉션할 경로
+    }, 2000);
+
+    return () => clearTimeout(redirectTimer); // cleanup 함수를 이용하여 타이머를 해제
+  }, [navigate]);
+
   return (
     <>
       <TextWrapper>
@@ -12,7 +26,7 @@ const Verification = () => {
   );
 };
 
-export default Verification;
+export default VerificationSnack;
 
 const TextWrapper = styled.div`
   margin-top: 50px;

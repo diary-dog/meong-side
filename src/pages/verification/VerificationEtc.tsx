@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-const VerificationMeal = () => {
+const VerificationEtc = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     // 페이지가 렌더링되면 2초 후에 리디렉션을 수행
     const redirectTimer = setTimeout(() => {
-      navigate('/verification/Mealpost'); // 리디렉션할 경로
+      navigate('/verification/etcpost'); // 리디렉션할 경로
     }, 2000);
 
     return () => clearTimeout(redirectTimer); // cleanup 함수를 이용하여 타이머를 해제
@@ -18,7 +18,7 @@ const VerificationMeal = () => {
   return (
     <>
       <TextWrapper>
-        <h2>식사하는군요!</h2>
+        <h2>일상이군요!</h2>
         <IconWapper>{/* 아이콘 */}</IconWapper>
         <p>인증성공!</p>
       </TextWrapper>
@@ -26,7 +26,7 @@ const VerificationMeal = () => {
   );
 };
 
-export default VerificationMeal;
+export default VerificationEtc;
 
 const TextWrapper = styled.div`
   margin-top: 50px;
