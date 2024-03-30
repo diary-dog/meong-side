@@ -6,7 +6,13 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 13px;
+`;
+export const LoggedInUserField = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 30px 0 0;
+  width: 100%;
+  background-color: ${({ theme }) => theme.COLORS['SECONDARY-DASH']};
 `;
 
 export const FamilyContainer = styled.div`

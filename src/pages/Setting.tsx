@@ -10,6 +10,9 @@ const Setting = () => {
   return (
     <Layout>
       <S.Container>
+        <S.LoggedInUserField>
+          <UserImage size="XS" />
+        </S.LoggedInUserField>
         <VerificationField pet={pet} />
         <S.FamilyContainer>
           <S.FamilyTitle>

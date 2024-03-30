@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Information = styled.div`
   width: 393px;
-  height: 349px;
-  padding: 35px 7px 20px 7px;
+  height: 330px;
+  padding: 30px 7px 20px 7px;
   gap: 20px;
   background-color: ${({ theme }) => theme.COLORS['SECONDARY-DASH']};
 
