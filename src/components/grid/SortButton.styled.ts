@@ -8,6 +8,7 @@ export const SelectSortType = styled.div<{
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 393px;
   height: 35px;
   gap: 15px;
   top: 85px;

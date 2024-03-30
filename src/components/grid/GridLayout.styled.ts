@@ -8,6 +8,7 @@ export const Container = styled.div`
   gap: 20px;
   background-color: white;
   width: 100%;
+  max-width: 393px;
   top: 50px;
   height: 50px;
 `;
