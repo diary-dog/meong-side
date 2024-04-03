@@ -87,6 +87,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 27px;
+  margin-top: 12px;
 `;
 
 const SelectedDate = styled.h3`
@@ -122,5 +123,7 @@ const VerificationItem = styled.div`
   }
   #time {
     margin-left: auto;
+    color: ${({ theme }) => theme.COLORS['FONT-COLOR-WB']};
+    font-size: ${({ theme }) => theme.FONT.XS};
   }
 `;

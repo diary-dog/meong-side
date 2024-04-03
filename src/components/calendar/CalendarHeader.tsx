@@ -54,9 +54,7 @@ const Container = styled.div`
 const ChangeButton = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 20px;
   gap: 20px;
-
   font-size: 20px;
   line-height: 25.6px;
 `;
