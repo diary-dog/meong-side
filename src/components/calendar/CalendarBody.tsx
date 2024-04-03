@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import useCalendarContext from './useCalendarContext';
+import { VERIFICATION } from '../../utils/constants';
+import { getVerificationTypeColor } from '../../utils/getVerificationTypeColor';
 
 const CalendarBody = () => {
   const weeks = ['일', '월', '화', '수', '목', '금', '토'];
@@ -15,15 +17,19 @@ const CalendarBody = () => {
       <DayWrapper>
         {daysInMonth.map((date) => (
           <Day
-            onClick={() => selectedDate.selectDate(date.day)}
+            onClick={() => selectedDate.selectDate(date.date)}
             $isCurrentMonth={currentDate.month === date.month}
-            $isSelectedDate={
-              currentDate.month === date.month && selectedDate.day === date.day
-            }
+            $isSelectedDate={selectedDate.date === date.date}
             className={date.month}
             key={date.date}
           >
-            {date.day}
+            <span>{date.day}</span>
+            <VerificationCircles>
+              <VerificationTypeCircle type={VERIFICATION.WALK} />
+              <VerificationTypeCircle type={VERIFICATION.MEAL} />
+              <VerificationTypeCircle type={VERIFICATION.TREAT} />
+              <VerificationTypeCircle type={VERIFICATION.BATH} />
+            </VerificationCircles>
           </Day>
         ))}
       </DayWrapper>
@@ -51,13 +57,31 @@ const CalendarItem = styled.div`
   display: flex;
   justify-content: center;
 `;
-const Day = styled(CalendarItem)<{
+
+const VerificationCircles = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4.29px;
+`;
+const VerificationTypeCircle = styled.div<{ type: string }>`
+  width: 7.86px;
+  height: 7.86px;
+  background-color: ${({ type }) => getVerificationTypeColor(type)};
+  border-radius: 100%;
+`;
+
+const Day = styled.div<{
   $isCurrentMonth?: boolean;
   $isSelectedDate: boolean;
 }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10.14px;
   cursor: pointer;
-  color: ${({ $isCurrentMonth, theme }) =>
-    $isCurrentMonth ? theme.COLORS['FONT-COLOR-A'] : 'transparent'};
+  visibility: ${({ $isCurrentMonth }) =>
+    $isCurrentMonth ? 'visible' : 'hidden'};
   background-color: ${({ $isSelectedDate }) =>
     $isSelectedDate ? '#FFFFE1' : 'transparent'};
 `;
