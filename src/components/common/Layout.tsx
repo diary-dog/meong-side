@@ -13,13 +13,15 @@ const TopBar = ({
   title,
   leftButton,
   rightButton,
+  backGroundColor,
 }: PropsWithChildren<{
   title: string;
   leftButton?: ReactNode;
   rightButton?: ReactNode;
+  backGroundColor?: string;
 }>) => {
   return (
-    <TOP.Container>
+    <TOP.Container $backGroundColor={backGroundColor}>
       {leftButton ? leftButton : <div className="blank"></div>}
       <TOP.Title>{title}</TOP.Title>
       {rightButton ? rightButton : <div className="blank"></div>}
@@ -100,7 +102,7 @@ const BOTTOM = {
 };
 
 const TOP = {
-  Container: styled.div`
+  Container: styled.div<{ $backGroundColor?: string }>`
     position: fixed;
     height: 50px;
     width: 100%;
@@ -109,7 +111,8 @@ const TOP = {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: white;
+    background-color: ${({ $backGroundColor }) =>
+      $backGroundColor ? $backGroundColor : 'white'};
 
     .blank {
       width: 30px;
