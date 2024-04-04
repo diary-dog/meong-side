@@ -21,7 +21,7 @@ interface WalkOption extends UploadVerificationDefault {
 const UploadVerification = () => {
   const { type } = useParams();
   const navigate = useNavigate();
-  const { register, handleSubmit, watch, control } = useForm({
+  const { register, handleSubmit, watch, control, setValue } = useForm({
     mode: 'onSubmit',
   });
 
@@ -51,7 +51,12 @@ const UploadVerification = () => {
             <CameraIcon className="svg" width={87.8} height={79.2} />
           </div>
         </ImageWrapper>
-        <VerificationOption type={type!} register={register} watch={watch} />
+        <VerificationOption
+          type={type!}
+          register={register}
+          watch={watch}
+          setValue={setValue}
+        />
         <CommentInput
           placeholder="지금 이 순간을 코멘트해주세요."
           {...register('comments')}

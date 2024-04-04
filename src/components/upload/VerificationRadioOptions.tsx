@@ -1,4 +1,9 @@
-import { FieldValues, UseFormRegister, UseFormWatch } from 'react-hook-form';
+import {
+  FieldValues,
+  UseFormRegister,
+  UseFormSetValue,
+  UseFormWatch,
+} from 'react-hook-form';
 import { Fragment } from 'react/jsx-runtime';
 import styled from 'styled-components';
 
@@ -8,28 +13,45 @@ const VerificationRadioOptions = ({
   options,
   register,
   watch,
+  setValue,
   name,
 }: {
   options: string[];
   type: string;
   register: UseFormRegister<FieldValues>;
   watch: UseFormWatch<FieldValues>;
+  setValue: UseFormSetValue<FieldValues>;
   name: VerificationWithOption;
-}) => (
-  <VerificationOptionContainer $name={name}>
-    {Object.values(options).map((value) => (
-      <Fragment key={value}>
-        <input id={value} type="radio" value={value} {...register(name)} />
-        <label
-          htmlFor={value}
-          className={watch(name) === value ? 'selected' : ''}
-        >
-          {value}
-        </label>
-      </Fragment>
-    ))}
-  </VerificationOptionContainer>
-);
+}) => {
+  const currentValue = watch(name) as string;
+
+  return (
+    <VerificationOptionContainer $name={name}>
+      {Object.values(options).map((value) => (
+        <Fragment key={value}>
+          <input
+            id={value}
+            type="radio"
+            value={value}
+            {...register(name)}
+            onClick={(e) => {
+              if (currentValue === e.currentTarget.value) {
+                setValue(name, '');
+                e.currentTarget.checked = false;
+              }
+            }}
+          />
+          <label
+            htmlFor={value}
+            className={watch(name) === value ? 'selected' : ''}
+          >
+            {value}
+          </label>
+        </Fragment>
+      ))}
+    </VerificationOptionContainer>
+  );
+};
 export default VerificationRadioOptions;
 
 const VerificationOptionContainer = styled.label<{
@@ -42,7 +64,6 @@ const VerificationOptionContainer = styled.label<{
   align-items: center;
   gap: 10px;
   font-size: ${({ theme }) => theme.FONT.XS};
-
   input {
     display: none;
   }
@@ -51,10 +72,12 @@ const VerificationOptionContainer = styled.label<{
     padding: 10px;
     border-radius: 20px;
     border: 1px solid ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
+    color: ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
     font-size: ${({ theme }) => theme.FONT.XS};
   }
   label.selected {
     background-color: ${({ theme }) => theme.COLORS['P-BUTTON2']};
     border-color: ${({ theme }) => theme.COLORS['P-BUTTON2']};
+    color: ${({ theme }) => theme.COLORS['FONT-COLOR-A']};
   }
 `;
