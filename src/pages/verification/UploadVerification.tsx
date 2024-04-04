@@ -1,23 +1,29 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import ROUTE_PATH from '../../router/constants';
 import { Button } from '../../components';
 import { useForm, useWatch } from 'react-hook-form';
 import { CameraIcon } from '../../components/Icons';
+import { getVerificationType } from '../../utils/getVerificationType';
 
-interface UploadVerification {
+import VerificationOption from '../../components/upload/VerificationOption';
+
+interface UploadVerificationDefault {
   imageUrl?: string;
   comment?: string;
 }
-interface WalkOption extends UploadVerification {
+interface WalkOption extends UploadVerificationDefault {
   hour?: string;
   minutes?: string;
 }
 
-const UploadWalk = () => {
+const UploadVerification = () => {
+  const { type } = useParams();
   const navigate = useNavigate();
-  const { register, handleSubmit, control } = useForm({ mode: 'onSubmit' });
+  const { register, handleSubmit, watch, control } = useForm({
+    mode: 'onSubmit',
+  });
 
   const previewImage = useWatch({
     name: 'imageUrl',
@@ -32,7 +38,7 @@ const UploadWalk = () => {
   };
   return (
     <Container onSubmit={handleSubmit(onSubmit)}>
-      <Title>산책 인증 순간 남기기</Title>
+      <Title>{getVerificationType(type!)} 인증 순간 남기기</Title>
       <InputContainer>
         <ImageWrapper $previewImageURL={previewImageURL} htmlFor="imageUrl">
           <input
@@ -41,17 +47,11 @@ const UploadWalk = () => {
             accept="image/*"
             {...register('imageUrl')}
           />
-          <label className="border" htmlFor="imageUrl">
-            <CameraIcon className="svg" />
-          </label>
+          <div className="border">
+            <CameraIcon className="svg" width={87.8} height={79.2} />
+          </div>
         </ImageWrapper>
-        <VerificationOption id="hour" htmlFor="hour">
-          <span>아이는 얼마나 산책했나요?</span>
-          <input id="hour" type="number" {...register('hour')} />
-          <span>시</span>
-          <input id="minutes" type="number" {...register('minutes')} />
-          <span>분</span>
-        </VerificationOption>
+        <VerificationOption type={type!} register={register} watch={watch} />
         <CommentInput
           placeholder="지금 이 순간을 코멘트해주세요."
           {...register('comments')}
@@ -67,7 +67,7 @@ const UploadWalk = () => {
   );
 };
 
-export default UploadWalk;
+export default UploadVerification;
 
 const Container = styled.form`
   width: 100%;
@@ -98,21 +98,18 @@ const ImageWrapper = styled.label<{ $previewImageURL: string }>`
     $previewImageURL ? `url(${$previewImageURL})` : ''};
   background-position: center;
   background-size: cover;
+  cursor: pointer;
 
   #imageUrl {
     display: none;
   }
-  label {
-    cursor: pointer;
-  }
-
   .border {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 85px;
-    height: 85px;
+    width: 145px;
+    height: 145px;
     background-color: white;
     border-radius: 100%;
     cursor: pointer;
@@ -134,26 +131,6 @@ const InputContainer = styled.div`
   flex-direction: column;
   gap: 17px;
   align-items: center;
-`;
-const VerificationOption = styled.label`
-  display: flex;
-  width: 100%;
-  max-height: 47px;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 19px;
-  border-radius: 20px;
-  border: 1px solid ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
-  font-size: ${({ theme }) => theme.FONT.XS};
-  input {
-    width: 25px;
-    height: 26px;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: ${({ theme }) => theme.COLORS['INACTIVE-BUTTON']};
-    text-align: center;
-  }
 `;
 
 const CommentInput = styled.textarea`

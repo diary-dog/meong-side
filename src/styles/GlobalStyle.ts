@@ -29,6 +29,7 @@ p {
   font-family: 'BinggraeMelona', sans-serif, Arial;
 }
 * {
+font-family: 'BinggraeMelona', sans-serif, Arial;
   box-sizing: border-box;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
