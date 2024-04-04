@@ -1,141 +1,171 @@
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
-import ROUTE_PATH from "../../router/constants";
+import ROUTE_PATH from '../../router/constants';
+import { Button } from '../../components';
+import { useForm, useWatch } from 'react-hook-form';
+import { CameraIcon } from '../../components/Icons';
+
+interface UploadVerification {
+  imageUrl?: string;
+  comment?: string;
+}
+interface WalkOption extends UploadVerification {
+  hour?: string;
+  minutes?: string;
+}
 
 const UploadWalk = () => {
-  const navigator = useNavigate();
+  const navigate = useNavigate();
+  const { register, handleSubmit, control } = useForm({ mode: 'onSubmit' });
 
+  const previewImage = useWatch({
+    name: 'imageUrl',
+    control,
+  });
+  const previewImageURL =
+    previewImage && previewImage[0] ? URL.createObjectURL(previewImage[0]) : '';
+
+  const onSubmit = (data: WalkOption) => {
+    console.log(data);
+    navigate(ROUTE_PATH.ROOT);
+  };
   return (
-    <>
-      <TextWrapper>
-        <h2>산책 인증 순간 남기기</h2>
-        <ImgWrapper>
-          <input type="file" className="imgFile" />
-        </ImgWrapper>
-        <InputWrapper>
-          <div className="time-input">
-            <label>
-              <span>아이는 얼마나 산책했나요?</span>
-              <input type="text" />
-              <span>시</span>
-              <input type="text" />
-              <span>분</span>
-            </label>
-          </div>
-          <input type="text" placeholder="지금 이 순간을 코멘트해주세요." />
-        </InputWrapper>
-        <Btnwrapper>
-          <button onClick={() => navigator(ROUTE_PATH.ROOT)}>전송!</button>
-          <br />
-          <button onClick={() => navigator(ROUTE_PATH.ROOT)}>그냥 닫기</button>
-        </Btnwrapper>
-      </TextWrapper>
-    </>
+    <Container onSubmit={handleSubmit(onSubmit)}>
+      <Title>산책 인증 순간 남기기</Title>
+      <InputContainer>
+        <ImageWrapper $previewImageURL={previewImageURL} htmlFor="imageUrl">
+          <input
+            type="file"
+            id="imageUrl"
+            accept="image/*"
+            {...register('imageUrl')}
+          />
+          <label className="border" htmlFor="imageUrl">
+            <CameraIcon className="svg" />
+          </label>
+        </ImageWrapper>
+        <VerificationOption id="hour" htmlFor="hour">
+          <span>아이는 얼마나 산책했나요?</span>
+          <input id="hour" type="number" {...register('hour')} />
+          <span>시</span>
+          <input id="minutes" type="number" {...register('minutes')} />
+          <span>분</span>
+        </VerificationOption>
+        <CommentInput
+          placeholder="지금 이 순간을 코멘트해주세요."
+          {...register('comments')}
+        />
+      </InputContainer>
+      <Button type="submit" color="P-BUTTON1">
+        전송!
+      </Button>
+      <Button color="INACTIVE-BUTTON" onClick={() => navigate(ROUTE_PATH.ROOT)}>
+        그냥 닫기
+      </Button>
+    </Container>
   );
 };
 
 export default UploadWalk;
 
-const TextWrapper = styled.div`
-  margin-top: 50px;
-  text-align: center;
+const Container = styled.form`
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 38px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  gap: 27px;
 `;
 
-const ImgWrapper = styled.div`
-  margin: 20px auto 0;
-  border: 1px solid #eee;
-  background: #d9d9d9 url(../../assets/PhotoIcon.svg) center center no-repeat;
+const Title = styled.h2`
+  font-size: ${({ theme }) => theme.FONT.LG};
+  font-weight: 400;
+  line-height: 25.6px;
+`;
+
+const ImageWrapper = styled.label<{ $previewImageURL: string }>`
+  background: ${({ theme }) => theme.COLORS['INACTIVE-BUTTON']};
   border-radius: 16px;
   width: calc(100vw - 60px);
-  max-width: 300px;
   height: calc(100vw - 60px);
-  max-height: 300px;
-`;
+  max-width: 315px;
+  max-height: 315px;
+  position: relative;
+  background-image: ${({ $previewImageURL }) =>
+    $previewImageURL ? `url(${$previewImageURL})` : ''};
+  background-position: center;
+  background-size: cover;
 
-const InputWrapper = styled.div`
-  margin: 0 auto;
-  width: calc(100% - 60px);
-
-  input[type="text"] {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 6px 10px;
-    margin-bottom: 10px;
+  #imageUrl {
+    display: none;
+  }
+  label {
+    cursor: pointer;
   }
 
-  .time-input {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 6px 10px;
-    margin-bottom: 10px;
-
-    label {
-      display: flex;
-      flex-flow: row;
-      justify-content: center;
-      align-items: center;
-    }
-
-    input[type="text"] {
-      width: 36px;
-      height: 100%;
-      background: #ddd;
-      border-radius: 4px;
-    }
+  .border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85px;
+    height: 85px;
+    background-color: white;
+    border-radius: 100%;
+    cursor: pointer;
+    visibility: ${({ $previewImageURL }) =>
+      $previewImageURL ? 'hidden' : 'visible'};
   }
-
-  .option-button {
-    width: 100%;
-    overflow-x: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    button {
-      width: auto;
-      padding: 4px 8px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      font-size: 14px;
-      margin: 0 4px;
-      height: 30px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+  .svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
   }
 `;
 
-const Btnwrapper = styled.div`
+const InputContainer = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  align-items: center;
+`;
+const VerificationOption = styled.label`
+  display: flex;
+  width: 100%;
+  max-height: 47px;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 19px;
+  border-radius: 20px;
+  border: 1px solid ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
+  font-size: ${({ theme }) => theme.FONT.XS};
+  input {
+    width: 25px;
+    height: 26px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: ${({ theme }) => theme.COLORS['INACTIVE-BUTTON']};
+    text-align: center;
+  }
+`;
 
-  button {
-    &:first-of-type {
-      background: #f48c29;
-      border-radius: 30px;
-      border: none;
-      text-align: center;
-      margin: 10px auto;
-      width: 265px;
-      height: 52px;
-      font-size: 18px;
-      margin-top: -20px;
-    }
-
-    &:last-of-type {
-      background: #d9d9d9;
-      border-radius: 30px;
-      border: none;
-      text-align: center;
-      margin: 10px auto;
-      width: 265px;
-      height: 52px;
-      font-size: 18px;
-    }
+const CommentInput = styled.textarea`
+  width: 100%;
+  height: 87px;
+  border-radius: 20px;
+  padding: 14px 20px;
+  line-height: 15.36px;
+  text-align: left;
+  border: 1px solid ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
+  font-size: ${({ theme }) => theme.FONT.XS};
+  ::placeholder {
+    color: ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
   }
 `;
