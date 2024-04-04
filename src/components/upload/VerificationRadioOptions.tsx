@@ -52,6 +52,7 @@ const VerificationRadioOptions = ({
     </VerificationOptionContainer>
   );
 };
+    
 export default VerificationRadioOptions;
 
 const VerificationOptionContainer = styled.label<{
@@ -64,6 +65,7 @@ const VerificationOptionContainer = styled.label<{
   align-items: center;
   gap: 10px;
   font-size: ${({ theme }) => theme.FONT.XS};
+
   input {
     display: none;
   }
