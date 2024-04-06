@@ -1,8 +1,7 @@
 export { default as Register } from './auth/Register';
 export { default as KakaoLogIn } from './auth/KakaoLogIn';
 
-export { default as UploadVerification } from './verification/UploadVerification';
-export { default as VerificationWalk } from './verification/VerificationWalk';
+export { default as UploadVerification } from './UploadVerification';
 
 export { default as Intro } from './Intro';
 export { default as Home } from './Home';

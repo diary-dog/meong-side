@@ -7,9 +7,10 @@ const ConformVerification = ({ onNext }: { onNext: () => void }) => {
   const petName = '월이';
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       onNext();
     }, 1000);
+    return () => clearTimeout(timeout);
   }, [onNext]);
 
   return (
