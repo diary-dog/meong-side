@@ -19,15 +19,21 @@ const ConformVerificationContents = () => {
     <Container>
       <Title>전송 완료했어요!</Title>
       <ContentWrapper>
-        <ImageWrapper
-          $previewImageURL={submitData.imageUrl}
-          htmlFor="imageUrl"
-        ></ImageWrapper>
-        <OptionWrapper>
-          {submitData.type === '산책' && <span>아이는 얼마나 산책했나요?</span>}
-          <Option>{submitData.verificationOption}</Option>
-        </OptionWrapper>
-        <Comment>{submitData.contents}</Comment>
+        {submitData.imageUrl && (
+          <ImageWrapper
+            $previewImageURL={submitData.imageUrl}
+            htmlFor="imageUrl"
+          ></ImageWrapper>
+        )}
+        {submitData.verificationOption && (
+          <OptionWrapper>
+            {submitData.type === '산책' && (
+              <span>아이는 얼마나 산책했나요?</span>
+            )}
+            <Option>{submitData.verificationOption}</Option>
+          </OptionWrapper>
+        )}
+        {submitData.contents && <Comment>{submitData.contents}</Comment>}
       </ContentWrapper>
       <Button color="INACTIVE-BUTTON" onClick={() => navigate(ROUTE_PATH.ROOT)}>
         닫기
