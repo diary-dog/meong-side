@@ -1192,7 +1192,7 @@ export const CheckedMeal = (props: SVGAttributes<SVGElement>) => {
       <path
         d="M53 84C71.0842 95.3194 119.501 111.166 150 84"
         stroke="#F48C29"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <ellipse cx="154" cy="126.5" rx="27" ry="30.5" fill="#F48C29" />
       <path

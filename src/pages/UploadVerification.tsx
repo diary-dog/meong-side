@@ -1,9 +1,12 @@
+import { useParams } from 'react-router-dom';
+
 import {
   ConformVerification,
   ConformVerificationContents,
   VerificationUploadForm,
 } from '../components';
 import { useFunnel } from '../hooks/useFunnel';
+import { VERIFICATION } from '../utils/constants';
 
 const UPLOAD_STEP = {
   인증성공: '인증 성공',
@@ -12,9 +15,12 @@ const UPLOAD_STEP = {
 } as const;
 
 const UploadVerification = () => {
+  const { type } = useParams();
+  const isSkip = type === VERIFICATION.SURVIVAL;
+
   const [Funnel, setStep] = useFunnel<
     (typeof UPLOAD_STEP)[keyof typeof UPLOAD_STEP]
-  >(UPLOAD_STEP.인증성공);
+  >(isSkip ? UPLOAD_STEP.인증순간남기기 : UPLOAD_STEP.인증성공);
 
   return (
     <Funnel>
