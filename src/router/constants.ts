@@ -5,7 +5,6 @@ const ROUTE_PATH = {
   KAKAO_LOGIN: '/oauth/kakao/callback',
   REGISTER_PET: '/register/pet',
   REGISTER_PEOPLE: '/register/people',
-  VERIFICATIONWALK: '/verificationWalk',
   VERIFICATION: '/verification',
   UPLOAD_VERIFICATION: '/verification/:type',
   SLIDE: '/slide',

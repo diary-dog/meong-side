@@ -8,7 +8,6 @@ import {
   Register,
   Slide,
   UploadVerification,
-  VerificationWalk,
   Setting,
   Home,
   Grid,
@@ -68,10 +67,6 @@ const router = createBrowserRouter([
       {
         element: <FamilyList />,
         path: ROUTE_PATH.FAMILY,
-      },
-      {
-        element: <VerificationWalk />,
-        path: ROUTE_PATH.VERIFICATIONWALK,
       },
       {
         element: <UploadVerification />,
