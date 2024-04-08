@@ -1,4 +1,4 @@
-export { default as Register } from './auth/Register';
+export { default as Register } from './register/Register';
 export { default as KakaoLogIn } from './KakaoLogIn';
 
 export { default as UploadVerification } from './upload/UploadVerification';
