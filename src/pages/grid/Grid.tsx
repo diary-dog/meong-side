@@ -3,7 +3,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import ROUTE_PATH from '../../router/constants';
 import { Layout } from '../../components';
 import { SlideIcon } from '../../components/Icons';
-import { AllGrid, GridLayout, UploaderGrid } from '../../components/grid';
+import { AllGrid, GridLayout, UploaderGrid } from './grid';
 
 export type Grid = 'all' | 'uploader';
 export type Sort = 'descending' | 'descending';

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
-import SendingInvitationForm from '../../components/setting/SendingInvitationForm';
-import SuccessInvitation from '../../components/setting/SuccessInvitation';
+import SendingInvitationForm from './components/SendingInvitationForm';
+import SuccessInvitation from './components/SuccessInvitation';
 import { useFunnel } from '../../hooks/useFunnel';
 import ROUTE_PATH from '../../router/constants';
 

@@ -1,4 +1,4 @@
-import Button from '../components/common/Button';
+import Button from '../components/Button';
 import { Dog, Ellipse, HeartCircle, KaKaoIcon } from '../components/Icons';
 
 import * as S from './Intro.styled';

@@ -1,10 +1,10 @@
 export { default as Register } from './auth/Register';
-export { default as KakaoLogIn } from './auth/KakaoLogIn';
+export { default as KakaoLogIn } from './KakaoLogIn';
 
 export { default as UploadVerification } from './upload/UploadVerification';
 
 export { default as Intro } from './Intro';
-export { default as Home } from './Home';
+export { default as Home } from './Home/Home';
 
 export { default as Slide } from './slide/Slide';
 export { default as Grid } from './grid/Grid';

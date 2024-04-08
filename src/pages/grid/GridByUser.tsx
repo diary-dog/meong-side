@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import ROUTE_PATH from '../../router/constants';
 import { Layout } from '../../components';
-import { AllGrid } from '../../components/grid';
+import { AllGrid } from './grid';
 import { LeftArrowIcon, SlideIcon } from '../../components/Icons';
 import { Sort } from './Grid';
 

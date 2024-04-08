@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 
 import { Layout } from '../../components';
 import { Message, RightArrowIcon } from '../../components/Icons';
-import UserImage from '../../components/common/UserImage';
-import VerificationField from '../../components/verification/VerificationField';
+import UserImage from '../../components/UserImage';
+import VerificationField from '../Home/components/VerificationField';
 import { familyMockData, pet } from '../../utils/mockData';
 import ROUTE_PATH from '../../router/constants';
-import FamilyItemList from '../../components/setting/FamilyItemList';
-import Switch from '../../components/common/Switch';
+import FamilyItemList from './components/FamilyItemList';
+import Switch from '../../components/Switch';
 
 import * as S from './Setting.styled';
 
