@@ -1,11 +1,13 @@
 // src/mocks/handlers.js
 import { http, HttpResponse } from 'msw';
+import petMock1ImageUrl from './data/mock1.jpeg';
 
 const verifications = [
   {
     petId: 1,
     petName: '월이',
     bornOfYear: 2019,
+    imageUrl: petMock1ImageUrl,
     gender: '남',
     mealCount: 2,
     walkCount: 3,
@@ -21,11 +23,8 @@ export const handlers = [
     const verification = verifications.find(
       (pet) => pet.petId === Number(petId)
     );
-    return HttpResponse.json(
-      { verification },
-      {
-        status: 200,
-      }
-    );
+    return HttpResponse.json(verification, {
+      status: 200,
+    });
   }),
 ];
