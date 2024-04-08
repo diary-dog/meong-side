@@ -8,9 +8,16 @@ import { pet } from '../utils/mockData';
 
 import * as S from './Home.styled';
 import { VERIFICATION } from '../utils/constants';
+import { useEffect } from 'react';
 
 const Home = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    fetch(`/verification/${1}`)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }, []);
+
   return (
     <Layout>
       <S.Container>
