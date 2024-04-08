@@ -768,7 +768,7 @@ export const Meal = () => {
   );
 };
 
-export const Snack = () => {
+export const Treat = () => {
   return (
     <svg
       width="33"

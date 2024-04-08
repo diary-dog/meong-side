@@ -1,75 +1,58 @@
-import { useNavigate } from 'react-router-dom';
-
 import ROUTE_PATH from '../../router/constants';
 import { Layout } from '../../components';
-import { Bath, Meal, Snack, Walk } from '../../components/Icons';
+import { Bath, Meal, Treat, Walk } from '../../components/Icons';
 import VerificationField from './components/VerificationField';
-import { pet } from '../../utils/mockData';
+import { VERIFICATION } from '../../utils/constants';
+import { useVerificationCount } from './hooks/queries';
+import VerificationButton from './components/VerificationButton';
 
 import * as S from './Home.styled';
-import { VERIFICATION } from '../../utils/constants';
-import { useEffect } from 'react';
 
 const Home = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    fetch(`/verification/${1}`)
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
-  console.log(window.location);
+  const { data, isLoading } = useVerificationCount({ petId: 1 });
+
   return (
     <Layout>
-      <S.Container>
-        <VerificationField pet={pet} />
-        <S.VerificationContainer>
-          <S.VerificationWrapper>
-            <S.VerificationItem
-              id="walk"
-              onClick={() =>
-                navigate(`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.WALK}`)
-              }
-            >
-              <Walk />
-              <span>산책인증</span>
-            </S.VerificationItem>
-            <S.VerificationItem
-              id="meal"
-              onClick={() =>
-                navigate(`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.MEAL}`)
-              }
-            >
-              <Meal />
-              <span>식사인증</span>
-            </S.VerificationItem>
-            <S.VerificationItem
-              id="treat"
-              onClick={() =>
-                navigate(`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.TREAT}`)
-              }
-            >
-              <Snack />
-              <span>간식인증</span>
-            </S.VerificationItem>
-            <S.VerificationItem
-              id="bath"
-              onClick={() =>
-                navigate(`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.BATH}`)
-              }
-            >
-              <Bath />
-              <span>목욕인증</span>
-            </S.VerificationItem>
-          </S.VerificationWrapper>
-          <S.VerificationSurvival
-            onClick={() =>
-              navigate(`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.SURVIVAL}`)
-            }
-          >
-            순간포착! 일상인증
-          </S.VerificationSurvival>
-        </S.VerificationContainer>
-      </S.Container>
+      {isLoading ? (
+        <div>로딩</div>
+      ) : (
+        <S.Container>
+          <VerificationField pet={data} />
+          <S.VerificationContainer>
+            <S.VerificationWrapper>
+              <VerificationButton
+                name={VERIFICATION.WALK}
+                navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.WALK}`}
+                title="산책인증"
+                icon={<Walk />}
+              />
+              <VerificationButton
+                name={VERIFICATION.MEAL}
+                navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.MEAL}`}
+                title="식사인증"
+                icon={<Meal />}
+              />
+              <VerificationButton
+                name={VERIFICATION.TREAT}
+                navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.TREAT}`}
+                title="간식인증"
+                icon={<Treat />}
+              />
+              <VerificationButton
+                name={VERIFICATION.BATH}
+                navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.BATH}`}
+                title="목욕인증"
+                icon={<Bath />}
+              />
+            </S.VerificationWrapper>
+            <VerificationButton
+              name={VERIFICATION.SURVIVAL}
+              navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.SURVIVAL}`}
+              title="순간포착! 일상인증"
+            />
+          </S.VerificationContainer>
+        </S.Container>
+      )}
     </Layout>
   );
 };

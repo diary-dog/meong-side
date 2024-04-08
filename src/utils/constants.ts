@@ -14,7 +14,7 @@ export const MEAL_OPTION = {
 
 export const TREAT_OPTION = {
   DOG_CHEW: '강아지껌',
-  DRIED_SNACK: '건조간식',
+  DRIED_TREAT: '건조간식',
   JERKY_TREAT: '저키/트릿',
   CAN: '캔',
   BISCUIT: '비스킷',
