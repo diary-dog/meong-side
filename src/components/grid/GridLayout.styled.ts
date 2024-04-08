@@ -5,18 +5,16 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
   background-color: white;
   width: 100%;
-  max-width: 393px;
-  top: 50px;
   height: 50px;
+  max-width: 393px;
 `;
 
 export const SelectGridType = styled.div<{ $gridType: 'all' | 'uploader' }>`
   display: flex;
   gap: 15px;
-  height: 30px;
   font-size: ${({ theme }) => theme.FONT.SM};
   #all {
     color: ${({ theme, $gridType }) =>

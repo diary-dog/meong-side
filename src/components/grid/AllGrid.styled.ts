@@ -12,7 +12,7 @@ export const GridWrapper = styled.div`
   gap: 16px 8px;
   height: 100vh;
   overflow-y: scroll;
-  padding: 140px 0 100px 0;
+  padding: 0 0 10px 0;
 
   img {
     width: 80px;

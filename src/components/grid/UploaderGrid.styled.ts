@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const GridContainer = styled.div`
-  padding: 140px 0 100px 0;
+  padding: 85px 0 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
