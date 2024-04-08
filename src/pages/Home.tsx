@@ -63,7 +63,6 @@ const Home = () => {
           </S.VerificationSurvival>
         </S.VerificationContainer>
       </S.Container>
-      <Layout.BottomBar />
     </Layout>
   );
 };

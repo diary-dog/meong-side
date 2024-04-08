@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 import useCalendarContext from './useCalendarContext';
 import {
   LeftArrowIcon,
@@ -9,12 +7,14 @@ import {
 } from '../Icons';
 import { THEME } from '../../styles/theme';
 
+import * as S from './CalendarHeader.styled';
+
 const CalendarHeader = () => {
   const { dispatch, currentDate } = useCalendarContext();
 
   return (
-    <Container>
-      <ChangeButton>
+    <S.Container>
+      <S.ChangeButton>
         <button onClick={dispatch.handlePrevYear}>
           <LeftTriangle width={19} height={13} />
         </button>
@@ -22,8 +22,8 @@ const CalendarHeader = () => {
         <button onClick={dispatch.handleNextYear}>
           <RightTriangle width={19} height={13} />
         </button>
-      </ChangeButton>
-      <ChangeButton>
+      </S.ChangeButton>
+      <S.ChangeButton>
         <button onClick={dispatch.handlePrevMonth}>
           <LeftArrowIcon
             width={18}
@@ -39,22 +39,9 @@ const CalendarHeader = () => {
             color={THEME.COLORS['P-BUTTON1']}
           />
         </button>
-      </ChangeButton>
-    </Container>
+      </S.ChangeButton>
+    </S.Container>
   );
 };
 
 export default CalendarHeader;
-
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const ChangeButton = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
-  font-size: 20px;
-  line-height: 25.6px;
-`;

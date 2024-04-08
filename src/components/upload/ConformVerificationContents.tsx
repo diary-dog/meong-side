@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 
 import { Button } from '..';
 import ROUTE_PATH from '../../router/constants';
+import * as S from './ConformVerificationContents.styled';
 
 const submitData = {
   verificationOption: '1시간10분',
@@ -16,96 +16,30 @@ const ConformVerificationContents = () => {
   const navigate = useNavigate();
 
   return (
-    <Container>
-      <Title>전송 완료했어요!</Title>
-      <ContentWrapper>
+    <S.Container>
+      <S.Title>전송 완료했어요!</S.Title>
+      <S.ContentWrapper>
         {submitData.imageUrl && (
-          <ImageWrapper
+          <S.ImageWrapper
             $previewImageURL={submitData.imageUrl}
             htmlFor="imageUrl"
-          ></ImageWrapper>
+          ></S.ImageWrapper>
         )}
         {submitData.verificationOption && (
-          <OptionWrapper>
+          <S.OptionWrapper>
             {submitData.type === '산책' && (
               <span>아이는 얼마나 산책했나요?</span>
             )}
-            <Option>{submitData.verificationOption}</Option>
-          </OptionWrapper>
+            <S.Option>{submitData.verificationOption}</S.Option>
+          </S.OptionWrapper>
         )}
-        {submitData.contents && <Comment>{submitData.contents}</Comment>}
-      </ContentWrapper>
+        {submitData.contents && <S.Comment>{submitData.contents}</S.Comment>}
+      </S.ContentWrapper>
       <Button color="INACTIVE-BUTTON" onClick={() => navigate(ROUTE_PATH.ROOT)}>
         닫기
       </Button>
-    </Container>
+    </S.Container>
   );
 };
 
 export default ConformVerificationContents;
-
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 80px 30px 0 30px;
-  gap: 31px;
-  background-color: ${({ theme }) => theme.COLORS['SECONDARY-DASH']};
-`;
-
-const Title = styled.h2`
-  font-size: ${({ theme }) => theme.FONT.XL};
-  font-weight: 400;
-  line-height: 25.6px;
-`;
-
-const ImageWrapper = styled.label<{ $previewImageURL: string }>`
-  background: ${({ theme }) => theme.COLORS['INACTIVE-BUTTON']};
-  border-radius: 16px;
-  width: calc(100vw - 60px);
-  height: calc(100vw - 60px);
-  max-width: 315px;
-  max-height: 315px;
-  position: relative;
-  background-image: ${({ $previewImageURL }) =>
-    $previewImageURL ? `url(${$previewImageURL})` : ''};
-  background-position: center;
-  background-size: cover;
-  cursor: pointer;
-`;
-
-const ContentWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  align-items: center;
-`;
-
-const Comment = styled.div`
-  width: 100%;
-  height: 87px;
-  border-radius: 20px;
-  padding: 14px 20px;
-  line-height: 15.36px;
-  text-align: left;
-  border: 1px solid white;
-  font-size: ${({ theme }) => theme.FONT.XS};
-`;
-
-const Option = styled.div`
-  padding: 10px 12px;
-  background-color: ${({ theme }) => theme.COLORS['P-BUTTON2']};
-  border-radius: 20px;
-`;
-
-const OptionWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  font-size: ${({ theme }) => theme.FONT.XS};
-`;

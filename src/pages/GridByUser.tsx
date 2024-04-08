@@ -16,11 +16,12 @@ const GridByUser = () => {
   const sortType = searchParams.get('sortType') || 'ascending';
 
   return (
-    <Layout>
-      <Layout.TopBar
-        title="그리드"
-        rightButton={<SlideIcon onClick={() => navigate(ROUTE_PATH.SLIDE)} />}
-      />
+    <Layout
+      top={{
+        title: '그리드',
+        rightButton: <SlideIcon onClick={() => navigate(ROUTE_PATH.SLIDE)} />,
+      }}
+    >
       <S.Container>
         <S.BackButton onClick={() => navigate('/grid/uploader')}>
           <LeftArrowIcon />
@@ -29,7 +30,6 @@ const GridByUser = () => {
         <S.Uploader>둘쨰딸</S.Uploader>
       </S.Container>
       <AllGrid sortType={sortType as Sort} />
-      <Layout.BottomBar />
     </Layout>
   );
 };

@@ -1,11 +1,9 @@
-
 import {
   FieldValues,
   UseFormRegister,
   UseFormSetValue,
   UseFormWatch,
 } from 'react-hook-form';
-import styled from 'styled-components';
 
 import {
   BATH_OPTION,
@@ -14,6 +12,8 @@ import {
   VERIFICATION,
 } from '../../utils/constants';
 import VerificationRadioOptions from './VerificationRadioOptions';
+
+import * as S from './VerificationOption.styled';
 
 const VerificationOption = ({
   type,
@@ -29,7 +29,7 @@ const VerificationOption = ({
   switch (type) {
     case VERIFICATION.WALK:
       return (
-        <WalkOptionContainer
+        <S.WalkOptionContainer
           $isTyping={watch('hour') || watch('minutes')}
           id="hour"
           htmlFor="hour"
@@ -39,7 +39,7 @@ const VerificationOption = ({
           <span>시</span>
           <input id="minutes" type="number" {...register('minutes')} />
           <span>분</span>
-        </WalkOptionContainer>
+        </S.WalkOptionContainer>
       );
     case VERIFICATION.MEAL:
       return (
@@ -75,35 +75,7 @@ const VerificationOption = ({
         />
       );
   }
-  return <None></None>;
+  return <S.None></S.None>;
 };
 
 export default VerificationOption;
-
-const WalkOptionContainer = styled.label<{ $isTyping: boolean }>`
-  display: flex;
-  width: 100%;
-  max-height: 47px;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 19px;
-  border-radius: 20px;
-  border: 1px solid ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
-  font-size: ${({ theme }) => theme.FONT.XS};
-  color: ${({ theme, $isTyping }) =>
-    $isTyping ? theme.COLORS['FONT-COLOR-A'] : theme.COLORS['FONT-COLOR-IA']};
-  input {
-    width: 25px;
-    height: 26px;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: ${({ theme }) => theme.COLORS['INACTIVE-BUTTON']};
-    text-align: center;
-  }
-`;
-
-const None = styled.div`
-  width: 100%;
-  height: 47px;
-`;

@@ -64,7 +64,6 @@ const Setting = () => {
           </S.FamilyTitle>
         </S.FamilyContainer>
       </S.Container>
-      <Layout.BottomBar />
     </Layout>
   );
 };

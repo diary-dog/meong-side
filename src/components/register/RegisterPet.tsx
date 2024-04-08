@@ -4,17 +4,8 @@ import { Button, Input } from '..';
 import UserImage from '../common/UserImage';
 import { CameraIcon, Female, Male } from '../Icons';
 
-import {
-  Container,
-  InputWrapper,
-  DefaultImage,
-  GenderWrapper,
-  GenderButton,
-  GenderItem,
-  ErrorMessage,
-  ButtonWrapper,
-} from './RegisterPet.styled';
-import { Title } from './register.styled';
+import * as S from './RegisterPet.styled';
+import * as G from './RegisterGlobal.styled';
 interface PetInformation {
   name: string;
   bornOfYear: number;
@@ -39,13 +30,13 @@ const RegisterPet = ({ onPrevious }: { onPrevious: () => void }) => {
     previewImage && previewImage[0] ? URL.createObjectURL(previewImage[0]) : '';
 
   return (
-    <Container onSubmit={handleSubmit(onSubmit)}>
-      <Title className="title">
+    <S.Container onSubmit={handleSubmit(onSubmit)}>
+      <G.Title className="title">
         반가워요!
         <br />
         우리 아이를 등록해주세요.
-      </Title>
-      <InputWrapper>
+      </G.Title>
+      <S.InputWrapper>
         <input
           type="file"
           id="imageUrl"
@@ -57,11 +48,11 @@ const RegisterPet = ({ onPrevious }: { onPrevious: () => void }) => {
             <UserImage size="XL" imageUrl={previewImageURL} />
           </label>
         ) : (
-          <DefaultImage>
+          <S.DefaultImage>
             <label className="border" htmlFor="imageUrl">
               <CameraIcon className="svg" />
             </label>
-          </DefaultImage>
+          </S.DefaultImage>
         )}
         <Input
           {...register('name', { required: '이름을 입력해주세요.' })}
@@ -82,35 +73,35 @@ const RegisterPet = ({ onPrevious }: { onPrevious: () => void }) => {
           type="number"
           isValid={1000 <= currentBornOfYear && currentBornOfYear <= 9999}
         />
-        <GenderWrapper>
-          <GenderButton
+        <S.GenderWrapper>
+          <S.GenderButton
             {...register('gender', { required: '성별을 선택해주세요.' })}
             name="gender"
             type="radio"
             id="male"
             value="male"
           />
-          <GenderItem id="male" htmlFor="male">
+          <S.GenderItem id="male" htmlFor="male">
             <Male />
             <span>남아</span>
-          </GenderItem>
-          <GenderButton
+          </S.GenderItem>
+          <S.GenderButton
             {...register('gender', { required: '성별을 선택해주세요.' })}
             name="gender"
             type="radio"
             id="female"
             value="female"
           />
-          <GenderItem id="female" htmlFor="female">
+          <S.GenderItem id="female" htmlFor="female">
             <Female />
             <span>여아</span>
-          </GenderItem>
-        </GenderWrapper>
-        <ErrorMessage>
+          </S.GenderItem>
+        </S.GenderWrapper>
+        <S.ErrorMessage>
           {Object.values(errors)?.at(0)?.message ?? ''}
-        </ErrorMessage>
-      </InputWrapper>
-      <ButtonWrapper>
+        </S.ErrorMessage>
+      </S.InputWrapper>
+      <S.ButtonWrapper>
         <Button
           color={
             Object.values(errors).length > 0 ? 'INACTIVE-BUTTON' : 'P-BUTTON2'
@@ -122,8 +113,8 @@ const RegisterPet = ({ onPrevious }: { onPrevious: () => void }) => {
         <Button onClick={onPrevious} color="INACTIVE-BUTTON">
           닫기
         </Button>
-      </ButtonWrapper>
-    </Container>
+      </S.ButtonWrapper>
+    </S.Container>
   );
 };
 

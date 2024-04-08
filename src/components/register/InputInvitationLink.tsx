@@ -3,11 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Button, Input } from '..';
 import { InvitationIcon } from '../Icons';
 
-import {
-  ButtonWrapper,
-  ConTainer,
-  IconWrapper,
-} from './InputInvitationLink.styled';
+import * as S from './InputInvitationLink.styled';
 
 interface InviteLink {
   link: string;
@@ -28,18 +24,18 @@ const InputInvitationLink = ({
     onNext();
   };
   return (
-    <ConTainer onSubmit={handleSubmit(onSubmit)}>
-      <IconWrapper>
+    <S.ConTainer onSubmit={handleSubmit(onSubmit)}>
+      <S.IconWrapper>
         <InvitationIcon />
         <h3 className="title">초대링크가 있어요</h3>
-      </IconWrapper>
+      </S.IconWrapper>
       <Input
         {...register('link', { required: true })}
         placeholder="링크주소를 알려주세요."
         type="url"
         isValid={watch('link')?.length > 0}
       />
-      <ButtonWrapper>
+      <S.ButtonWrapper>
         <Button
           type="submit"
           color={watch('link')?.length > 0 ? 'P-BUTTON2' : 'INACTIVE-BUTTON'}
@@ -49,8 +45,8 @@ const InputInvitationLink = ({
         <Button onClick={onPrevious} color="INACTIVE-BUTTON">
           닫기
         </Button>
-      </ButtonWrapper>
-    </ConTainer>
+      </S.ButtonWrapper>
+    </S.ConTainer>
   );
 };
 

@@ -16,15 +16,15 @@ const Grid = () => {
   const sortType = searchParams.get('sortType') || 'ascending';
 
   return (
-    <Layout>
-      <Layout.TopBar
-        title="그리드"
-        rightButton={<SlideIcon onClick={() => navigate(ROUTE_PATH.SLIDE)} />}
-      />
+    <Layout
+      top={{
+        title: '그리드',
+        rightButton: <SlideIcon onClick={() => navigate(ROUTE_PATH.SLIDE)} />,
+      }}
+    >
       <GridLayout type={type ?? 'all'} />
       {type === 'all' && <AllGrid sortType={sortType as Sort} />}
       {type === 'uploader' && <UploaderGrid />}
-      <Layout.BottomBar />
     </Layout>
   );
 };

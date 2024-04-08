@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Button } from '..';
 
 import UserImage from '../common/UserImage';
-import { Title } from './register.styled';
+import { Title } from './RegisterGlobal.styled';
 
 const ConfirmPeople = () => {
   const imageUrl = '';

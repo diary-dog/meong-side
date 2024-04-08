@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { RightArrowIcon } from '../Icons';
 import { mockData } from '../../utils/mockData';
 
-import * as S from './UploderGrid.styled';
+import * as S from './UploaderGrid.styled';
 
 const UploaderGrid = () => {
   const userId = 'test';
