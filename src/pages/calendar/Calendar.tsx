@@ -1,6 +1,6 @@
-import { Layout, VerificationCalendar } from '../components';
+import { Layout, VerificationCalendar } from '../../components';
 
-import * as S from './Intro.styled';
+import * as S from '../Intro.styled';
 
 const Calendar = () => {
   return (

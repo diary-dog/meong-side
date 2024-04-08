@@ -4,9 +4,9 @@ import {
   ConformVerification,
   ConformVerificationContents,
   VerificationUploadForm,
-} from '../components';
-import { useFunnel } from '../hooks/useFunnel';
-import { VERIFICATION } from '../utils/constants';
+} from '../../components';
+import { useFunnel } from '../../hooks/useFunnel';
+import { VERIFICATION } from '../../utils/constants';
 
 const UPLOAD_STEP = {
   인증성공: '인증 성공',

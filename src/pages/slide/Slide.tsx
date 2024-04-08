@@ -1,11 +1,11 @@
 import { useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Layout } from '../components';
-import { GridIcon } from '../components/Icons';
-import UserImage from '../components/common/UserImage';
-import ROUTE_PATH from '../router/constants';
-import { slideMockData } from '../utils/mockData';
+import { Layout } from '../../components';
+import { GridIcon } from '../../components/Icons';
+import UserImage from '../../components/common/UserImage';
+import ROUTE_PATH from '../../router/constants';
+import { slideMockData } from '../../utils/mockData';
 
 import * as S from './Slide.styled';
 

@@ -2,7 +2,7 @@ import QueryString from 'qs';
 import { useNavigate } from 'react-router-dom';
 
 import Switch from '../common/Switch';
-import { Sort } from '../../pages/Grid';
+import { Sort } from '../../pages/grid/Grid';
 
 import * as S from './SortButton.styled';
 

@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 
-import SendingInvitationForm from '../components/setting/SendingInvitationForm';
-import SuccessInvitation from '../components/setting/SuccessInvitation';
-import { useFunnel } from '../hooks/useFunnel';
-import ROUTE_PATH from '../router/constants';
+import SendingInvitationForm from '../../components/setting/SendingInvitationForm';
+import SuccessInvitation from '../../components/setting/SuccessInvitation';
+import { useFunnel } from '../../hooks/useFunnel';
+import ROUTE_PATH from '../../router/constants';
 
 const SendingInvitation = () => {
   const [Funnel, setStep] = useFunnel<'공유링크보내기' | '공유링크성공'>(

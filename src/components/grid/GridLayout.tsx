@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import { Grid } from '../../pages/Grid';
+import { Grid } from '../../pages/grid/Grid';
 import * as S from './GridLayout.styled';
 
 const GridLayout = ({ type }: { type: Grid }) => {

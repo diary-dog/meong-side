@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
-import UserImage from '../components/common/UserImage';
-import { LeftArrowIcon } from '../components/Icons';
-import FamilyItemList from '../components/setting/FamilyItemList';
-import ROUTE_PATH from '../router/constants';
-import { familyMockData } from '../utils/mockData';
+import UserImage from '../../components/common/UserImage';
+import { LeftArrowIcon } from '../../components/Icons';
+import FamilyItemList from '../../components/setting/FamilyItemList';
+import ROUTE_PATH from '../../router/constants';
+import { familyMockData } from '../../utils/mockData';
 
 import * as G from './Setting.styled';
 import * as S from './FamilyList.styled';

@@ -1,6 +1,6 @@
 import { mockData } from '../../utils/mockData';
 import { SortButton } from '.';
-import { Sort } from '../../pages/Grid';
+import { Sort } from '../../pages/grid/Grid';
 
 import useControlImageModal from '../../hooks/useControlImageModal';
 import ImageModal from './ImageModal';
