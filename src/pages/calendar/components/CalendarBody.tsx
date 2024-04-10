@@ -1,5 +1,5 @@
 import useCalendarContext from './useCalendarContext';
-import { VERIFICATION } from '../../../utils/constants';
+import { VERIFICATION } from '../../../constants/verifications';
 
 import * as S from './CalendarBody.styled';
 

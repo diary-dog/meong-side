@@ -1,6 +1,6 @@
 import useCalendarContext from './useCalendarContext';
 import UserImage from '../../../components/UserImage';
-import { VERIFICATION } from '../../../utils/constants';
+import { VERIFICATION } from '../../../constants/verifications';
 
 import * as S from './Verification.styled';
 

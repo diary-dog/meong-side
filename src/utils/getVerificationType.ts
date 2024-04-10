@@ -1,4 +1,4 @@
-import { VERIFICATION } from './constants';
+import { VERIFICATION } from '../constants/verifications';
 
 export const getVerificationType = (type: string) => {
   switch (type) {

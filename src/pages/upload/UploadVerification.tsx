@@ -6,7 +6,7 @@ import {
   VerificationUploadForm,
 } from '../../components';
 import { useFunnel } from '../../hooks/useFunnel';
-import { VERIFICATION } from '../../utils/constants';
+import { VERIFICATION } from '../../constants/verifications';
 
 const UPLOAD_STEP = {
   인증성공: '인증 성공',

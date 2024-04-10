@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import * as S from '../Home.styled';
 import { ReactNode } from 'react';
-import { VERIFICATION } from '../../../utils/constants';
+import { VERIFICATION } from '../../../constants/verifications';
 
 const VerificationButton = ({
   icon,

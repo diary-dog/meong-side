@@ -1,4 +1,4 @@
-import { VERIFICATION } from '../../../utils/constants';
+import { VERIFICATION } from '../../../constants/verifications';
 import {
   CheckedBath,
   CheckedDog,

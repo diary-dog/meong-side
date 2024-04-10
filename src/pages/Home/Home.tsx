@@ -2,7 +2,7 @@ import ROUTE_PATH from '../../router/constants';
 import { Layout } from '../../components';
 import { Bath, Meal, Treat, Walk } from '../../components/Icons';
 import VerificationField from './components/VerificationField';
-import { VERIFICATION } from '../../utils/constants';
+import { VERIFICATION } from '../../constants/verifications';
 import { useVerificationCount } from './hooks/queries';
 import VerificationButton from './components/VerificationButton';
 

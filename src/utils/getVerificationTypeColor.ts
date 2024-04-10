@@ -1,5 +1,5 @@
 import { THEME } from '../styles/theme';
-import { VERIFICATION } from './constants';
+import { VERIFICATION } from '../constants/verifications';
 
 export const getVerificationTypeColor = (type: string) => {
   switch (type) {

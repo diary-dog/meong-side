@@ -10,7 +10,7 @@ import {
   MEAL_OPTION,
   TREAT_OPTION,
   VERIFICATION,
-} from '../../../utils/constants';
+} from '../../../constants/verifications';
 import VerificationRadioOptions from './VerificationRadioOptions';
 
 import * as S from './VerificationOption.styled';
