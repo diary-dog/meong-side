@@ -1,6 +1,7 @@
 // src/mocks/handlers.js
 import { http, HttpResponse } from 'msw';
 import petMock1ImageUrl from './data/mock1.jpeg';
+import { END_POINT } from '../constants/endPoint';
 
 const verifications = [
   {
@@ -18,8 +19,9 @@ const verifications = [
 ];
 
 export const handlers = [
-  http.get('/verification/:petId', ({ params }) => {
-    const { petId } = params;
+  http.get(END_POINT.HOME(1), ({ request }) => {
+    const url = new URL(request.url);
+    const petId = url.searchParams.get('petid');
     const verification = verifications.find(
       (pet) => pet.petId === Number(petId)
     );
