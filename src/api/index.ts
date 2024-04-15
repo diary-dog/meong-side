@@ -1,11 +1,9 @@
 import axios from 'axios';
 
-const { VITE_BASE_URL } = import.meta.env;
-
-const baseUrl = import.meta.env.DEV ? window.location.origin : VITE_BASE_URL;
+import { BACKEND_ENDPOINT } from '../constants/endPoint';
 
 const apiClient = axios.create({
-  baseURL: baseUrl,
+  baseURL: BACKEND_ENDPOINT,
   headers: {
     accept: 'application/json',
   },
