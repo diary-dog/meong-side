@@ -16,7 +16,7 @@ const VerificationButton = ({
 }) => {
   const navigate = useNavigate();
   switch (name) {
-    case VERIFICATION.SURVIVAL:
+    case VERIFICATION.DAILY:
       return (
         <S.VerificationSurvival onClick={() => navigate(navigatePath)}>
           순간포착! 일상인증

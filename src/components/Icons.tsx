@@ -768,7 +768,7 @@ export const Meal = () => {
   );
 };
 
-export const Treat = () => {
+export const Treats = () => {
   return (
     <svg
       width="33"
@@ -1203,7 +1203,7 @@ export const CheckedMeal = (props: SVGAttributes<SVGElement>) => {
   );
 };
 
-export const CheckedTreat = (props: SVGAttributes<SVGElement>) => {
+export const CheckedTreats = (props: SVGAttributes<SVGElement>) => {
   return (
     <svg
       width="214"

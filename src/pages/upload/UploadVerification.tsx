@@ -16,7 +16,7 @@ const UPLOAD_STEP = {
 
 const UploadVerification = () => {
   const { type } = useParams();
-  const isSkip = type === VERIFICATION.SURVIVAL;
+  const isSkip = type === VERIFICATION.DAILY;
 
   const [Funnel, setStep] = useFunnel<
     (typeof UPLOAD_STEP)[keyof typeof UPLOAD_STEP]

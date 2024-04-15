@@ -63,7 +63,7 @@ export const VerificationCount = styled.div`
   #meal {
     color: ${({ theme }) => theme.COLORS['P-BUTTON2']};
   }
-  #treat {
+  #treats {
     color: ${({ theme }) => theme.COLORS.DECO2};
   }
   #bath {
@@ -94,7 +94,7 @@ export const VerificationItem = styled.button`
   &#meal {
     border: 1px solid ${({ theme }) => theme.COLORS['P-BUTTON2']};
   }
-  &#treat {
+  &#treats {
     border: 1px solid ${({ theme }) => theme.COLORS.DECO2};
   }
   &#bath {

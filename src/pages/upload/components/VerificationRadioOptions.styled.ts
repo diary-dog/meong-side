@@ -6,8 +6,8 @@ export const VerificationOptionContainer = styled.label<{
   $name: VerificationWithOption;
 }>`
   display: flex;
-  width: ${({ $name }) => ($name === 'treat' ? 'auto' : '100%')};
-  margin: ${({ $name }) => ($name === 'treat' ? '0 -60px' : '')};
+  width: ${({ $name }) => ($name === 'treats' ? 'auto' : '100%')};
+  margin: ${({ $name }) => ($name === 'treats' ? '0 -60px' : '')};
   justify-content: space-around;
   align-items: center;
   gap: 10px;

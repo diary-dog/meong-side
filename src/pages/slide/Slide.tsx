@@ -40,7 +40,7 @@ const Slide = () => {
                   <S.Image src={data.imageUrl} alt={data.createdAt} />
                 )}
               </S.VerificationItem>
-              {data.contents && <S.Contents>{data.contents}</S.Contents>}
+              {data.comment && <S.Comment>{data.comment}</S.Comment>}
             </S.VerificationWrapper>
             <S.Author>
               <UserImage size="XS" imageUrl={data.user.userImage} />

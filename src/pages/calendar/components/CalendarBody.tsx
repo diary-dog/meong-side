@@ -27,7 +27,7 @@ const CalendarBody = () => {
             <S.VerificationCircles>
               <S.VerificationTypeCircle type={VERIFICATION.WALK} />
               <S.VerificationTypeCircle type={VERIFICATION.MEAL} />
-              <S.VerificationTypeCircle type={VERIFICATION.TREAT} />
+              <S.VerificationTypeCircle type={VERIFICATION.TREATS} />
               <S.VerificationTypeCircle type={VERIFICATION.BATH} />
             </S.VerificationCircles>
           </S.Day>

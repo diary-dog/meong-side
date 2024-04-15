@@ -3,7 +3,7 @@ import {
   CheckedBath,
   CheckedDog,
   CheckedMeal,
-  CheckedTreat,
+  CheckedTreats,
 } from '../../../components/Icons';
 
 const VerificationCheckIcon = ({ type }: { type: string }) => {
@@ -12,8 +12,8 @@ const VerificationCheckIcon = ({ type }: { type: string }) => {
       return <CheckedDog />;
     case VERIFICATION.MEAL:
       return <CheckedMeal />;
-    case VERIFICATION.TREAT:
-      return <CheckedTreat />;
+    case VERIFICATION.TREATS:
+      return <CheckedTreats />;
     case VERIFICATION.BATH:
       return <CheckedBath />;
     default:

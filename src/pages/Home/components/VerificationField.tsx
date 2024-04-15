@@ -1,27 +1,29 @@
-import { Pet } from '../../../utils/mockData';
 import { Female, Male } from '../../../components/Icons';
 import UserImage from '../../../components/UserImage';
-import * as S from './VerificationField.styled';
 import getAge from '../../../utils/getAge';
+import { VerificationCount } from '../../../types/verification';
+import { GENDER } from '../../../constants/pet';
 
-const VerificationField = ({ pet }: { pet: Pet }) => {
+import * as S from './VerificationField.styled';
+
+const VerificationField = ({ pet }: { pet?: VerificationCount }) => {
   return (
     <S.Information>
       <S.PetInformation>
-        <UserImage size="MD" imageUrl={pet.imageUrl} />
-        <span id="name">{pet.petName}</span>
+        <UserImage size="MD" imageUrl={pet?.imageUrl} />
+        <span id="name">{pet?.name}</span>
         <span id="age">
-          {getAge(pet.bornOfYear)}살{' '}
-          {pet.gender === '남' ? <Male /> : <Female />}
+          {pet?.birthYear ? `${getAge(pet.birthYear)}살` : ''}
+          {pet?.gender === GENDER.MALE ? <Male /> : <Female />}
         </span>
       </S.PetInformation>
       <S.VerificationInformation>
         <h3 id="title">오늘의 횟수</h3>
         <S.VerificationCount>
-          <span id="walk">산책 {pet.walkCount}번</span>
-          <span id="meal">식사 {pet.walkCount}번</span>
-          <span id="treat">간식 {pet.treatsCount}번</span>
-          <span id="bath">목욕 {pet.walkCount}번</span>
+          <span id="walk">산책 {pet?.verification.walkCount}번</span>
+          <span id="meal">식사 {pet?.verification.walkCount}번</span>
+          <span id="treats">간식 {pet?.verification.treatsCount}번</span>
+          <span id="bath">목욕 {pet?.verification.walkCount}번</span>
         </S.VerificationCount>
       </S.VerificationInformation>
     </S.Information>

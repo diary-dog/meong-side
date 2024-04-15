@@ -7,7 +7,7 @@ export const getVerificationTypeColor = (type: string) => {
       return THEME.COLORS['P-BUTTON1'];
     case VERIFICATION.MEAL:
       return THEME.COLORS['P-BUTTON2'];
-    case VERIFICATION.TREAT:
+    case VERIFICATION.TREATS:
       return THEME.COLORS.DECO2;
     case VERIFICATION.BATH:
       return THEME.COLORS.DECO3;

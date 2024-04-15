@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   height: 100vh;
 `;
-export const ContentsWrapper = styled.div<{ $hasTop: boolean }>`
+export const ContentWrapper = styled.div<{ $hasTop: boolean }>`
   padding: ${({ $hasTop }) => ($hasTop ? '50px 0 100px 0' : '0 0 100px 0')};
 `;
 

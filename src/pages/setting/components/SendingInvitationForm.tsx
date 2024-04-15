@@ -39,7 +39,7 @@ const SendingInvitationForm = ({ onNext }: { onNext: () => void }) => {
         <div></div>
       </G.HeaderBar>
       <UserImage size="XL" imageUrl={imageUrl} />
-      <G.ContentWrapper $isValid={isValid}>
+      <G.ContentsWrapper $isValid={isValid}>
         <p>함께 관리할 사람의 이메일을 알려주세요!</p>
         <Input
           type="email"
@@ -57,7 +57,7 @@ const SendingInvitationForm = ({ onNext }: { onNext: () => void }) => {
         <Button type="submit" color={isValid ? 'P-BUTTON2' : 'INACTIVE-BUTTON'}>
           완료
         </Button>
-      </G.ContentWrapper>
+      </G.ContentsWrapper>
     </G.Container>
   );
 };

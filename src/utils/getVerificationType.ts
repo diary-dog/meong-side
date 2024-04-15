@@ -6,7 +6,7 @@ export const getVerificationType = (type: string) => {
       return '산책';
     case VERIFICATION.MEAL:
       return '식사';
-    case VERIFICATION.TREAT:
+    case VERIFICATION.TREATS:
       return '간식';
     case VERIFICATION.BATH:
       return '목욕';

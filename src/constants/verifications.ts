@@ -1,10 +1,10 @@
 export const VERIFICATION = {
   WALK: 'walk',
   MEAL: 'meal',
-  TREAT: 'treat',
+  TREATS: 'treats',
   BATH: 'bath',
-  SURVIVAL: 'survival',
-};
+  DAILY: 'daily',
+} as const;
 
 export const MEAL_OPTION = {
   ALL: '다 먹었어요!',
@@ -12,7 +12,7 @@ export const MEAL_OPTION = {
   NONE: '거의 안먹었어요!',
 };
 
-export const TREAT_OPTION = {
+export const TREATS_OPTION = {
   DOG_CHEW: '강아지껌',
   DRIED_TREAT: '건조간식',
   JERKY_TREAT: '저키/트릿',
@@ -26,3 +26,5 @@ export const BATH_OPTION = {
   HALF_WIPE: '반만 닦았어요',
   PAW_WIPE: '발만 닦았어요',
 };
+
+export const verificationOption = 'verificationOption';

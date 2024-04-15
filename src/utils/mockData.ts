@@ -1,7 +1,7 @@
 export interface Pet {
   petId: number;
   petName: string;
-  bornOfYear: number;
+  birthYear: number;
   imageUrl: string;
   gender: '남' | '여';
   walkCount: number;
@@ -14,7 +14,7 @@ export interface Pet {
 export const pet: Pet = {
   petId: 1,
   petName: '월이',
-  bornOfYear: 2019,
+  birthYear: 2019,
   imageUrl:
     'https://s3-alpha-sig.figma.com/img/4ff7/8f13/860ad4b7818f4fe382ca9378cc33724b?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JAArtVM73XMp7USZpPDppvUgTI77B7hEuVra5xwyRnpfx5xmzJmX6doEcjRHj825bYWDHsMl6mEH77a6Ziqx-BIeMYzk5ohIekpvCQ7JDXz3Vdg3W9TG0NTise377KE~lGj7bTptHCrldB-PuVme3~caFNcfKaiK6Vn54WmG0PCJ9e1OkBtHFbuwoyGzwuoMVtYlwL5mzJjfY8py650D-RkNZqPog0qgFg1CaFHUW8Wj1ZHgwgKMWf7ZvtgM0H33Od3aSRKgICSFrDrnCk3GMJDdJnYpePSOsi-2rxnATq7-JXWUsWHMaWbUMd1UlqdMHy-SjY~z-mUhbGW74w53Lw__',
   gender: '남',
@@ -33,7 +33,7 @@ export interface Data {
   createdAt: number;
   category?: string;
   imageUrl: string;
-  contents?: string;
+  comment?: string;
   option?: string;
   user?: User;
 }
@@ -203,7 +203,7 @@ export interface SlidData {
   createdAt: string;
   category: string;
   imageUrl: string;
-  contents: string;
+  comment: string;
   option: string;
   user: {
     userId: string;
@@ -218,7 +218,7 @@ export const slideMockData: SlidData[] = [
     option: '1시간 10분',
     imageUrl:
       'https://s3-alpha-sig.figma.com/img/4ff7/8f13/860ad4b7818f4fe382ca9378cc33724b?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JAArtVM73XMp7USZpPDppvUgTI77B7hEuVra5xwyRnpfx5xmzJmX6doEcjRHj825bYWDHsMl6mEH77a6Ziqx-BIeMYzk5ohIekpvCQ7JDXz3Vdg3W9TG0NTise377KE~lGj7bTptHCrldB-PuVme3~caFNcfKaiK6Vn54WmG0PCJ9e1OkBtHFbuwoyGzwuoMVtYlwL5mzJjfY8py650D-RkNZqPog0qgFg1CaFHUW8Wj1ZHgwgKMWf7ZvtgM0H33Od3aSRKgICSFrDrnCk3GMJDdJnYpePSOsi-2rxnATq7-JXWUsWHMaWbUMd1UlqdMHy-SjY~z-mUhbGW74w53Lw__',
-    contents: '',
+    comment: '',
     user: {
       userId: '0',
       userImage:
@@ -231,7 +231,7 @@ export const slideMockData: SlidData[] = [
     category: '산책 인증',
     option: '1시간 10분',
     imageUrl: '',
-    contents: '',
+    comment: '',
     user: {
       userId: '1',
       userImage:
@@ -244,7 +244,7 @@ export const slideMockData: SlidData[] = [
     category: '간식 인증',
     option: '뼈다귀',
     imageUrl: '',
-    contents: '개껌 두개나 먹었는데 더달라고 쳐다봄ㅋㅋㅋㅋ 적당히 줘야될 듯!',
+    comment: '개껌 두개나 먹었는데 더달라고 쳐다봄ㅋㅋㅋㅋ 적당히 줘야될 듯!',
     user: {
       userId: '1',
       userImage:
@@ -258,7 +258,7 @@ export const slideMockData: SlidData[] = [
     option: '',
     imageUrl:
       'https://s3-alpha-sig.figma.com/img/4ff7/8f13/860ad4b7818f4fe382ca9378cc33724b?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JAArtVM73XMp7USZpPDppvUgTI77B7hEuVra5xwyRnpfx5xmzJmX6doEcjRHj825bYWDHsMl6mEH77a6Ziqx-BIeMYzk5ohIekpvCQ7JDXz3Vdg3W9TG0NTise377KE~lGj7bTptHCrldB-PuVme3~caFNcfKaiK6Vn54WmG0PCJ9e1OkBtHFbuwoyGzwuoMVtYlwL5mzJjfY8py650D-RkNZqPog0qgFg1CaFHUW8Wj1ZHgwgKMWf7ZvtgM0H33Od3aSRKgICSFrDrnCk3GMJDdJnYpePSOsi-2rxnATq7-JXWUsWHMaWbUMd1UlqdMHy-SjY~z-mUhbGW74w53Lw__',
-    contents:
+    comment:
       '왼쪽으로 가야되는데 오른쪽으로 간다고 개찡찡댔다... 다음타자 힘들듯^^',
     user: {
       userId: '0',
@@ -273,7 +273,7 @@ export const slideMockData: SlidData[] = [
     option: '개껌',
     imageUrl:
       'https://s3-alpha-sig.figma.com/img/4ff7/8f13/860ad4b7818f4fe382ca9378cc33724b?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JAArtVM73XMp7USZpPDppvUgTI77B7hEuVra5xwyRnpfx5xmzJmX6doEcjRHj825bYWDHsMl6mEH77a6Ziqx-BIeMYzk5ohIekpvCQ7JDXz3Vdg3W9TG0NTise377KE~lGj7bTptHCrldB-PuVme3~caFNcfKaiK6Vn54WmG0PCJ9e1OkBtHFbuwoyGzwuoMVtYlwL5mzJjfY8py650D-RkNZqPog0qgFg1CaFHUW8Wj1ZHgwgKMWf7ZvtgM0H33Od3aSRKgICSFrDrnCk3GMJDdJnYpePSOsi-2rxnATq7-JXWUsWHMaWbUMd1UlqdMHy-SjY~z-mUhbGW74w53Lw__',
-    contents: '',
+    comment: '',
     user: {
       userId: '1',
       userImage:
@@ -287,7 +287,7 @@ export const slideMockData: SlidData[] = [
     option: '',
     imageUrl:
       'https://s3-alpha-sig.figma.com/img/4ff7/8f13/860ad4b7818f4fe382ca9378cc33724b?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JAArtVM73XMp7USZpPDppvUgTI77B7hEuVra5xwyRnpfx5xmzJmX6doEcjRHj825bYWDHsMl6mEH77a6Ziqx-BIeMYzk5ohIekpvCQ7JDXz3Vdg3W9TG0NTise377KE~lGj7bTptHCrldB-PuVme3~caFNcfKaiK6Vn54WmG0PCJ9e1OkBtHFbuwoyGzwuoMVtYlwL5mzJjfY8py650D-RkNZqPog0qgFg1CaFHUW8Wj1ZHgwgKMWf7ZvtgM0H33Od3aSRKgICSFrDrnCk3GMJDdJnYpePSOsi-2rxnATq7-JXWUsWHMaWbUMd1UlqdMHy-SjY~z-mUhbGW74w53Lw__',
-    contents: '',
+    comment: '',
     user: {
       userId: '0',
       userImage:
@@ -301,7 +301,7 @@ export const slideMockData: SlidData[] = [
     option: '1시간 10분',
     imageUrl:
       'https://s3-alpha-sig.figma.com/img/4ff7/8f13/860ad4b7818f4fe382ca9378cc33724b?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JAArtVM73XMp7USZpPDppvUgTI77B7hEuVra5xwyRnpfx5xmzJmX6doEcjRHj825bYWDHsMl6mEH77a6Ziqx-BIeMYzk5ohIekpvCQ7JDXz3Vdg3W9TG0NTise377KE~lGj7bTptHCrldB-PuVme3~caFNcfKaiK6Vn54WmG0PCJ9e1OkBtHFbuwoyGzwuoMVtYlwL5mzJjfY8py650D-RkNZqPog0qgFg1CaFHUW8Wj1ZHgwgKMWf7ZvtgM0H33Od3aSRKgICSFrDrnCk3GMJDdJnYpePSOsi-2rxnATq7-JXWUsWHMaWbUMd1UlqdMHy-SjY~z-mUhbGW74w53Lw__',
-    contents: '',
+    comment: '',
     user: {
       userId: '1',
       userImage:

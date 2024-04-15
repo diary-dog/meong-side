@@ -1,6 +1,6 @@
 import ROUTE_PATH from '../../router/constants';
 import { Layout } from '../../components';
-import { Bath, Meal, Treat, Walk } from '../../components/Icons';
+import { Bath, Meal, Treats, Walk } from '../../components/Icons';
 import VerificationField from './components/VerificationField';
 import { VERIFICATION } from '../../constants/verifications';
 import { useVerificationCount } from './hooks/queries';
@@ -33,10 +33,10 @@ const Home = () => {
                 icon={<Meal />}
               />
               <VerificationButton
-                name={VERIFICATION.TREAT}
-                navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.TREAT}`}
+                name={VERIFICATION.TREATS}
+                navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.TREATS}`}
                 title="간식인증"
-                icon={<Treat />}
+                icon={<Treats />}
               />
               <VerificationButton
                 name={VERIFICATION.BATH}
@@ -46,8 +46,8 @@ const Home = () => {
               />
             </S.VerificationWrapper>
             <VerificationButton
-              name={VERIFICATION.SURVIVAL}
-              navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.SURVIVAL}`}
+              name={VERIFICATION.DAILY}
+              navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.DAILY}`}
               title="순간포착! 일상인증"
             />
           </S.VerificationContainer>

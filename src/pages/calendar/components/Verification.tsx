@@ -48,7 +48,7 @@ const Verification = () => {
       </S.VerificationSection>
       <S.VerificationSection>
         <S.VerificationTitle>
-          <S.Round type={VERIFICATION.TREAT} />
+          <S.Round type={VERIFICATION.TREATS} />
           <div>간식 2회</div>
         </S.VerificationTitle>
         <S.VerificationItem>

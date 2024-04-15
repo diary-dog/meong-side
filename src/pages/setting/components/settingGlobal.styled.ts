@@ -21,7 +21,7 @@ export const Container = styled.form`
   height: 100vh;
   gap: 40px;
 `;
-export const ContentWrapper = styled.div<{ $isValid: boolean }>`
+export const ContentsWrapper = styled.div<{ $isValid: boolean }>`
   padding: 0 60px;
   display: flex;
   flex-direction: column;

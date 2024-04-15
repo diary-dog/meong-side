@@ -74,7 +74,7 @@ const Layout = ({ top, children }: { top?: TopBar; children: ReactNode }) => {
   return (
     <S.Container>
       {top && <TopBar {...top} />}
-      <S.ContentsWrapper $hasTop={!!top}>{children}</S.ContentsWrapper>
+      <S.ContentWrapper $hasTop={!!top}>{children}</S.ContentWrapper>
       <BottomBar />
     </S.Container>
   );

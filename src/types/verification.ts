@@ -4,7 +4,7 @@ import { VERIFICATION } from '../constants/verifications';
 export interface UploadVerification {
   category: (typeof VERIFICATION)[keyof typeof VERIFICATION];
   imageUrl?: string;
-  content?: string;
+  comment?: string;
   verificationOption?: string;
 }
 

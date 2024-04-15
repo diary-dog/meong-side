@@ -10,12 +10,12 @@ const ConfirmPeople = () => {
     <Container>
       <Title className="title">계정확인</Title>
       <UserImage size="XL" imageUrl={imageUrl} />
-      <ContentWrapper>
+      <ContentsWrapper>
         <Username>둘째딸</Username>
         <Button onClick={() => {}} color="P-BUTTON2">
           완료
         </Button>
-      </ContentWrapper>
+      </ContentsWrapper>
     </Container>
   );
 };
@@ -31,7 +31,7 @@ const Container = styled.div`
   height: 100vh;
   gap: 40px;
 `;
-const ContentWrapper = styled.div`
+const ContentsWrapper = styled.div`
   padding: 0 60px;
   display: flex;
   flex-direction: column;

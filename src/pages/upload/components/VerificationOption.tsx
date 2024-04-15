@@ -8,7 +8,7 @@ import {
 import {
   BATH_OPTION,
   MEAL_OPTION,
-  TREAT_OPTION,
+  TREATS_OPTION,
   VERIFICATION,
 } from '../../../constants/verifications';
 import VerificationRadioOptions from './VerificationRadioOptions';
@@ -52,11 +52,11 @@ const VerificationOption = ({
           setValue={setValue}
         />
       );
-    case VERIFICATION.TREAT:
+    case VERIFICATION.TREATS:
       return (
         <VerificationRadioOptions
-          name="treat"
-          options={Object.values(TREAT_OPTION)}
+          name="treats"
+          options={Object.values(TREATS_OPTION)}
           type={type}
           register={register}
           watch={watch}

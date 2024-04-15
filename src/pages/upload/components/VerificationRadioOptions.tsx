@@ -7,8 +7,9 @@ import {
 import { Fragment } from 'react/jsx-runtime';
 
 import * as S from './VerificationRadioOptions.styled';
+import { verificationOption } from '../../../constants/verifications';
 
-export type VerificationWithOption = 'meal' | 'treat' | 'bath';
+export type VerificationWithOption = 'meal' | 'treats' | 'bath';
 
 const VerificationRadioOptions = ({
   options,
@@ -24,7 +25,7 @@ const VerificationRadioOptions = ({
   setValue: UseFormSetValue<FieldValues>;
   name: VerificationWithOption;
 }) => {
-  const currentValue = watch(name) as string;
+  const currentValue = watch(verificationOption) as string;
 
   return (
     <S.VerificationOptionContainer $name={name}>
@@ -34,17 +35,17 @@ const VerificationRadioOptions = ({
             id={value}
             type="radio"
             value={value}
-            {...register(name)}
+            {...register(verificationOption)}
             onClick={(e) => {
               if (currentValue === e.currentTarget.value) {
-                setValue(name, '');
+                setValue(verificationOption, '');
                 e.currentTarget.checked = false;
               }
             }}
           />
           <label
             htmlFor={value}
-            className={watch(name) === value ? 'selected' : ''}
+            className={watch(verificationOption) === value ? 'selected' : ''}
           >
             {value}
           </label>

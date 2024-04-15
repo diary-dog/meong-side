@@ -27,6 +27,7 @@ export const PetInformation = styled.div`
     gap: 20px;
     font-size: ${({ theme }) => theme.FONT.MD};
     color: #666666;
+    display: flex;
   }
 `;
 export const VerificationInformation = styled.div`

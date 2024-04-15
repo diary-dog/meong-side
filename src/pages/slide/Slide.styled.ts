@@ -75,7 +75,7 @@ export const VerificationItem = styled.div`
   }
 `;
 
-export const Contents = styled.p`
+export const Comment = styled.p`
   width: 218px;
   height: 44px;
   top: 1843px;
