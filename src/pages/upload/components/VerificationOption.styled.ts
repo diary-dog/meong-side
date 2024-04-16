@@ -21,6 +21,17 @@ export const WalkOptionContainer = styled.label<{ $isTyping: boolean }>`
     background-color: ${({ theme }) => theme.COLORS['INACTIVE-BUTTON']};
     text-align: center;
   }
+
+  /* Chrome, Edge, Safari */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield; /* Firefox */
+  }
 `;
 
 export const None = styled.div`
