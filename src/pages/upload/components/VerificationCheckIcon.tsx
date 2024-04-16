@@ -6,8 +6,8 @@ import {
   CheckedTreats,
 } from '../../../components/Icons';
 
-const VerificationCheckIcon = ({ type }: { type: string }) => {
-  switch (type) {
+const VerificationCheckIcon = ({ category }: { category: string }) => {
+  switch (category) {
     case VERIFICATION.WALK:
       return <CheckedDog />;
     case VERIFICATION.MEAL:

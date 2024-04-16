@@ -16,17 +16,17 @@ import VerificationRadioOptions from './VerificationRadioOptions';
 import * as S from './VerificationOption.styled';
 
 const VerificationOption = ({
-  type,
+  category,
   register,
   setValue,
   watch,
 }: {
-  type: string;
+  category: string;
   register: UseFormRegister<FieldValues>;
   setValue: UseFormSetValue<FieldValues>;
   watch: UseFormWatch<FieldValues>;
 }) => {
-  switch (type) {
+  switch (category) {
     case VERIFICATION.WALK:
       return (
         <S.WalkOptionContainer
@@ -46,7 +46,6 @@ const VerificationOption = ({
         <VerificationRadioOptions
           name="meal"
           options={Object.values(MEAL_OPTION)}
-          type={type}
           register={register}
           watch={watch}
           setValue={setValue}
@@ -57,7 +56,6 @@ const VerificationOption = ({
         <VerificationRadioOptions
           name="treats"
           options={Object.values(TREATS_OPTION)}
-          type={type}
           register={register}
           watch={watch}
           setValue={setValue}
@@ -68,7 +66,6 @@ const VerificationOption = ({
         <VerificationRadioOptions
           name="bath"
           options={Object.values(BATH_OPTION)}
-          type={type}
           register={register}
           watch={watch}
           setValue={setValue}

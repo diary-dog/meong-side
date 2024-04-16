@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getVerificationType } from '../../../utils/getVerificationType';
+import { getVerificationTitle } from '../../../utils/getVerificationInfo';
 import VerificationCheckIcon from './VerificationCheckIcon';
 
 import * as S from './ConformVerification.styled';
@@ -9,7 +9,7 @@ import * as S from './ConformVerification.styled';
 const ConformVerification = ({ onNext }: { onNext: () => void }) => {
   //강아지 정보 고려 (ex. url query, 전역상태, req header)
   const petName = '월이';
-  const { type } = useParams();
+  const { category } = useParams();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -21,9 +21,9 @@ const ConformVerification = ({ onNext }: { onNext: () => void }) => {
   return (
     <S.Container onClick={onNext}>
       <h2>
-        {petName}가(이) {getVerificationType(type!)}하는 군요!
+        {petName}가(이) {getVerificationTitle(category!)}하는 군요!
       </h2>
-      <VerificationCheckIcon type={type!} />
+      <VerificationCheckIcon category={category!} />
       <span>인증성공!</span>
     </S.Container>
   );

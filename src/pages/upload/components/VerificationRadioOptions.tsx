@@ -6,10 +6,10 @@ import {
 } from 'react-hook-form';
 import { Fragment } from 'react/jsx-runtime';
 
-import * as S from './VerificationRadioOptions.styled';
 import { verificationOption } from '../../../constants/verifications';
+import * as S from './VerificationRadioOptions.styled';
 
-export type VerificationWithOption = 'meal' | 'treats' | 'bath';
+export type VerificationWithCategory = 'meal' | 'treats' | 'bath';
 
 const VerificationRadioOptions = ({
   options,
@@ -19,11 +19,10 @@ const VerificationRadioOptions = ({
   name,
 }: {
   options: string[];
-  type: string;
   register: UseFormRegister<FieldValues>;
   watch: UseFormWatch<FieldValues>;
   setValue: UseFormSetValue<FieldValues>;
-  name: VerificationWithOption;
+  name: VerificationWithCategory;
 }) => {
   const currentValue = watch(verificationOption) as string;
 
