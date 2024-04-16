@@ -1,3 +1,5 @@
+import { DefaultBodyType, HttpResponseResolver, PathParams } from 'msw';
+
 import { BACKEND_ENDPOINT } from '../constants/endPoint';
 
 export const getSearchParams = (key: string) => {
@@ -7,3 +9,8 @@ export const getSearchParams = (key: string) => {
 export const baseURL = (path: string) => {
   return BACKEND_ENDPOINT + path;
 };
+
+export type MSWResolvers = Record<
+  string,
+  Record<string, HttpResponseResolver<PathParams, DefaultBodyType, undefined>>
+>;
