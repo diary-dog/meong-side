@@ -1,7 +1,7 @@
 import { GENDER_TYPE } from '../constants/pet';
 import { VERIFICATION } from '../constants/verifications';
 
-export interface UploadVerification {
+export interface UploadVerificationContents {
   category: (typeof VERIFICATION)[keyof typeof VERIFICATION];
   imageUrl?: string;
   comment?: string;
@@ -20,3 +20,15 @@ export interface VerificationCount {
     treatsCount: number;
   };
 }
+
+export interface WalkOption extends DefaultOption {
+  hour?: string;
+  minutes?: string;
+}
+
+export interface DefaultOption {
+  verificationOption?: string;
+  comment?: string;
+  imageUrl?: File[];
+}
+export type UploadVerificationForm = WalkOption | DefaultOption;
