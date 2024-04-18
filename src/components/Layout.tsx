@@ -71,6 +71,10 @@ const BottomBar = () => {
   );
 };
 const Layout = ({ top, children }: { top?: TopBar; children: ReactNode }) => {
+  const navigate = useNavigate();
+  if (!localStorage.getItem('token')) {
+    navigate(ROUTE_PATH.INTRO);
+  }
   return (
     <S.Container>
       {top && <TopBar {...top} />}
