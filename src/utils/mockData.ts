@@ -1,28 +1,17 @@
-export interface Pet {
-  petId: number;
-  petName: string;
-  birthYear: number;
-  imageUrl: string;
-  gender: '남' | '여';
-  walkCount: number;
-  mealCount: number;
-  bathCount: number;
-  treatsCount: number;
-  survivalCount: number;
-}
+import { VerificationCount } from '../types/verification';
 
-export const pet: Pet = {
-  petId: 1,
-  petName: '월이',
+export const pet: VerificationCount = {
+  name: '월이',
   birthYear: 2019,
   imageUrl:
     'https://s3-alpha-sig.figma.com/img/4ff7/8f13/860ad4b7818f4fe382ca9378cc33724b?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JAArtVM73XMp7USZpPDppvUgTI77B7hEuVra5xwyRnpfx5xmzJmX6doEcjRHj825bYWDHsMl6mEH77a6Ziqx-BIeMYzk5ohIekpvCQ7JDXz3Vdg3W9TG0NTise377KE~lGj7bTptHCrldB-PuVme3~caFNcfKaiK6Vn54WmG0PCJ9e1OkBtHFbuwoyGzwuoMVtYlwL5mzJjfY8py650D-RkNZqPog0qgFg1CaFHUW8Wj1ZHgwgKMWf7ZvtgM0H33Od3aSRKgICSFrDrnCk3GMJDdJnYpePSOsi-2rxnATq7-JXWUsWHMaWbUMd1UlqdMHy-SjY~z-mUhbGW74w53Lw__',
   gender: '남',
-  mealCount: 2,
-  walkCount: 3,
-  bathCount: 4,
-  survivalCount: 5,
-  treatsCount: 6,
+  verification: {
+    mealCount: 2,
+    walkCount: 3,
+    bathCount: 4,
+    treatsCount: 6,
+  },
 };
 export interface User {
   userId: string;

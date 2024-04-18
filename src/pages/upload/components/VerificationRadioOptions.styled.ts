@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import { VerificationWithOption } from './VerificationRadioOptions';
+import { VerificationWithCategory } from './VerificationRadioOptions';
 
 export const VerificationOptionContainer = styled.label<{
-  $name: VerificationWithOption;
+  $name: VerificationWithCategory;
 }>`
   display: flex;
   width: ${({ $name }) => ($name === 'treats' ? 'auto' : '100%')};
