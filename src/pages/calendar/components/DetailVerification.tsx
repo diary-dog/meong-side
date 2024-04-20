@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import useCalendarContext from './useCalendarContext';
 import UserImage from '../../../components/UserImage';
 import { getVerificationTitle } from '../../../utils/getVerificationInfo';
+import removeLeadingZeros from '../../../utils/removeLeadingZeros';
 
 import * as S from './DetailVerification.styled';
 
@@ -23,7 +24,7 @@ const DetailVerification = () => {
 
   return (
     <S.Container>
-      <S.SelectedDate>{`${year}년 ${month}월 ${day}일`}</S.SelectedDate>
+      <S.SelectedDate>{`${year}년 ${removeLeadingZeros(month)}월 ${removeLeadingZeros(day)}일`}</S.SelectedDate>
       {verifications.map((verification) => (
         <S.VerificationSection key={verification.category}>
           <S.VerificationTitle>
