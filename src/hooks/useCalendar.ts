@@ -19,7 +19,7 @@ const useCalendar = () => {
     'yyyy-LLLL-d'
   ).split('-');
   const [selectedDate, setSelectedDate] = useState<string>(
-    format(new Date(), 'yyyy-M-d')
+    format(new Date(), 'yyyy-MM-dd')
   );
 
   const startCurrentMonth = startOfMonth(currentDate);
@@ -50,7 +50,7 @@ const useCalendar = () => {
     setSelectedDate(date);
   };
   const daysInMonth = days.map((day) => ({
-    date: format(day, 'yyyy-M-d'),
+    date: format(day, 'yyyy-MM-dd'),
     year: format(day, 'yyyy'),
     month: format(day, 'LLLL'),
     day: format(day, 'd'),

@@ -10,7 +10,9 @@ import { THEME } from '../../../styles/theme';
 import * as S from './CalendarHeader.styled';
 
 const CalendarHeader = () => {
-  const { dispatch, currentDate } = useCalendarContext();
+  const {
+    calendar: { dispatch, currentDate },
+  } = useCalendarContext();
 
   return (
     <S.Container>

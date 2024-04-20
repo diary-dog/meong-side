@@ -8,7 +8,9 @@ const imageUrl =
   'https://s3-alpha-sig.figma.com/img/53dd/e582/a7ad46483eb5c2a1714a957f9ff9efac?Expires=1713139200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Blls~PN-jxbzXt6LD7gwoBcuFTXCIL7hZAXfDtng5UtHUM2ryM~RQyOHD64KaWyiFWM3M36Y5P9BYtU59PHILEsRaTLvETtQYzYSIKf0dRmWpggQ-hlpKHafxFH-YdMrSk-iEKUTuPBpdFNVhGYFpfOx73KgXlPCnsVoWE2tnzRAZBrd3CoutqXa4JmqtVvaSlkKi5JfxJP0nY3ar-fdqBy~8WmdmsCZLYr9IBrzVB4L5yxnACmUBRqWoeoEge67pYbcWOfIUHBZ7tXW2iYLdG2F0GNBjxoXDKw8oo8Nfgt-xIt6cciuRWKhR~6Df2eYDePyCWcQpzKRGLfrdaWlmQ__';
 
 const Verification = () => {
-  const { selectedDate } = useCalendarContext();
+  const {
+    calendar: { selectedDate },
+  } = useCalendarContext();
   const [year, month, day] = selectedDate.date.split('-');
 
   return (
