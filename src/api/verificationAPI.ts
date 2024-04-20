@@ -5,6 +5,7 @@ import { END_POINT } from '../constants/endPoint';
 import type {
   UploadVerificationContents,
   VerificationCount,
+  VerificationsForCalendar,
 } from '../types/verification';
 
 const verificationAPI = {
@@ -21,6 +22,20 @@ const verificationAPI = {
     const { data } = await apiClient.post<UploadVerificationContents>(
       END_POINT.POST,
       body
+    );
+    return data;
+  },
+  /** get verification for calendar data */
+  getVerificationCalendar: async ({
+    year,
+    month,
+  }: {
+    year: number;
+    month: number;
+  }) => {
+    const query = QueryString.stringify({ year, month });
+    const { data } = await apiClient.get<VerificationsForCalendar>(
+      `${END_POINT.CALENDAR}?${query}`
     );
     return data;
   },
