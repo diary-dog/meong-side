@@ -1,6 +1,5 @@
 const ROUTE_PATH = {
   ROOT: '/',
-  HOME: '',
   INTRO: '/intro',
   KAKAO_LOGIN: '/oauth/kakao/callback',
   REGISTER_PET: '/register/pet',

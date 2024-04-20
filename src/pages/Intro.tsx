@@ -1,13 +1,15 @@
 import Button from '../components/Button';
 import { Dog, Ellipse, HeartCircle, KaKaoIcon } from '../components/Icons';
+import ROUTE_PATH from '../router/constants';
 
 import * as S from './Intro.styled';
 
-const { VITE_KAKAO_REST_API_KEY, VITE_KAKAO_REDIRECT_URI } = import.meta.env;
+const { VITE_KAKAO_REST_API_KEY } = import.meta.env;
 
 const Intro = () => {
-  const link = `https://kauth.kakao.com/oauth/authorize?client_id=${VITE_KAKAO_REST_API_KEY}&redirect_uri=${VITE_KAKAO_REDIRECT_URI}&response_type=code`;
+  const REDIRECT_URI = `${window.location.origin}${ROUTE_PATH.KAKAO_LOGIN}`;
 
+  const link = `https://kauth.kakao.com/oauth/authorize?client_id=${VITE_KAKAO_REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
   const loginHandler = () => {
     window.location.href = link;
   };
