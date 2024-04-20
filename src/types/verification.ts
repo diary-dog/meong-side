@@ -56,6 +56,7 @@ export interface VerificationByDate {
   category: VerificationCategoryType;
   verificationCount: number;
   verificationDetails: Array<{
+    id: string;
     verificationOption: string;
     createdAt: Date;
     author: User;

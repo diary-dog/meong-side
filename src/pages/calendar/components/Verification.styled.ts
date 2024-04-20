@@ -41,12 +41,20 @@ export const VerificationItem = styled.div`
   grid-template-columns: 6fr 2fr 1fr;
   gap: 10px;
   align-items: center;
+  padding: 3px;
+  font-size: ${({ theme }) => theme.FONT.XS};
+
   span {
     white-space: nowrap;
+  }
+  #option {
+    background-color: ${({ theme }) => theme.COLORS['P-BUTTON2']};
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
   }
   #time {
     margin-left: auto;
     color: ${({ theme }) => theme.COLORS['FONT-COLOR-WB']};
-    font-size: ${({ theme }) => theme.FONT.XS};
   }
 `;
