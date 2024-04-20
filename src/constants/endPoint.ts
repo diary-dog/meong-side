@@ -7,4 +7,5 @@ export const BACKEND_ENDPOINT = import.meta.env.DEV
 export const END_POINT = {
   HOME: `/api/home`,
   POST: '/api/post',
+  CALENDAR: '/api/calendar',
 } as const;
