@@ -6,6 +6,9 @@ export const VERIFICATION = {
   DAILY: 'daily',
 } as const;
 
+export type VerificationCategoryType =
+  (typeof VERIFICATION)[keyof typeof VERIFICATION];
+
 export const MEAL_OPTION = {
   ALL: '다 먹었어요!',
   HALF: '반만 먹었어요!',
