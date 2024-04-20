@@ -26,13 +26,13 @@ export const VerificationCircles = styled.div`
   gap: 4.29px;
 `;
 export const CategoryCircle = styled.div<{
-  category?: string;
+  $category?: string;
 }>`
   width: 7.86px;
   height: 7.86px;
-  background-color: ${({ category }) =>
-    category && getVerificationCategoryColor(category)};
-  visibility: ${({ category }) => (category ? 'visible' : 'hidden')};
+  background-color: ${({ $category }) =>
+    $category && getVerificationCategoryColor($category)};
+  visibility: ${({ $category }) => ($category ? 'visible' : 'hidden')};
   border-radius: 100%;
 `;
 

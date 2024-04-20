@@ -11,7 +11,7 @@ const VerificationCategoryCircle = ({
   category: VerificationCategoryType;
 }) => (
   <CategoryCircle
-    category={
+    $category={
       verifications?.find((verification) => verification.category === category)
         ?.category
     }

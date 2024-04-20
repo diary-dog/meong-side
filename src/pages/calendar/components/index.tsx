@@ -4,7 +4,7 @@ import { CalendarContext } from './useCalendarContext';
 import useCalendar from '../../../hooks/useCalendar';
 import CalendarHeader from './CalendarHeader';
 import CalendarBody from './CalendarBody';
-import Verification from './Verification';
+import DetailVerification from './DetailVerification';
 import styled from 'styled-components';
 import useVerificationCalendar from '../hooks/queries';
 
@@ -27,7 +27,7 @@ const CalendarRoot = ({ children }: { children: ReactNode }) => {
 const Calendar = Object.assign(CalendarRoot, {
   Header: CalendarHeader,
   Body: CalendarBody,
-  Footer: Verification,
+  Footer: DetailVerification,
 });
 
 export default Calendar;
