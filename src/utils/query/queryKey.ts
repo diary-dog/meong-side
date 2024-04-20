@@ -4,6 +4,5 @@ export const verificationKey = {
   gird: (petId: number, filter: string) =>
     [...verificationKey.pet(petId), { filter }] as const,
   slide: (petId: number) => [...verificationKey.pet(petId), 'slide'] as const,
-  calendar: (petId: number) =>
-    [...verificationKey.pet(petId), 'calendar'] as const,
+  calendar: () => [...verificationKey.base, 'calendar'] as const,
 };
