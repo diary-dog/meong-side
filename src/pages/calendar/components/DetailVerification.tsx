@@ -4,9 +4,9 @@ import useCalendarContext from './useCalendarContext';
 import UserImage from '../../../components/UserImage';
 import { getVerificationTitle } from '../../../utils/getVerificationInfo';
 
-import * as S from './Verification.styled';
+import * as S from './DetailVerification.styled';
 
-const Verification = () => {
+const DetailVerification = () => {
   const {
     calendar: { selectedDate },
     verifications: { dates },
@@ -47,4 +47,4 @@ const Verification = () => {
   );
 };
 
-export default Verification;
+export default DetailVerification;
