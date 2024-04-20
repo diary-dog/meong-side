@@ -9,4 +9,10 @@ export const verificationHandler = [
 
   /** pet verification post */
   http.post(baseURL(END_POINT.POST), verification.uploadVerification.success),
+
+  /** get verification for calendar data */
+  http.get(
+    baseURL(END_POINT.CALENDAR),
+    verification.getVerificationCalendar.success
+  ),
 ];
