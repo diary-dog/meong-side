@@ -1,5 +1,14 @@
 import { GENDER_TYPE } from '../constants/pet';
-import { VERIFICATION } from '../constants/verifications';
+import {
+  VERIFICATION,
+  VerificationCategoryType,
+} from '../constants/verifications';
+
+interface User {
+  id: string;
+  imageUrl: string;
+  name: string;
+}
 
 export interface UploadVerificationContents {
   category: (typeof VERIFICATION)[keyof typeof VERIFICATION];
@@ -32,3 +41,23 @@ export interface DefaultOption {
   imageUrl?: File[];
 }
 export type UploadVerificationForm = WalkOption | DefaultOption;
+
+export interface VerificationsForCalendar {
+  year: number;
+  month: number;
+  dates: DateBasedVerification[];
+}
+
+interface DateBasedVerification {
+  date: string;
+  verifications: VerificationByDate[];
+}
+export interface VerificationByDate {
+  category: VerificationCategoryType;
+  verificationCount: number;
+  verificationDetails: Array<{
+    verificationOption: string;
+    createdAt: Date;
+    author: User;
+  }>;
+}
