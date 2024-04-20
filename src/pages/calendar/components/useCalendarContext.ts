@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react';
+import { VerificationsForCalendar } from '../../../types/verification';
 
 interface DateInfo {
   year: string;
@@ -6,18 +7,21 @@ interface DateInfo {
   day: string;
 }
 interface CalendarContextType {
-  currentDate: DateInfo;
-  daysInMonth: (DateInfo & { date: string })[];
-  dispatch: {
-    handlePrevYear: () => void;
-    handleNextYear: () => void;
-    handlePrevMonth: () => void;
-    handleNextMonth: () => void;
+  calendar: {
+    currentDate: DateInfo;
+    daysInMonth: (DateInfo & { date: string })[];
+    dispatch: {
+      handlePrevYear: () => void;
+      handleNextYear: () => void;
+      handlePrevMonth: () => void;
+      handleNextMonth: () => void;
+    };
+    selectedDate: {
+      date: string;
+      selectDate: (date: string) => void;
+    };
   };
-  selectedDate: {
-    date: string;
-    selectDate: (date: string) => void;
-  };
+  verifications: VerificationsForCalendar;
 }
 
 export const CalendarContext = createContext<CalendarContextType | null>(null);

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getVerificationTypeColor } from '../../../utils/getVerificationTypeColor';
+import { getVerificationCategoryColor } from '../../../utils/getVerificationCategoryColor';
 
 export const Container = styled.div`
   width: 100%;
@@ -22,7 +22,7 @@ export const SelectedDate = styled.h3`
 export const Round = styled.div<{ type: string }>`
   width: 11px;
   height: 11px;
-  background-color: ${({ type }) => getVerificationTypeColor(type)};
+  background-color: ${({ type }) => getVerificationCategoryColor(type)};
   border-radius: 100%;
 `;
 export const VerificationSection = styled.div`

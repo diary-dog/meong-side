@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getVerificationTypeColor } from '../../../utils/getVerificationTypeColor';
+import { getVerificationCategoryColor } from '../../../utils/getVerificationCategoryColor';
 
 export const Container = styled.div`
   display: flex;
@@ -25,10 +25,14 @@ export const VerificationCircles = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 4.29px;
 `;
-export const VerificationTypeCircle = styled.div<{ type: string }>`
+export const CategoryCircle = styled.div<{
+  category?: string;
+}>`
   width: 7.86px;
   height: 7.86px;
-  background-color: ${({ type }) => getVerificationTypeColor(type)};
+  background-color: ${({ category }) =>
+    category && getVerificationCategoryColor(category)};
+  visibility: ${({ category }) => (category ? 'visible' : 'hidden')};
   border-radius: 100%;
 `;
 
@@ -46,4 +50,12 @@ export const Day = styled.div<{
     $isCurrentMonth ? 'visible' : 'hidden'};
   background-color: ${({ $isSelectedDate }) =>
     $isSelectedDate ? '#FFFFE1' : 'transparent'};
+
+  ${({ $isCurrentMonth }) =>
+    !$isCurrentMonth &&
+    `
+    ${CategoryCircle} {
+      visibility: hidden;
+    }
+  `}
 `;
