@@ -5,7 +5,7 @@ import { END_POINT } from '../constants/endPoint';
 import type {
   UploadVerificationContents,
   VerificationCount,
-  VerificationsForSlide,
+  VerificationForSlide,
   VerificationsForCalendar,
 } from '../types/verification';
 
@@ -43,7 +43,7 @@ const verificationAPI = {
   /** get verification for slide data */
   getVerificationForSlide: async ({ currentPage }: { currentPage: number }) => {
     const query = QueryString.stringify({ currentPage });
-    const { data } = await apiClient.get<VerificationsForSlide>(
+    const { data } = await apiClient.get<VerificationForSlide>(
       `${END_POINT.SLIDE}?${query}`
     );
     return data;
