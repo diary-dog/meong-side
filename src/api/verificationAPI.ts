@@ -5,6 +5,7 @@ import { END_POINT } from '../constants/endPoint';
 import type {
   UploadVerificationContents,
   VerificationCount,
+  VerificationsForSlide,
   VerificationsForCalendar,
 } from '../types/verification';
 
@@ -36,6 +37,14 @@ const verificationAPI = {
     const query = QueryString.stringify({ year, month });
     const { data } = await apiClient.get<VerificationsForCalendar>(
       `${END_POINT.CALENDAR}?${query}`
+    );
+    return data;
+  },
+  /** get verification for slide data */
+  getVerificationForSlide: async ({ currentPage }: { currentPage: number }) => {
+    const query = QueryString.stringify({ currentPage });
+    const { data } = await apiClient.get<VerificationsForSlide>(
+      `${END_POINT.SLIDE}?${query}`
     );
     return data;
   },
