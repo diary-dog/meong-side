@@ -7,6 +7,21 @@ export const Container = styled.div`
   flex-direction: column;
   background-color: #f9f5f5;
 `;
+export const Comment = styled.p`
+  width: 218px;
+  height: 44px;
+  top: 1843px;
+  left: 70px;
+  padding: 7px 12px;
+  gap: 8px;
+  border-radius: 10px;
+  font-size: ${({ theme }) => theme.FONT.XS};
+  background-color: ${({ theme }) => theme.COLORS['S-BUTTON']};
+  line-height: 15.36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const SlideWrapper = styled.div<{ $isLoggedInUser: boolean }>`
   display: flex;
@@ -62,7 +77,7 @@ export const VerificationItem = styled.div`
     padding: 5px 40px;
   }
   .option {
-    width: 77px;
+    width: fit-content;
     height: 35px;
     padding: 10px 12px;
     gap: 10px;
@@ -73,22 +88,6 @@ export const VerificationItem = styled.div`
     justify-content: center;
     align-items: center;
   }
-`;
-
-export const Comment = styled.p`
-  width: 218px;
-  height: 44px;
-  top: 1843px;
-  left: 70px;
-  padding: 7px 12px;
-  gap: 8px;
-  border-radius: 10px;
-  font-size: ${({ theme }) => theme.FONT.XS};
-  background-color: ${({ theme }) => theme.COLORS['S-BUTTON']};
-  line-height: 15.36px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const Author = styled.div`

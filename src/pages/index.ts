@@ -6,7 +6,7 @@ export { default as UploadVerification } from './upload/UploadVerification';
 export { default as Intro } from './Intro';
 export { default as Home } from './Home/Home';
 
-export { default as Slide } from './slide/Slide';
+export { default as SlidePage } from './slide/SlidePage';
 export { default as Grid } from './grid/Grid';
 export { default as GridByUser } from './grid/GridByUser';
 export { default as Calendar } from './calendar/Calendar';
