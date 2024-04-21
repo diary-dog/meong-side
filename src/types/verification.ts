@@ -69,7 +69,7 @@ export interface VerificationResponse {
   author: User;
 }
 
-export interface VerificationsForSlide {
+export interface VerificationForSlide {
   currentPage: number;
   totalPages: number;
   totalItems: number;

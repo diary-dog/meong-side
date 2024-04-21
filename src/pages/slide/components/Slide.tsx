@@ -1,22 +1,22 @@
-import { useLayoutEffect } from 'react';
-
 import UserImage from '../../../components/UserImage';
 import useVerificationForSlide from '../hooks/queries';
 import { getVerificationTitle } from '../../../utils/getVerificationInfo';
 
 import * as S from './Slide.styled';
+import Spinner from '../../../components/Spinner';
+import useControlScroll from '../hooks/useContorlScroll';
 
 const loggedUserId = '1';
 
 const Slide = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, document.body.scrollHeight);
-  }, []);
-  const { items } = useVerificationForSlide({ currentPage: 1 });
+  const { data, targetItemRef, isFetchingNextPage } = useVerificationForSlide();
+  const { containerRef } = useControlScroll();
 
   return (
-    <S.Container>
-      {items.map((verification) => (
+    <S.Container ref={containerRef}>
+      {isFetchingNextPage && <Spinner size={30} />}
+      <div ref={targetItemRef}></div>
+      {data.map((verification) => (
         <S.SlideWrapper
           $isLoggedInUser={loggedUserId === verification.author.id}
           key={verification.id}
