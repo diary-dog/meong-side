@@ -4,7 +4,7 @@ import { verificationKey } from '../../../utils/query/queryKey';
 import verificationAPI from '../../../api/verificationAPI';
 import useIntersectionObserver from '../../calendar/useIntersectionObserver';
 
-const useVerificationForSlide = () => {
+const useInfiniteVerificationsForSlide = () => {
   const { data, fetchNextPage, isFetchingNextPage } = useSuspenseInfiniteQuery({
     queryKey: verificationKey.slide(),
     queryFn: ({ pageParam }) =>
@@ -24,4 +24,4 @@ const useVerificationForSlide = () => {
   return { data: slideData, targetItemRef, isFetchingNextPage };
 };
 
-export default useVerificationForSlide;
+export default useInfiniteVerificationsForSlide;
