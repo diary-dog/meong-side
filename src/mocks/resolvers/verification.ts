@@ -3,6 +3,7 @@ import qs from 'qs';
 
 import {
   verificationCountInfo,
+  verificationForSlideData,
   verificationsForCalendarData,
 } from '../datas/verification';
 import { MSWResolvers } from '../../utils/mswUtils';
@@ -33,5 +34,14 @@ export const verification = {
     const year = Number(parsedQuery.year);
     const month = Number(parsedQuery.month);
     return HttpResponse.json(verificationsForCalendarData({ year, month }));
+  },
+
+  getVerificationForSlide: async ({ request }) => {
+    await delay();
+    const queryString = new URL(request.url).search;
+    const parsedQuery = qs.parse(queryString, { ignoreQueryPrefix: true });
+    const currentPage = Number(parsedQuery.currentPage);
+
+    return HttpResponse.json(verificationForSlideData(currentPage));
   },
 } satisfies MSWResolvers;

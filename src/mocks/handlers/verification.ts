@@ -12,4 +12,7 @@ export const verificationHandler = [
 
   /** get verification for calendar data */
   http.get(baseURL(END_POINT.CALENDAR), verification.getVerificationCalendar),
+
+  /** get verification for slide data */
+  http.get(baseURL(END_POINT.SLIDE), verification.getVerificationForSlide),
 ];
