@@ -1,5 +1,5 @@
 import UserImage from '../../../components/UserImage';
-import useVerificationForSlide from '../hooks/queries';
+import useInfiniteVerificationsForSlide from '../hooks/queries';
 import { getVerificationTitle } from '../../../utils/getVerificationInfo';
 
 import * as S from './Slide.styled';
@@ -9,7 +9,8 @@ import useControlScroll from '../hooks/useContorlScroll';
 const loggedUserId = '1';
 
 const Slide = () => {
-  const { data, targetItemRef, isFetchingNextPage } = useVerificationForSlide();
+  const { data, targetItemRef, isFetchingNextPage } =
+    useInfiniteVerificationsForSlide();
   const { containerRef } = useControlScroll();
 
   return (
