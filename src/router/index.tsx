@@ -6,7 +6,7 @@ import {
   ErrorPage,
   Intro,
   Register,
-  Slide,
+  SlidePage,
   UploadVerification,
   Setting,
   Home,
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             path: ROUTE_PATH.ROOT,
           },
           {
-            element: <Slide />,
+            element: <SlidePage />,
             path: ROUTE_PATH.SLIDE,
           },
           {
