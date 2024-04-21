@@ -2,10 +2,10 @@ import { PropsWithChildren } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 interface SpinnerProps {
-  size: number;
+  size?: number;
 }
 
-const Spinner = ({ size }: PropsWithChildren<SpinnerProps>) => {
+const Spinner = ({ size = 50 }: PropsWithChildren<SpinnerProps>) => {
   return (
     <SpinnerContainer>
       <Dot size={size} />
@@ -35,7 +35,7 @@ const SpinnerContainer = styled.div`
 const Dot = styled.div<SpinnerProps>`
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
-  border: ${({ size }) => size / 10}px solid
+  border: ${({ size }) => (size ?? 50) / 10}px solid
     ${(props) => props.theme.COLORS['P-BUTTON1']};
   border-top-color: transparent;
   border-radius: 50%;
