@@ -8,4 +8,5 @@ export const END_POINT = {
   HOME: `/api/home`,
   POST: '/api/post',
   CALENDAR: '/api/calendar',
+  SLIDE: '/api/slide',
 } as const;
