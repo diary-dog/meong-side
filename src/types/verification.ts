@@ -1,8 +1,5 @@
 import { GENDER_TYPE } from '../constants/pet';
-import {
-  VERIFICATION,
-  VerificationCategoryType,
-} from '../constants/verifications';
+import { VerificationCategoryType } from '../constants/verifications';
 
 interface User {
   id: string;
@@ -11,7 +8,7 @@ interface User {
 }
 
 export interface UploadVerificationContents {
-  category: (typeof VERIFICATION)[keyof typeof VERIFICATION];
+  category: VerificationCategoryType;
   imageUrl?: string;
   comment?: string;
   verificationOption?: string;
@@ -61,4 +58,21 @@ export interface VerificationByDate {
     createdAt: Date;
     author: User;
   }>;
+}
+export interface VerificationResponse {
+  id: string;
+  createdAt: string;
+  category: VerificationCategoryType;
+  imageUrl?: string;
+  verificationOption?: string;
+  comment?: string;
+  author: User;
+}
+
+export interface VerificationsForSlide {
+  currentPage: number;
+  totalPages: number;
+  totalItems: number;
+  pageSize: number;
+  items: VerificationResponse[];
 }
