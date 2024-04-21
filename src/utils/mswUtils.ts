@@ -12,5 +12,5 @@ export const baseURL = (path: string) => {
 
 export type MSWResolvers = Record<
   string,
-  Record<string, HttpResponseResolver<PathParams, DefaultBodyType, undefined>>
+  HttpResponseResolver<PathParams, DefaultBodyType, undefined>
 >;
