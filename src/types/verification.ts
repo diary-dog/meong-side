@@ -63,9 +63,9 @@ export interface VerificationResponse {
   id: string;
   createdAt: string;
   category: VerificationCategoryType;
-  imageUrl?: string;
+  imageUrl: string;
   verificationOption?: string;
-  comment?: string;
+  comment: string;
   author: User;
 }
 
@@ -75,4 +75,30 @@ export interface VerificationForSlide {
   totalItems: number;
   pageSize: number;
   items: VerificationResponse[];
+}
+
+export interface VerificationsFroGrid {
+  currentPage: number;
+  totalPages: number;
+  totalItems: number;
+  pageSize: number;
+  items: VerificationForGridResponse[];
+}
+interface VerificationForGridResponse {
+  id: string;
+  createdAt: string;
+  imageUrl: string;
+  author: User;
+}
+
+export type GridType = 'all' | 'uploader';
+export type SortType = 'ascending' | 'descending';
+
+export interface VerificationsFroGridByUploader {
+  items: Array<{
+    id: string;
+    createdAt: string;
+    imageUrl: string;
+  }>;
+  author: User;
 }
