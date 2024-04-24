@@ -9,4 +9,7 @@ export const END_POINT = {
   POST: '/api/post',
   CALENDAR: '/api/calendar',
   SLIDE: '/api/slide',
+  GRID: '/api/grid',
+  GRID_BY_UPLOADER: '/api/grid/uploader',
+  UPLOADER_GRID: '/api/grid/:userId',
 } as const;

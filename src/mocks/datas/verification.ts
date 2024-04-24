@@ -4,7 +4,7 @@ import type {
   VerificationForSlide,
   VerificationsForCalendar,
   VerificationsFroGrid,
-  VerificationsFroGridByUploader,
+  VerificationsForGridByUploader,
 } from '../../types/verification';
 import petMockImageUrl1 from './mock1.jpeg';
 import petMockImageUrl2 from './mock4.jpeg';
@@ -2264,7 +2264,7 @@ export const verificationsForGridData: (
   }
 };
 
-export const UploaderTypeVerificationsForGridData: VerificationsFroGridByUploader[] =
+export const UploaderTypeVerificationsForGridData: VerificationsForGridByUploader[] =
   [
     {
       author: {
