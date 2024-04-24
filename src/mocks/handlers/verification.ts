@@ -15,4 +15,19 @@ export const verificationHandler = [
 
   /** get verification for slide data */
   http.get(baseURL(END_POINT.SLIDE), verification.getVerificationForSlide),
+
+  /** get verification for grid all data */
+  http.get(baseURL(END_POINT.GRID), verification.getVerificationForAllGrid),
+
+  /** get verification for grid by Uploader data */
+  http.get(
+    baseURL(END_POINT.GRID_BY_UPLOADER),
+    verification.getVerificationForGridByUploader
+  ),
+
+  /** get verification for one specific uploader grid data */
+  http.get(
+    baseURL(END_POINT.UPLOADER_GRID),
+    verification.getVerificationForUploaderGrid
+  ),
 ];
