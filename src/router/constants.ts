@@ -9,7 +9,7 @@ const ROUTE_PATH = {
   SLIDE: '/slide',
   GRID: '/grid',
   GRID_BY_TYPE: '/grid/:type',
-  GRID_BY_USER: '/grid/uploader/:userId',
+  UPLOADER_GRID: '/grid/uploader/:userId',
   SETTING: '/setting',
   SENDING_INVITATION: '/setting/invitation',
   FAMILY: '/setting/family',
