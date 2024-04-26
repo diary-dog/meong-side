@@ -84,7 +84,7 @@ export interface VerificationsFroGrid {
   pageSize: number;
   items: VerificationForGridResponse[];
 }
-interface VerificationForGridResponse {
+export interface VerificationForGridResponse {
   id: string;
   createdAt: string;
   imageUrl: string;
@@ -94,7 +94,7 @@ interface VerificationForGridResponse {
 export type GridType = 'all' | 'uploader';
 export type SortType = 'ascending' | 'descending';
 
-export interface VerificationsFroGridByUploader {
+export interface VerificationsForGridByUploader {
   items: Array<{
     id: string;
     createdAt: string;
