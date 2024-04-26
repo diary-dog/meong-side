@@ -1,13 +1,14 @@
-import { PropsWithChildren } from 'react';
+import { CSSProperties, PropsWithChildren } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 interface SpinnerProps {
   size?: number;
+  style?: CSSProperties;
 }
 
-const Spinner = ({ size = 50 }: PropsWithChildren<SpinnerProps>) => {
+const Spinner = ({ size = 50, style }: PropsWithChildren<SpinnerProps>) => {
   return (
-    <SpinnerContainer>
+    <SpinnerContainer style={style}>
       <Dot size={size} />
     </SpinnerContainer>
   );
