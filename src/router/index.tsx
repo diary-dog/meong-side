@@ -55,7 +55,7 @@ const router = createBrowserRouter([
           },
           {
             element: <GridByUser />,
-            path: ROUTE_PATH.GRID_BY_USER,
+            path: ROUTE_PATH.UPLOADER_GRID,
           },
           {
             element: <Calendar />,

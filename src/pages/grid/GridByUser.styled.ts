@@ -1,24 +1,20 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  background-color: white;
-  width: 100%;
-  max-width: 393px;
-  top: 50px;
-  height: 100px;
+export const Wrapper = styled.div`
+  height: calc(100vh - 200px);
+  padding-top: 100px;
 `;
 
-export const BackButton = styled.button`
+export const Top = styled.div`
+  position: fixed;
+  width: 100%;
+  max-width: 393px;
   display: flex;
-  gap: 5px;
-  align-items: center;
-`;
-export const Uploader = styled.div`
-  align-self: center;
-  margin-top: 10px;
+  flex-direction: column;
+  gap: 23px;
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
+
+  h3 {
+    text-align: center;
+  }
 `;
