@@ -2,11 +2,11 @@ import QueryString from 'qs';
 import { useNavigate } from 'react-router-dom';
 
 import Switch from '../../../components/Switch';
-import { Sort } from '../Grid';
 
 import * as S from './SortButton.styled';
+import { SortType } from '../../../types/verification';
 
-const SortButton = ({ type }: { type: Sort }) => {
+const SortButton = ({ type }: { type: SortType }) => {
   const navigate = useNavigate();
   const updateQueryParams = ({
     newQuery,
