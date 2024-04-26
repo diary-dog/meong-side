@@ -1,18 +1,21 @@
-import QueryString from 'qs';
+import qs from 'qs';
 
 import apiClient from '.';
 import { END_POINT } from '../constants/endPoint';
 import type {
+  SortType,
   UploadVerificationContents,
   VerificationCount,
   VerificationForSlide,
   VerificationsForCalendar,
+  VerificationsFroGrid,
+  VerificationsForGridByUploader,
 } from '../types/verification';
 
 const verificationAPI = {
   /** verification count 및 pet info 조회 */
   getVerificationCount: async (petId: number) => {
-    const query = QueryString.stringify({ petId: petId }, { skipNulls: true });
+    const query = qs.stringify({ petId: petId }, { skipNulls: true });
     const { data } = await apiClient.get<VerificationCount>(
       `${END_POINT.HOME}?${query}`
     );
@@ -34,7 +37,7 @@ const verificationAPI = {
     year: number;
     month: number;
   }) => {
-    const query = QueryString.stringify({ year, month });
+    const query = qs.stringify({ year, month });
     const { data } = await apiClient.get<VerificationsForCalendar>(
       `${END_POINT.CALENDAR}?${query}`
     );
@@ -42,9 +45,46 @@ const verificationAPI = {
   },
   /** get verification for slide data */
   getVerificationForSlide: async ({ currentPage }: { currentPage: number }) => {
-    const query = QueryString.stringify({ currentPage });
+    const query = qs.stringify({ currentPage });
     const { data } = await apiClient.get<VerificationForSlide>(
       `${END_POINT.SLIDE}?${query}`
+    );
+    return data;
+  },
+  /** get verification for all grid data  */
+  getAllGridVerifications: async ({
+    sort,
+    currentPage,
+  }: {
+    sort: SortType;
+    currentPage: number;
+  }) => {
+    const query = qs.stringify({ sort, currentPage }, { skipNulls: true });
+    const { data } = await apiClient.get<VerificationsFroGrid>(
+      `${END_POINT.GRID}?${query}`
+    );
+    return data;
+  },
+  /** get verification for grid by uploader data  */
+  getVerificationByUploaderForGrid: async () => {
+    const { data } = await apiClient.get<VerificationsForGridByUploader[]>(
+      END_POINT.GRID_BY_UPLOADER
+    );
+    return data;
+  },
+  /** get verification for uploader grid data  */
+  getGridVerificationsForUploader: async ({
+    uploaderId,
+    sort,
+    currentPage,
+  }: {
+    uploaderId: string;
+    sort: SortType;
+    currentPage: number;
+  }) => {
+    const query = qs.stringify({ sort, currentPage }, { skipNulls: true });
+    const { data } = await apiClient.get<VerificationsFroGrid>(
+      `${END_POINT.GRID}/${uploaderId}?${query}`
     );
     return data;
   },
