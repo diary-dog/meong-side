@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 import SortButton from './SortButton';
 import { SortType } from '../../../types/verification';
 
-import * as S from './AllTypeGrid.styled';
+import * as S from './GridVerificationsForAll.styled';
 
 const AllTypeGridVerifications = () => {
   const { data, targetItemRef, isFetchingNextPage } =
@@ -22,7 +22,7 @@ const AllTypeGridVerifications = () => {
   );
 };
 
-const AllTypeGrid = () => {
+const GridVerificationsForAll = () => {
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
   const sortType = searchParams.get('sortType') || 'ascending';
@@ -42,4 +42,4 @@ const AllTypeGrid = () => {
     </S.Container>
   );
 };
-export default AllTypeGrid;
+export default GridVerificationsForAll;

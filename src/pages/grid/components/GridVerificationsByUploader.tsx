@@ -5,7 +5,7 @@ import { RightArrowIcon } from '../../../components/Icons';
 import { useGridVerificationsForUploader } from '../hooks/queries';
 import Spinner from '../../../components/Spinner';
 
-import * as S from './UploaderTypeGrid.styled';
+import * as S from './GridVerificationsByUploader.styled';
 
 const UploaderTypeGridVerifications = () => {
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const UploaderTypeGridVerifications = () => {
   ));
 };
 
-const UploaderTypeGrid = () => {
+const GridVerificationsByUploader = () => {
   return (
     <S.GridContainer>
       <Suspense fallback={<Spinner size={100} />}>
@@ -35,4 +35,4 @@ const UploaderTypeGrid = () => {
     </S.GridContainer>
   );
 };
-export default UploaderTypeGrid;
+export default GridVerificationsByUploader;
