@@ -3,7 +3,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ROUTE_PATH from '../../router/constants';
 import { Layout } from '../../components';
 import { SlideIcon } from '../../components/Icons';
-import { AllTypeGrid, GridLayout, UploaderTypeGrid } from './components';
+import {
+  GridVerificationsForAll,
+  GridLayout,
+  GridVerificationsByUploader,
+} from './components';
 import { GridType } from '../../types/verification';
 
 const Grid = () => {
@@ -17,9 +21,9 @@ const Grid = () => {
         rightButton: <SlideIcon onClick={() => navigate(ROUTE_PATH.SLIDE)} />,
       }}
     >
-      <GridLayout type={type ?? 'all'}>
-        {type === 'all' && <AllTypeGrid />}
-        {type === 'uploader' && <UploaderTypeGrid />}
+      <GridLayout type={type}>
+        {type === 'all' && <GridVerificationsForAll />}
+        {type === 'uploader' && <GridVerificationsByUploader />}
       </GridLayout>
     </Layout>
   );

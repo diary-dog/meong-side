@@ -7,7 +7,7 @@ import * as S from './GridLayout.styled';
 import { LeftArrowIcon } from '../../../components/Icons';
 
 const GridLayout = ({
-  type,
+  type = 'all',
   children,
 }: PropsWithChildren<{ type?: GridType }>) => {
   const navigate = useNavigate();
