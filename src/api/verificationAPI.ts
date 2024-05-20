@@ -14,7 +14,7 @@ import type {
 
 const verificationAPI = {
   /** verification count 및 pet info 조회 */
-  getVerificationCount: async (petId: number) => {
+  getVerificationCount: async (petId: string) => {
     const query = qs.stringify({ petId: petId }, { skipNulls: true });
     const { data } = await apiClient.get<VerificationCount>(
       `${END_POINT.HOME}?${query}`
