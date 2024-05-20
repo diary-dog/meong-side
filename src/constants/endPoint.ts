@@ -12,4 +12,6 @@ export const END_POINT = {
   GRID: '/api/grid',
   GRID_BY_UPLOADER: '/api/grid/uploader',
   UPLOADER_GRID: '/api/grid/:userId',
+  FAMILY: (petId: string) => `/api/family/${petId}`,
+  INVITE_MEMBER: (petId: string) => `/api/family/${petId}/member`,
 } as const;
