@@ -7,6 +7,7 @@ import UserImage from '../../../components/UserImage';
 import { Button, Input } from '../../../components';
 
 import * as G from './settingGlobal.styled';
+import useInviteMember from '../hooks/mutation';
 
 interface SendingInvitation {
   email: string;
@@ -20,11 +21,16 @@ const SendingInvitationForm = ({ onNext }: { onNext: () => void }) => {
     formState: { errors },
   } = useForm<SendingInvitation>({ mode: 'onSubmit' });
   const navigate = useNavigate();
+  const mutation = useInviteMember();
+
+  // TODO: 현재 연결된 펫 데이터를 페칭해오는 api 와 쿼리훅 추가 필요
   const imageUrl = '';
 
   const onSubmit = (data: SendingInvitation) => {
     onNext();
     console.log(data);
+    // TODO: 현재 로그인된 유저가 조회하고 있는 pet Id를 최상단에서 저장하고 있어야한다.
+    mutation.mutate({ petId: '1', email: data.email });
   };
   const isValid = watch('email')?.length > 0 && !errors.email?.message;
 
