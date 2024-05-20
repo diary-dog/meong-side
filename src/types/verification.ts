@@ -1,11 +1,6 @@
 import { GENDER_TYPE } from '../constants/pet';
 import { VerificationCategoryType } from '../constants/verifications';
-
-interface User {
-  id: string;
-  imageUrl: string;
-  name: string;
-}
+import { User } from './user';
 
 export interface UploadVerificationContents {
   category: VerificationCategoryType;
