@@ -9,7 +9,13 @@ const userAPI = {
     return data;
   },
   /** invite member to family */
-  inviteMemberToFamily: async (petId: string, email: string) => {
+  inviteMemberToFamily: async ({
+    petId,
+    email,
+  }: {
+    petId: string;
+    email: string;
+  }) => {
     const { data } = await apiClient.post(END_POINT.INVITE_MEMBER(petId), {
       email,
     });
