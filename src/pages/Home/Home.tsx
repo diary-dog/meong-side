@@ -9,7 +9,7 @@ import VerificationButton from './components/VerificationButton';
 import * as S from './Home.styled';
 
 const Home = () => {
-  const { data, isLoading } = useVerificationCount({ petId: 1 });
+  const { data, isLoading } = useVerificationCount({ petId: '1' });
 
   return (
     <Layout>
