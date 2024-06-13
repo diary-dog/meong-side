@@ -8,9 +8,9 @@ import {
   verificationForSlideData,
   verificationsForCalendarData,
 } from '../datas/verification';
-import { MSWResolvers } from '../../utils/mswUtils';
 
-import type { UploadVerificationContents } from '../../model/verification';
+import type { UploadVerificationContents } from '../../shared/types/verification';
+import { MSWResolvers } from '../../shared/lib/mswUtils';
 
 export const verification = {
   getVerificationCount: async () => {

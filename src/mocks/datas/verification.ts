@@ -5,7 +5,7 @@ import type {
   VerificationsForCalendar,
   VerificationsFroGrid,
   VerificationsForGridByUploader,
-} from '../../model/verification';
+} from '../../shared/types/verification';
 import petMockImageUrl1 from './mock1.jpeg';
 import petMockImageUrl2 from './mock4.jpeg';
 import petMockImageUrl3 from './mock5.jpeg';

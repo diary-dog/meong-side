@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import BinggraeMelona from '../assets/fonts/BinggraeMelona.ttf';
+import BinggraeMelona from '../../assets/fonts/BinggraeMelona.ttf';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
