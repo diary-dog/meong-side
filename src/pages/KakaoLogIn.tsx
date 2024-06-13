@@ -1,5 +1,5 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import ROUTE_PATH from '../router/constants';
+import ROUTE_PATH from '../shared/constants/routePath';
 import { useEffect } from 'react';
 
 const KakaoLogIn = () => {

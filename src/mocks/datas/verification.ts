@@ -1,11 +1,11 @@
-import { GENDER } from '../../constants/pet';
+import { GENDER } from '../../shared/constants/pet';
 import type {
   VerificationCount,
   VerificationForSlide,
   VerificationsForCalendar,
   VerificationsFroGrid,
   VerificationsForGridByUploader,
-} from '../../types/verification';
+} from '../../model/verification';
 import petMockImageUrl1 from './mock1.jpeg';
 import petMockImageUrl2 from './mock4.jpeg';
 import petMockImageUrl3 from './mock5.jpeg';

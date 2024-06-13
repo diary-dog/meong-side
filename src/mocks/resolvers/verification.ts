@@ -10,7 +10,7 @@ import {
 } from '../datas/verification';
 import { MSWResolvers } from '../../utils/mswUtils';
 
-import type { UploadVerificationContents } from '../../types/verification';
+import type { UploadVerificationContents } from '../../model/verification';
 
 export const verification = {
   getVerificationCount: async () => {

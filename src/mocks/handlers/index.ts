@@ -1,6 +1,6 @@
-import { userHandler } from './user';
+import { familyHandler } from './family';
 import { verificationHandler } from './verification';
 
-const mockHandlers = [...verificationHandler, ...userHandler];
+const mockHandlers = [...verificationHandler, ...familyHandler];
 
 export default mockHandlers;

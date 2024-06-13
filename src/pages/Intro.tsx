@@ -1,6 +1,6 @@
-import Button from '../components/Button';
-import { Dog, Ellipse, HeartCircle, KaKaoIcon } from '../components/Icons';
-import ROUTE_PATH from '../router/constants';
+import ROUTE_PATH from '../shared/constants/routePath';
+import { Button } from '../shared/ui';
+import { Dog, Ellipse, HeartCircle, KaKaoIcon } from '../shared/ui/Icons';
 
 import * as S from './Intro.styled';
 

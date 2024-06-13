@@ -1,4 +1,4 @@
-import { Family } from '../../types/user';
+import { Family } from '../../model/user';
 import userMockImageUrl1 from './mock2.jpeg';
 import userMockImageUrl2 from './mock3.jpeg';
 import userMockImageUrl3 from './mock6.jpeg';
