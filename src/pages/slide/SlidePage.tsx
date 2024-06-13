@@ -1,10 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { Layout } from '../../components';
-import { GridIcon } from '../../components/Icons';
-import ROUTE_PATH from '../../router/constants';
-import Slide from './components/Slide';
 import { Suspense } from 'react';
-import Spinner from '../../components/Spinner';
+
+import { Layout } from '../../shared/ui';
+import { GridIcon } from '../../shared/ui/Icons';
+import ROUTE_PATH from '../../shared/constants/routePath';
+import Slide from '../../widgets/slide/ui/Slide';
+import Spinner from '../../shared/ui/Spinner';
 
 const SlidePage = () => {
   const navigate = useNavigate();

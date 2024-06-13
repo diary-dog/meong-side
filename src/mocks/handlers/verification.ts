@@ -1,7 +1,7 @@
 import { http } from 'msw';
-import { baseURL } from '../../utils/mswUtils';
-import { END_POINT } from '../../constants/endPoint';
+import { END_POINT } from '../../shared/constants/endPoint';
 import { verification } from '../resolvers/verification';
+import { baseURL } from '../../shared/lib/mswUtils';
 
 export const verificationHandler = [
   /** verification count 및 pet info 조회 */
