@@ -1,11 +1,9 @@
 import React from 'react';
-import { RouterProvider } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 
-import router from './router';
 import { SKIP_MSW_WARNING_URL } from './shared/constants/msw';
 
-import Layout from './Layout';
+import Providers from './providers/index.tsx';
 
 async function enableMocking() {
   const { worker } = await import('./mocks/browser.ts');
@@ -22,9 +20,7 @@ async function enableMocking() {
 enableMocking().then(() =>
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-      <Layout>
-        <RouterProvider router={router} />
-      </Layout>
+      <Providers />
     </React.StrictMode>
   )
 );
