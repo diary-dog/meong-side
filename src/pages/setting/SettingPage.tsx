@@ -1,5 +1,6 @@
 import { Suspense, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Spinner from '../../shared/ui/Spinner';
 
 import { Layout } from '../../shared/ui';
 import { Message, RightArrowIcon } from '../../shared/ui/Icons';
@@ -8,7 +9,6 @@ import ROUTE_PATH from '../../shared/constants/routePath';
 import FamilyItemList from '../../widgets/family/ui/FamilyItemList';
 import Switch from '../../shared/ui/Switch';
 import useFamilyMembers from '../../entities/family/api/useFamilyMembers';
-import useVerificationCount from '../../entities/verification/api/useVerificationCount';
 import UserImage from '../../shared/ui/UserImage';
 
 import * as S from './SettingPage.styled';
@@ -17,9 +17,6 @@ const SettingPage = () => {
   const navigate = useNavigate();
   const [isAlarm, setIsAlarm] = useState(true);
   const { data: familyMembers } = useFamilyMembers({ petId: '1' });
-  const { data: verificationCount } = useVerificationCount({
-    petId: '1',
-  });
 
   return (
     <Layout>
@@ -27,7 +24,9 @@ const SettingPage = () => {
         <S.LoggedInUserField>
           <UserImage size="XS" imageUrl={familyMembers?.manager.imageUrl} />
         </S.LoggedInUserField>
-        <VerificationField pet={verificationCount} />
+        <Suspense fallback={<Spinner />}>
+          <VerificationField petId="1" />
+        </Suspense>
         <S.FamilyContainer>
           <S.FamilyTitle>
             <span>월이의 가족</span>
