@@ -1,8 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
+import ErrorResetBoundaryWrapper from './shared/error/ErrorResetBoundaryWrapper';
 
-/*레이아웃 컴포넌트가 감싸집니다 */
 function App() {
-  return <Outlet />;
+  return (
+    <ErrorResetBoundaryWrapper>
+      <Outlet />
+    </ErrorResetBoundaryWrapper>
+  );
 }
 
 export default App;
