@@ -2,32 +2,45 @@ import { http } from 'msw';
 import { END_POINT } from '../../shared/constants/endPoint';
 import { verification } from '../resolvers/verification';
 import { baseURL } from '../../shared/lib/mswUtils';
+import withAuth from '../middleware/withAuth';
 
 export const verificationHandler = [
   /** verification count 및 pet info 조회 */
-  http.get(baseURL(END_POINT.HOME), verification.getVerificationCount),
+  http.get(
+    baseURL(END_POINT.HOME),
+    withAuth(verification.getVerificationCount)
+  ),
 
   /** pet verification post */
-  http.post(baseURL(END_POINT.POST), verification.uploadVerification),
+  http.post(baseURL(END_POINT.POST), withAuth(verification.uploadVerification)),
 
   /** get verification for calendar data */
-  http.get(baseURL(END_POINT.CALENDAR), verification.getVerificationCalendar),
+  http.get(
+    baseURL(END_POINT.CALENDAR),
+    withAuth(verification.getVerificationCalendar)
+  ),
 
   /** get verification for slide data */
-  http.get(baseURL(END_POINT.SLIDE), verification.getVerificationForSlide),
+  http.get(
+    baseURL(END_POINT.SLIDE),
+    withAuth(verification.getVerificationForSlide)
+  ),
 
   /** get verification for grid all data */
-  http.get(baseURL(END_POINT.GRID), verification.getVerificationForAllGrid),
+  http.get(
+    baseURL(END_POINT.GRID),
+    withAuth(verification.getVerificationForAllGrid)
+  ),
 
   /** get verification for grid by Uploader data */
   http.get(
     baseURL(END_POINT.GRID_BY_UPLOADER),
-    verification.getVerificationForGridByUploader
+    withAuth(verification.getVerificationForGridByUploader)
   ),
 
   /** get verification for one specific uploader grid data */
   http.get(
     baseURL(END_POINT.UPLOADER_GRID),
-    verification.getVerificationForUploaderGrid
+    withAuth(verification.getVerificationForUploaderGrid)
   ),
 ];
