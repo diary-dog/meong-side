@@ -1,7 +1,10 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import ROUTE_PATH from '../shared/constants/routePath';
 import { useEffect } from 'react';
+import styled from 'styled-components';
+
+import ROUTE_PATH from '../shared/constants/routePath';
 import useKakaoLogin from '../entities/verification/api/useKakaoLogin';
+import Spinner from '../shared/ui/Spinner';
 
 const KakaoLogIn = () => {
   const navigate = useNavigate();
@@ -20,11 +23,13 @@ const KakaoLogIn = () => {
   }, [code, mutateAsync, navigate]);
 
   return (
-    <div>
-      <p>로그인 중입니다.</p>
-      <p>잠시만 기다려주세요.</p>
-    </div>
+    <Container>
+      <Spinner />
+    </Container>
   );
 };
 
+const Container = styled.div`
+  height: 100vh;
+`;
 export default KakaoLogIn;
