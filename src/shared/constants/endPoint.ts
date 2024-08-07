@@ -14,5 +14,5 @@ export const END_POINT = {
   UPLOADER_GRID: '/api/grid/:userId',
   FAMILY: (petId: string) => `/api/family/${petId}`,
   INVITE_MEMBER: (petId: string) => `/api/family/${petId}/member`,
-  KAKAO_TOKEN: '/auth/kakao-login-page',
+  KAKAO_LOGIN: '/auth/kakao-login',
 } as const;

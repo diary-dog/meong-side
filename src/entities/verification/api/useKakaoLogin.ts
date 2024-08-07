@@ -1,12 +1,10 @@
-import { useQuery } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 
-import { userKey } from '../../../shared/lib/query/queryKey';
 import userAPI from './useAPI';
 
 const useKakaoLogin = () => {
-  return useQuery({
-    queryKey: userKey.kakaoLogin(),
-    queryFn: () => userAPI.kakaoLogin(),
+  return useMutation({
+    mutationFn: (code: string) => userAPI.kakaoLogin(code),
   });
 };
 export default useKakaoLogin;
