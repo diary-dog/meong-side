@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import { BACKEND_ENDPOINT } from '../constants/endPoint';
 import { ApiError } from './customError';
+import { tokenStorage } from '../lib/tokenStorage';
 
 const apiClient = axios.create({
   baseURL: BACKEND_ENDPOINT,
@@ -13,7 +14,7 @@ const apiClient = axios.create({
 
 apiClient.interceptors.request.use(
   (config) => {
-    const accessToken = window.localStorage.getItem('token');
+    const accessToken = tokenStorage.getToken();
     config.headers['Authorization'] = `Bearer ${accessToken}`;
 
     return config;
