@@ -1,18 +1,23 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import ROUTE_PATH from '../shared/constants/routePath';
 import { useEffect } from 'react';
+import useKakaoLogin from '../entities/verification/api/useKakaoLogin';
 
 const KakaoLogIn = () => {
   const navigate = useNavigate();
-  const [search] = useSearchParams();
-  const code = search.get('code');
+  const [searchParams] = useSearchParams();
+  const code = searchParams.get('code');
+  const { mutateAsync } = useKakaoLogin();
 
   useEffect(() => {
-    if (code) {
-      localStorage.setItem('token', 'test');
-      navigate(ROUTE_PATH.ROOT);
-    }
-  }, [code, navigate]);
+    (async () => {
+      if (code) {
+        const data = await mutateAsync(code);
+        localStorage.setItem('token', data.accessToken);
+        navigate(ROUTE_PATH.ROOT);
+      }
+    })();
+  }, [code, mutateAsync, navigate]);
 
   return (
     <div>
