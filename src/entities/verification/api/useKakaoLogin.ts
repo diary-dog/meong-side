@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 
-import userAPI from './useAPI';
+import userAPI from './userAPI';
 
 const useKakaoLogin = () => {
   return useMutation({

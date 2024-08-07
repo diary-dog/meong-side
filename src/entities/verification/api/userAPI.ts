@@ -11,10 +11,6 @@ const userAPI = {
     });
     return data;
   },
-  checkLogin: async () => {
-    const { data } = await apiClient.post(END_POINT.LOGIN_CHECK);
-    return data;
-  },
 };
 
 export default userAPI;

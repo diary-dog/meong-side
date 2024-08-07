@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import ROUTE_PATH from '../shared/constants/routePath';
 import useKakaoLogin from '../entities/verification/api/useKakaoLogin';
 import Spinner from '../shared/ui/Spinner';
+import { tokenStorage } from '../shared/lib/tokenStorage';
 
 const KakaoLogIn = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const KakaoLogIn = () => {
     (async () => {
       if (code) {
         const data = await mutateAsync(code);
-        localStorage.setItem('token', data.accessToken);
+        tokenStorage.setToken(data.accessToken);
         navigate(ROUTE_PATH.ROOT);
       }
     })();
