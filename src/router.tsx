@@ -17,7 +17,7 @@ import {
   SendingInvitation,
   FamilyList,
 } from './pages';
-import AuthLayout from './providers/AuthLayout';
+import AuthProvider from './providers/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -34,13 +34,13 @@ const router = createBrowserRouter([
         path: ROUTE_PATH.KAKAO_LOGIN,
       },
       {
-        element: <Register />,
-        path: ROUTE_PATH.REGISTER_PET,
-      },
-      {
-        element: <AuthLayout />,
+        element: <AuthProvider />,
         path: ROUTE_PATH.ROOT,
         children: [
+          {
+            element: <Register />,
+            path: ROUTE_PATH.REGISTER_PET,
+          },
           {
             element: <Home />,
             path: ROUTE_PATH.ROOT,
