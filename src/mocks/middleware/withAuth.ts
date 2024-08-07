@@ -9,8 +9,9 @@ const withAuth = (
   resolver: HttpResponseResolver<PathParams, DefaultBodyType, undefined>
 ): HttpResponseResolver<PathParams, DefaultBodyType, undefined> => {
   return async (input) => {
-    const { cookies } = input;
-    if (!cookies.access_token) {
+    const { request } = input;
+    const accessToken = request.headers.get('Authorization');
+    if (!accessToken) {
       return new HttpResponse('Authorization', { status: 401 });
     }
 

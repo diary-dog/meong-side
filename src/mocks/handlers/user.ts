@@ -6,5 +6,5 @@ import { user } from '../resolvers/user';
 
 export const userHandler = [
   /** kakao login */
-  http.get(baseURL(END_POINT.KAKAO_TOKEN), user.kakaoLogin),
+  http.post(baseURL(END_POINT.KAKAO_LOGIN), user.kakaoLogin),
 ];
