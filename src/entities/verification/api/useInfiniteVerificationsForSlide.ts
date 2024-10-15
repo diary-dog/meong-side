@@ -16,10 +16,7 @@ const useInfiniteVerificationsForSlide = () => {
 
   const { targetItemRef } =
     useIntersectionObserver<HTMLDivElement>(fetchNextPage);
-  const slideData = data?.pages
-    .reverse()
-    .flatMap((page) => page.items)
-    .reverse();
+  const slideData = data?.pages.flatMap((page) => page.items);
 
   return { data: slideData, targetItemRef, isFetchingNextPage };
 };
