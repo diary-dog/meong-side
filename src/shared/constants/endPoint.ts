@@ -7,6 +7,7 @@ export const BACKEND_ENDPOINT = import.meta.env.DEV
 export const END_POINT = {
   HOME: `/api/home`,
   POST: '/api/post',
+  DETAIL: (verificationId: string) => `/api/verification/${verificationId}`,
   CALENDAR: '/api/calendar',
   SLIDE: '/api/slide',
   GRID: '/api/grid',

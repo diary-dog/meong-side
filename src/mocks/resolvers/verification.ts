@@ -7,12 +7,17 @@ import {
   verificationCountInfo,
   verificationForSlideData,
   verificationsForCalendarData,
+  detailVerificationData,
 } from '../datas/verification';
 
 import type { UploadVerificationContents } from '../../shared/types/verification';
 import { MSWResolvers } from '../../shared/lib/mswUtils';
 
 export const verification = {
+  getDetailVerification: async () => {
+    await delay();
+    return HttpResponse.json(detailVerificationData);
+  },
   getVerificationCount: async () => {
     await delay();
     return HttpResponse.json(verificationCountInfo);
