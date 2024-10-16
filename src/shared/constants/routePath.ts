@@ -6,6 +6,7 @@ const ROUTE_PATH = {
   REGISTER_PEOPLE: '/register/people',
   VERIFICATION: '/verification',
   UPLOAD_VERIFICATION: '/verification/:category',
+  DETAIL_VERIFICATION: '/verification/:verificationId',
   SLIDE: '/slide',
   GRID: '/grid',
   GRID_BY_TYPE: '/grid/:type',

@@ -5,6 +5,7 @@ export { default as UploadVerification } from './upload/UploadVerificationPage';
 
 export { default as Intro } from './Intro';
 export { default as Home } from './Home/HomePage';
+export { default as DetailVerification } from './detailVerification/detailVerificationPage';
 
 export { default as SlidePage } from './slide/SlidePage';
 export { default as Grid } from './grid/GridPage';
