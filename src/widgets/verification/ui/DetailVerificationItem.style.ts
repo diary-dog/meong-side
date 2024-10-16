@@ -1,0 +1,65 @@
+import styled from 'styled-components';
+
+import { VerificationCategoryType } from '../../../shared/constants/verification';
+import {
+  getVerificationCategoryColor,
+  getVerificationCategoryTextColor,
+} from '../../../shared/lib/getVerificationCategoryColor';
+import { Link } from 'react-router-dom';
+
+export const FeedItemWrapper = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 5px white solid;
+
+  .image {
+    align-self: center;
+    width: 310px;
+    height: 310px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .comment {
+    line-height: 1.2;
+  }
+`;
+
+export const FeedItemHeader = styled.div<{
+  $category: VerificationCategoryType;
+}>`
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  & > * {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .info {
+    margin-left: auto;
+  }
+
+  .category {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 20px;
+    border-radius: 30px;
+    font-size: 11px;
+    background-color: ${({ $category }) =>
+      getVerificationCategoryColor($category)};
+    color: ${({ $category }) => getVerificationCategoryTextColor($category)};
+  }
+  .option {
+    font-size: 12px;
+  }
+  .date {
+    font-size: 11px;
+  }
+`;
