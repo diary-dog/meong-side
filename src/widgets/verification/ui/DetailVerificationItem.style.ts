@@ -13,6 +13,8 @@ export const FeedItemWrapper = styled(Link)`
   gap: 20px;
   padding: 20px;
   border: 5px white solid;
+  text-decoration: none;
+  color: black;
 
   .image {
     align-self: center;
