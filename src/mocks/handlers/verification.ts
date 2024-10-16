@@ -43,4 +43,10 @@ export const verificationHandler = [
     baseURL(END_POINT.UPLOADER_GRID),
     withAuth(verification.getVerificationForUploaderGrid)
   ),
+
+  /** get detail verification by id*/
+  http.get(
+    baseURL(END_POINT.DETAIL(':verificationId')),
+    withAuth(verification.getDetailVerification)
+  ),
 ];

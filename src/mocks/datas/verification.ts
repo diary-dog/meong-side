@@ -2512,3 +2512,18 @@ export const UploaderTypeVerificationsForGridData: VerificationsForGridByUploade
       ],
     },
   ];
+
+export const detailVerificationData = {
+  id: '0',
+  createdAt: '2024-04-21T12:00:00Z',
+  category: 'walk',
+  imageUrl: petMockImageUrl2,
+  verificationOption: '1시간 10분',
+  comment:
+    '왼쪽으로 가야되는데 오른쪽으로 간다고 개찡찡댔다... 다음타자 힘들듯^^',
+  author: {
+    id: '2',
+    imageUrl: userMockImageUrl2,
+    name: '막둥이',
+  },
+};
