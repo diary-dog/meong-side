@@ -3,6 +3,8 @@ import { SortType } from '../../types/verification';
 export const verificationKey = {
   base: ['verification'] as const,
   pet: (petId: string) => [...verificationKey.base, petId] as const,
+  verification: (verificationId: string) =>
+    [...verificationKey.base, verificationId] as const,
   grid: () => [...verificationKey.base, 'grid'] as const,
   allGrid: (sort: SortType) =>
     [...verificationKey.grid(), 'all', sort] as const,

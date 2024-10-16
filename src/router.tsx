@@ -16,6 +16,7 @@ import {
   GridByUser,
   SendingInvitation,
   FamilyList,
+  DetailVerification,
 } from './pages';
 import AuthProvider from './providers/AuthProvider';
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
           {
             element: <Home />,
             path: ROUTE_PATH.ROOT,
+          },
+          {
+            element: <DetailVerification />,
+            path: ROUTE_PATH.DETAIL_VERIFICATION,
           },
           {
             element: <SlidePage />,

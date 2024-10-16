@@ -9,6 +9,7 @@ import type {
   VerificationsForCalendar,
   VerificationsFroGrid,
   VerificationsForGridByUploader,
+  VerificationResponse,
 } from '../../../shared/types/verification';
 import apiClient from '../../../shared/api';
 
@@ -18,6 +19,13 @@ const verificationAPI = {
     const query = qs.stringify({ petId: petId }, { skipNulls: true });
     const { data } = await apiClient.get<VerificationCount>(
       `${END_POINT.HOME}?${query}`
+    );
+    return data;
+  },
+  /** verification detail info 조회 */
+  getDetailVerification: async (verificationId: string) => {
+    const { data } = await apiClient.get<VerificationResponse>(
+      END_POINT.DETAIL(verificationId)
     );
     return data;
   },
