@@ -21,25 +21,25 @@ const HomePage = () => {
           <S.VerificationWrapper>
             <VerificationButton
               name={VERIFICATION.WALK}
-              navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.WALK}`}
+              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.WALK}`}
               title="산책인증"
               icon={<Walk />}
             />
             <VerificationButton
               name={VERIFICATION.MEAL}
-              navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.MEAL}`}
+              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.MEAL}`}
               title="식사인증"
               icon={<Meal />}
             />
             <VerificationButton
               name={VERIFICATION.TREATS}
-              navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.TREATS}`}
+              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.TREATS}`}
               title="간식인증"
               icon={<Treats />}
             />
             <VerificationButton
               name={VERIFICATION.BATH}
-              navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.BATH}`}
+              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.BATH}`}
               title="목욕인증"
               icon={<Bath />}
             />
