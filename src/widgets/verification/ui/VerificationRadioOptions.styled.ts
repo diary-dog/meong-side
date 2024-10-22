@@ -1,13 +1,8 @@
 import styled from 'styled-components';
 
-import { VerificationWithCategory } from './VerificationRadioOptions';
-
-export const VerificationOptionContainer = styled.label<{
-  $name: VerificationWithCategory;
-}>`
+export const VerificationOptionContainer = styled.label`
   display: flex;
-  width: ${({ $name }) => ($name === 'treats' ? 'auto' : '100%')};
-  margin: ${({ $name }) => ($name === 'treats' ? '0 -60px' : '')};
+  width: 100%;
   justify-content: space-around;
   align-items: center;
   gap: 10px;

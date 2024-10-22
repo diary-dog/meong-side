@@ -16,12 +16,8 @@ export const MEAL_OPTION = {
 };
 
 export const TREATS_OPTION = {
-  DOG_CHEW: '강아지껌',
-  DRIED_TREAT: '건조간식',
-  JERKY_TREAT: '저키/트릿',
-  CAN: '캔',
-  BISCUIT: '비스킷',
-  OTHER: '기타',
+  ALL: '다 먹었어요!',
+  NONE: '거의 안먹었어요!',
 };
 
 export const BATH_OPTION = {

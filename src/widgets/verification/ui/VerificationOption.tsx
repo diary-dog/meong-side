@@ -44,7 +44,6 @@ const VerificationOption = ({
     case VERIFICATION.MEAL:
       return (
         <VerificationRadioOptions
-          name="meal"
           options={Object.values(MEAL_OPTION)}
           register={register}
           watch={watch}
@@ -54,7 +53,6 @@ const VerificationOption = ({
     case VERIFICATION.TREATS:
       return (
         <VerificationRadioOptions
-          name="treats"
           options={Object.values(TREATS_OPTION)}
           register={register}
           watch={watch}
@@ -64,7 +62,6 @@ const VerificationOption = ({
     case VERIFICATION.BATH:
       return (
         <VerificationRadioOptions
-          name="bath"
           options={Object.values(BATH_OPTION)}
           register={register}
           watch={watch}
