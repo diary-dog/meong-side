@@ -7,28 +7,31 @@ import withAuth from '../middleware/withAuth';
 export const verificationHandler = [
   /** verification count 및 pet info 조회 */
   http.get(
-    baseURL(END_POINT.HOME),
+    baseURL(END_POINT.VERIFICATIONS.COUNT()),
     withAuth(verification.getVerificationCount)
   ),
 
   /** pet verification post */
-  http.post(baseURL(END_POINT.POST), withAuth(verification.uploadVerification)),
+  http.post(
+    baseURL(END_POINT.VERIFICATION),
+    withAuth(verification.uploadVerification)
+  ),
 
   /** get verification for calendar data */
   http.get(
-    baseURL(END_POINT.CALENDAR),
+    baseURL(END_POINT.VERIFICATIONS.CALENDAR()),
     withAuth(verification.getVerificationCalendar)
   ),
 
   /** get verification for slide data */
   http.get(
-    baseURL(END_POINT.SLIDE),
+    baseURL(END_POINT.VERIFICATIONS.SLIDE()),
     withAuth(verification.getVerificationForSlide)
   ),
 
   /** get verification for grid all data */
   http.get(
-    baseURL(END_POINT.GRID),
+    baseURL(END_POINT.VERIFICATIONS.GRID()),
     withAuth(verification.getVerificationForAllGrid)
   ),
 
@@ -46,7 +49,7 @@ export const verificationHandler = [
 
   /** get detail verification by id*/
   http.get(
-    baseURL(END_POINT.DETAIL(':verificationId')),
+    baseURL(END_POINT.VERIFICATIONS.DETAIL(':verificationId')),
     withAuth(verification.getDetailVerification)
   ),
 ];
