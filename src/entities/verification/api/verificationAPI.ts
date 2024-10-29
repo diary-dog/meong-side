@@ -18,21 +18,21 @@ const verificationAPI = {
   getVerificationCount: async (petId: string) => {
     const query = qs.stringify({ petId: petId }, { skipNulls: true });
     const { data } = await apiClient.get<VerificationCount>(
-      `${END_POINT.HOME}?${query}`
+      `${END_POINT.VERIFICATIONS.COUNT()}?${query}`
     );
     return data;
   },
   /** verification detail info 조회 */
   getDetailVerification: async (verificationId: string) => {
     const { data } = await apiClient.get<VerificationResponse>(
-      END_POINT.DETAIL(verificationId)
+      END_POINT.VERIFICATIONS.DETAIL(verificationId)
     );
     return data;
   },
   /** pet verification post */
   postVerification: async (body: UploadVerificationContents) => {
     const { data } = await apiClient.post<UploadVerificationContents>(
-      END_POINT.POST,
+      END_POINT.VERIFICATION,
       body
     );
     return data;
@@ -47,7 +47,7 @@ const verificationAPI = {
   }) => {
     const query = qs.stringify({ year, month });
     const { data } = await apiClient.get<VerificationsForCalendar>(
-      `${END_POINT.CALENDAR}?${query}`
+      `${END_POINT.VERIFICATIONS.CALENDAR()}?${query}`
     );
     return data;
   },
@@ -55,7 +55,7 @@ const verificationAPI = {
   getVerificationForSlide: async ({ currentPage }: { currentPage: number }) => {
     const query = qs.stringify({ currentPage });
     const { data } = await apiClient.get<VerificationForSlide>(
-      `${END_POINT.SLIDE}?${query}`
+      `${END_POINT.VERIFICATIONS.SLIDE()}?${query}`
     );
     return data;
   },
@@ -69,7 +69,7 @@ const verificationAPI = {
   }) => {
     const query = qs.stringify({ sort, currentPage }, { skipNulls: true });
     const { data } = await apiClient.get<VerificationsFroGrid>(
-      `${END_POINT.GRID}?${query}`
+      `${END_POINT.VERIFICATIONS.GRID()}?${query}`
     );
     return data;
   },
@@ -92,7 +92,7 @@ const verificationAPI = {
   }) => {
     const query = qs.stringify({ sort, currentPage }, { skipNulls: true });
     const { data } = await apiClient.get<VerificationsFroGrid>(
-      `${END_POINT.GRID}/${uploaderId}?${query}`
+      `${END_POINT.VERIFICATIONS.GRID()}/${uploaderId}?${query}`
     );
     return data;
   },

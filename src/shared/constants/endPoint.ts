@@ -1,19 +1,30 @@
-const { VITE_BASE_URL } = import.meta.env;
+const { VITE_API_BASE_URL } = import.meta.env;
 
-export const BACKEND_ENDPOINT = import.meta.env.DEV
-  ? window.location.origin
-  : VITE_BASE_URL;
+export const BACKEND_ENDPOINT = VITE_API_BASE_URL
+  ? VITE_API_BASE_URL
+  : window.location.origin;
 
 export const END_POINT = {
-  HOME: `/api/home`,
-  POST: '/api/post',
-  DETAIL: (verificationId: string) => `/api/verification/${verificationId}`,
-  CALENDAR: '/api/calendar',
-  SLIDE: '/api/slide',
-  GRID: '/api/grid',
-  GRID_BY_UPLOADER: '/api/grid/uploader',
-  UPLOADER_GRID: '/api/grid/:userId',
-  FAMILY: (petId: string) => `/api/family/${petId}`,
-  INVITE_MEMBER: (petId: string) => `/api/family/${petId}/member`,
+  PET: '/pets',
+  PETS: {
+    DETAIL: (petId: string) => createPath(END_POINT.PET, petId),
+  },
+  VERIFICATION: '/verifications',
+  VERIFICATIONS: {
+    COUNT: () => createPath(END_POINT.VERIFICATION, `count`),
+    DETAIL: (verificationId: string) =>
+      createPath(END_POINT.VERIFICATION, verificationId),
+    CALENDAR: () => createPath(END_POINT.VERIFICATION, 'calendar'),
+    SLIDE: () => createPath(END_POINT.VERIFICATION, 'slide'),
+    GRID: () => createPath(END_POINT.VERIFICATION, 'grid'),
+  },
+  GRID_BY_UPLOADER: '/grid/uploader',
+  UPLOADER_GRID: '/grid/:userId',
+  FAMILY: (petId: string) => `/family/${petId}`,
+  INVITE_MEMBER: (petId: string) => `/family/${petId}/member`,
   KAKAO_LOGIN: '/auth/kakao-login',
-} as const;
+};
+
+export function createPath(...pathArray: string[]) {
+  return pathArray.join('/');
+}
