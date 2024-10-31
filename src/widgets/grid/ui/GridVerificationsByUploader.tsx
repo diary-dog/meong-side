@@ -9,7 +9,7 @@ import * as S from './GridVerificationsByUploader.styled';
 
 const UploaderTypeGridVerifications = () => {
   const navigate = useNavigate();
-  const gridByUploader = useGridVerificationsForUploader();
+  const { data: gridByUploader } = useGridVerificationsForUploader();
 
   return gridByUploader.map((verification) => (
     <S.UploaderSection key={verification.author.id}>

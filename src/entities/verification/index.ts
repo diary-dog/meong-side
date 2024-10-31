@@ -8,5 +8,3 @@ export { default as useInfiniteVerificationsForSlide } from './api/useInfiniteVe
 export { default as useUploaderGridVerifications } from './api/useUploaderGridVerifications';
 
 export { default as useVerificationCalendar } from './api/useVerificationCalendar';
-
-export { default as useVerificationCount } from './api/useVerificationCount';
