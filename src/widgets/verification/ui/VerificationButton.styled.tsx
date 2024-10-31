@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const VerificationSurvival = styled.div`
+export const VerificationDaily = styled.div`
   width: 295px;
   height: 71px;
   border-radius: 20px;

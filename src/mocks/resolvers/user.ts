@@ -49,4 +49,16 @@ export const user = {
       console.error(error);
     }
   },
+  checkLogin: async ({ cookies }) => {
+    if (cookies.access_token) {
+      return HttpResponse.json({
+        isLogin: true,
+        message: '로그인 유저입니다.',
+      });
+    }
+    return HttpResponse.json({
+      isLogin: false,
+      message: '비로그인 유저입니다.',
+    });
+  },
 } satisfies MSWResolvers;

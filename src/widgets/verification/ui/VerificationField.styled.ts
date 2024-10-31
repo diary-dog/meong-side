@@ -50,7 +50,7 @@ export const VerificationInformation = styled.div`
 export const VerificationCount = styled.div`
   display: flex;
   gap: 20px;
-  /* #walk {
+  #walk {
     color: ${({ theme }) => theme.COLORS['P-BUTTON1']};
   }
   #meal {
@@ -61,7 +61,7 @@ export const VerificationCount = styled.div`
   }
   #bath {
     color: ${({ theme }) => theme.COLORS.DECO3};
-  } */
+  }
 
   $width: 90px;
   @if not($width > 100px) {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const VerificationOptionContainer = styled.label`
+export const VerificationOptionContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -12,14 +12,17 @@ export const VerificationOptionContainer = styled.label`
     display: none;
   }
   label {
-    height: 35px;
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
-    color: ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
-    font-size: ${({ theme }) => theme.FONT.XS};
   }
-  label.selected {
+`;
+export const OptionLabel = styled.label`
+  height: 35px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
+  color: ${({ theme }) => theme.COLORS['FONT-COLOR-IA']};
+  font-size: ${({ theme }) => theme.FONT.XS};
+
+  &:has(input:checked) {
     background-color: ${({ theme }) => theme.COLORS['P-BUTTON2']};
     border-color: ${({ theme }) => theme.COLORS['P-BUTTON2']};
     color: ${({ theme }) => theme.COLORS['FONT-COLOR-A']};

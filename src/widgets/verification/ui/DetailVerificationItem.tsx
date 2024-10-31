@@ -1,6 +1,10 @@
 import UserImage from '../../../shared/ui/UserImage';
 import { VerificationResponse } from '../../../shared/types/verification';
-import { getVerificationTitle } from '../../../shared/lib/getVerificationInfo';
+import {
+  getDisplayOption,
+  getVerificationDetail,
+  getVerificationTitle,
+} from '../../../shared/lib/getVerificationInfo';
 import formattedDate from '../../../shared/lib/formattedDate';
 import ROUTE_PATH from '../../../shared/constants/routePath';
 
@@ -22,10 +26,18 @@ const DetailVerificationItem = ({
       <S.FeedItemHeader $category={verification.category}>
         <UserImage size="XS" imageUrl={verification.author?.imageUrl} />
         <div>
-          <span>{verification.author.name}</span>
+          <span>{verification.author?.name}</span>
           <div>
-            {verification.verificationOption && (
-              <p className="option">{verification.verificationOption}</p>
+            {verification.verificationDetail ? (
+              <p className="option">
+                {getDisplayOption(
+                  getVerificationDetail[verification.category](
+                    verification.verificationDetail
+                  )
+                )}
+              </p>
+            ) : (
+              ''
             )}
           </div>
         </div>

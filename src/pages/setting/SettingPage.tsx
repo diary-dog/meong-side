@@ -37,7 +37,7 @@ const SettingPage = () => {
               style={{ cursor: 'pointer' }}
             />
           </S.FamilyTitle>
-          <Suspense fallback={<div>로딩 중</div>}>
+          <Suspense fallback={<Spinner />}>
             <FamilyItemList family={familyMembers?.members.slice(0, 1)} />
             {familyMembers.members.slice(0, 1).length === 1 && (
               <S.MessageItem>

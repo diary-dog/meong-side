@@ -1,6 +1,6 @@
 export const GENDER = {
-  MALE: '남',
-  FEMALE: '여',
+  MALE: 'M',
+  FEMALE: 'F',
 } as const;
 
 export type GENDER_TYPE = (typeof GENDER)[keyof typeof GENDER];

@@ -1,9 +1,10 @@
 import { Suspense } from 'react';
+
 import { Layout } from '../../shared/ui';
-import * as S from './CalendarPage.styled';
+import Spinner from '../../shared/ui/Spinner';
 import { Calendar as VerificationCalendar } from '../../widgets/calendar';
 
-import Spinner from '../../shared/ui/Spinner';
+import * as S from './CalendarPage.styled';
 
 const CalendarPage = () => {
   return (

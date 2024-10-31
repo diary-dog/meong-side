@@ -1,23 +1,27 @@
-import { useNavigate } from 'react-router-dom';
 import { Suspense } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { Layout } from '../../shared/ui';
 import { LeftArrowIcon } from '../../shared/ui/Icons';
-import ROUTE_PATH from '../../shared/constants/routePath';
 import Spinner from '../../shared/ui/Spinner';
 import { THEME } from '../../shared/styles/theme';
 import DetailVerificationItem from '../../widgets/verification/ui/DetailVerificationItem';
 import useDetailVerification from '../../entities/verification/api/useDetailVerification';
+import useNavigateBack from '../../shared/hooks/useNavigateBack';
 
 const DetailVerification = () => {
-  const { data: detailVerification } = useDetailVerification({
-    verificationId: '1',
+  const { verificationId } = useParams();
+
+  const {
+    data: { data: detailVerification },
+  } = useDetailVerification({
+    verificationId: verificationId!,
   });
   return <DetailVerificationItem verification={detailVerification} as="div" />;
 };
 
 const DetailVerificationPage = () => {
-  const navigate = useNavigate();
+  const navigateBack = useNavigateBack();
   return (
     <Layout
       top={{
@@ -25,7 +29,7 @@ const DetailVerificationPage = () => {
         leftButton: (
           <LeftArrowIcon
             style={{ color: THEME.COLORS['P-BUTTON1'] }}
-            onClick={() => navigate(ROUTE_PATH.SLIDE)}
+            onClick={() => navigateBack()}
           />
         ),
       }}

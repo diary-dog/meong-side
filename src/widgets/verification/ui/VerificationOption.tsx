@@ -1,71 +1,32 @@
 import {
-  FieldValues,
-  UseFormRegister,
-  UseFormSetValue,
-  UseFormWatch,
-} from 'react-hook-form';
-
-import {
-  BATH_OPTION,
-  MEAL_OPTION,
-  TREATS_OPTION,
   VERIFICATION,
+  VERIFICATION_DETAILS,
 } from '../../../shared/constants/verification';
 import VerificationRadioOptions from './VerificationRadioOptions';
 
 import * as S from './VerificationOption.styled';
+import WalkDetailOption from './WalkDetailOption';
 
-const VerificationOption = ({
-  category,
-  register,
-  setValue,
-  watch,
-}: {
-  category: string;
-  register: UseFormRegister<FieldValues>;
-  setValue: UseFormSetValue<FieldValues>;
-  watch: UseFormWatch<FieldValues>;
-}) => {
+const VerificationOption = ({ category }: { category: string }) => {
   switch (category) {
-    case VERIFICATION.WALK:
-      return (
-        <S.WalkOptionContainer
-          $isTyping={watch('hour') || watch('minutes')}
-          id="hour"
-          htmlFor="hour"
-        >
-          <span>아이는 얼마나 산책했나요?</span>
-          <input id="hour" type="number" {...register('hour')} />
-          <span>시</span>
-          <input id="minutes" type="number" {...register('minutes')} />
-          <span>분</span>
-        </S.WalkOptionContainer>
-      );
-    case VERIFICATION.MEAL:
+    case VERIFICATION.WALK.value:
+      return <WalkDetailOption />;
+    case VERIFICATION.MEAL.value:
       return (
         <VerificationRadioOptions
-          options={Object.values(MEAL_OPTION)}
-          register={register}
-          watch={watch}
-          setValue={setValue}
+          options={VERIFICATION_DETAILS.MEAL.map((option) => option)}
         />
       );
-    case VERIFICATION.TREATS:
+    case VERIFICATION.TREATS.value:
       return (
         <VerificationRadioOptions
-          options={Object.values(TREATS_OPTION)}
-          register={register}
-          watch={watch}
-          setValue={setValue}
+          options={VERIFICATION_DETAILS.TREATS.map((option) => option)}
         />
       );
-    case VERIFICATION.BATH:
+    case VERIFICATION.BATH.value:
       return (
         <VerificationRadioOptions
-          options={Object.values(BATH_OPTION)}
-          register={register}
-          watch={watch}
-          setValue={setValue}
+          options={VERIFICATION_DETAILS.BATH.map((option) => option)}
         />
       );
   }

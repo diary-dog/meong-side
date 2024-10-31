@@ -9,6 +9,10 @@ export const Container = styled.div`
   align-items: center;
   padding: 0 30px;
   gap: 27px;
+
+  #error-message {
+    color: red;
+  }
 `;
 
 export const Title = styled.h2`
@@ -31,7 +35,7 @@ export const ImageWrapper = styled.label<{ $previewImageURL: string }>`
   background-size: cover;
   cursor: pointer;
 
-  #imageUrl {
+  #image {
     display: none;
   }
   .border {

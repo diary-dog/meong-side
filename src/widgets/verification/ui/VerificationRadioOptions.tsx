@@ -1,51 +1,52 @@
-import {
-  FieldValues,
-  UseFormRegister,
-  UseFormSetValue,
-  UseFormWatch,
-} from 'react-hook-form';
+import { useFormContext, useWatch } from 'react-hook-form';
 import { Fragment } from 'react/jsx-runtime';
 
-import { verificationOption } from '../../../shared/constants/verification';
+import {
+  COMPLETION_STATUS,
+  VERIFICATION_DETAIL,
+} from '../../../shared/constants/verification';
+import {
+  OptionWithValue,
+  UploadVerificationForm,
+} from '../../../shared/types/verification';
+
 import * as S from './VerificationRadioOptions.styled';
 
 const VerificationRadioOptions = ({
   options,
-  register,
-  watch,
-  setValue,
 }: {
-  options: string[];
-  register: UseFormRegister<FieldValues>;
-  watch: UseFormWatch<FieldValues>;
-  setValue: UseFormSetValue<FieldValues>;
+  options: OptionWithValue[];
 }) => {
-  const currentValue = watch(verificationOption) as string;
-
+  const { register, setValue } = useFormContext();
+  const verificationDetail = useWatch<UploadVerificationForm>({
+    name: VERIFICATION_DETAIL,
+  });
   return (
     <S.VerificationOptionContainer>
-      {Object.values(options).map((value) => (
-        <Fragment key={value}>
-          <input
-            id={value}
-            type="radio"
-            value={value}
-            {...register(verificationOption)}
-            onClick={(e) => {
-              if (currentValue === e.currentTarget.value) {
-                setValue(verificationOption, '');
-                e.currentTarget.checked = false;
-              }
-            }}
-          />
-          <label
-            htmlFor={value}
-            className={watch(verificationOption) === value ? 'selected' : ''}
-          >
-            {value}
-          </label>
-        </Fragment>
-      ))}
+      {Object.values(options).map((option) => {
+        return (
+          <Fragment key={option.value}>
+            <S.OptionLabel htmlFor={option.label}>
+              <input
+                id={option.label}
+                type="radio"
+                value={option.value}
+                {...register(VERIFICATION_DETAIL)}
+                onClick={(e) => {
+                  if (verificationDetail === e.currentTarget.value) {
+                    setValue(VERIFICATION_DETAIL, COMPLETION_STATUS.DEFAULT);
+                    e.currentTarget.checked = false;
+                  } else {
+                    e.currentTarget.checked = true;
+                  }
+                }}
+              />
+
+              {option.label}
+            </S.OptionLabel>
+          </Fragment>
+        );
+      })}
     </S.VerificationOptionContainer>
   );
 };

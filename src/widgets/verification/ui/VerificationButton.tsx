@@ -18,11 +18,11 @@ const VerificationButton = ({
 }) => {
   const navigate = useNavigate();
   switch (name) {
-    case VERIFICATION.DAILY:
+    case VERIFICATION.DAILY.value:
       return (
-        <S.VerificationSurvival onClick={() => navigate(navigatePath)}>
+        <S.VerificationDaily onClick={() => navigate(navigatePath)}>
           순간포착! 일상인증
-        </S.VerificationSurvival>
+        </S.VerificationDaily>
       );
     default:
       return (

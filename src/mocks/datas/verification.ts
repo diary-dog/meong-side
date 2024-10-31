@@ -1,8 +1,5 @@
-import { GENDER } from '../../shared/constants/pet';
+import { GENDER, GENDER_TYPE } from '../../shared/constants/pet';
 import type {
-  VerificationCount,
-  VerificationForSlide,
-  VerificationsForCalendar,
   VerificationsFroGrid,
   VerificationsForGridByUploader,
 } from '../../shared/types/verification';
@@ -11,6 +8,19 @@ import petMockImageUrl2 from './mock4.jpeg';
 import petMockImageUrl3 from './mock5.jpeg';
 import userMockImageUrl1 from './mock2.jpeg';
 import userMockImageUrl2 from './mock3.jpeg';
+
+export interface VerificationCount {
+  name: string;
+  birthYear: number;
+  gender: GENDER_TYPE;
+  imageUrl: string;
+  verification: {
+    mealCount: number;
+    walkCount: number;
+    bathCount: number;
+    treatsCount: number;
+  };
+}
 
 export const verificationCountInfo: VerificationCount = {
   name: '월이',
@@ -25,13 +35,7 @@ export const verificationCountInfo: VerificationCount = {
   },
 };
 
-export const verificationsForCalendarData: ({
-  year,
-  month,
-}: {
-  year: number;
-  month: number;
-}) => VerificationsForCalendar | undefined = ({
+export const verificationsForCalendarData = ({
   year,
   month,
 }: {
@@ -580,9 +584,7 @@ export const verificationsForCalendarData: ({
       }
     : undefined;
 
-export const verificationForSlideData: (
-  currentPage: number
-) => VerificationForSlide = (currentPage: number) => {
+export const verificationForSlideData = (currentPage: number) => {
   const totalPages = 3;
   const pageSize = 10;
   const totalItems = 28;

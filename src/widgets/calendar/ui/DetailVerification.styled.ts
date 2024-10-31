@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { getVerificationCategoryColor } from '../../../shared/lib/getVerificationCategoryColor';
+import {
+  getVerificationCategoryColor,
+  getVerificationCategoryTextColor,
+} from '../../../shared/lib/getVerificationCategoryColor';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 100%;
@@ -18,10 +22,11 @@ export const SelectedDate = styled.h3`
   text-align: left;
 `;
 
-export const Round = styled.div<{ type: string }>`
+export const Round = styled.div<{ $category: string }>`
   width: 11px;
   height: 11px;
-  background-color: ${({ type }) => getVerificationCategoryColor(type)};
+  background-color: ${({ $category }) =>
+    getVerificationCategoryColor($category)};
   border-radius: 100%;
 `;
 export const VerificationSection = styled.div`
@@ -35,19 +40,22 @@ export const VerificationTitle = styled.div`
   gap: 5px;
   font-size: ${({ theme }) => theme.FONT.SM};
 `;
-export const VerificationItem = styled.div`
+export const VerificationItem = styled(Link)<{ $category: string }>`
   display: grid;
   grid-template-columns: 6fr 2fr 1fr;
   gap: 10px;
   align-items: center;
   padding: 3px;
   font-size: ${({ theme }) => theme.FONT.XS};
+  text-decoration: none;
 
   span {
     white-space: nowrap;
   }
   #option {
-    background-color: ${({ theme }) => theme.COLORS['P-BUTTON2']};
+    background-color: ${({ $category }) =>
+      getVerificationCategoryColor($category)};
+    color: ${({ $category }) => getVerificationCategoryTextColor($category)};
     width: fit-content;
     padding: 10px;
     border-radius: 20px;

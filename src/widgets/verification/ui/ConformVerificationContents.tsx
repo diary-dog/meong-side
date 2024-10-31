@@ -1,36 +1,56 @@
 import { useNavigate } from 'react-router-dom';
+import { useWatch } from 'react-hook-form';
 
 import { Button } from '../../../shared/ui';
 import ROUTE_PATH from '../../../shared/constants/routePath';
-import type { UploadVerificationContents } from '../../../shared/types/verification';
+import { VERIFICATION } from '../../../shared/constants/verification';
+import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
+import {
+  getDisplayOption,
+  getVerificationCategoryByValue,
+  getVerificationDetail,
+  isTimeOption,
+} from '../../../shared/lib/getVerificationInfo';
 
 import * as S from './ConformVerificationContents.styled';
+import { UploadVerificationForm } from '../../../shared/types/verification';
 
-const ConformVerificationContents = ({
-  uploadedData,
-}: {
-  uploadedData?: UploadVerificationContents;
-}) => {
+const ConformVerificationContents = ({ category }: { category: string }) => {
   const navigate = useNavigate();
+  const uploadedData = useWatch<UploadVerificationForm>();
+  const previewImageURL = getPreviewImageURL(uploadedData.image ?? '');
+  const CATEGORY = getVerificationCategoryByValue(category);
 
   return (
     <S.Container>
       <S.Title>전송 완료했어요!</S.Title>
       <S.ContentWrapper>
-        {uploadedData?.imageUrl && (
+        {previewImageURL && (
           <S.ImageWrapper
-            $previewImageURL={uploadedData.imageUrl}
+            $previewImageURL={previewImageURL}
             htmlFor="imageUrl"
           ></S.ImageWrapper>
         )}
-        {uploadedData?.verificationOption && (
-          <S.OptionWrapper>
-            {uploadedData?.category === 'walk' && (
+        <S.OptionWrapper>
+          {CATEGORY.type === VERIFICATION.WALK.type && (
+            <>
               <span>아이는 얼마나 산책했나요?</span>
-            )}
-            <S.Option>{uploadedData?.verificationOption}</S.Option>
-          </S.OptionWrapper>
-        )}
+              <S.Option>
+                {isTimeOption(uploadedData.walkDetail) &&
+                  getDisplayOption(uploadedData.walkDetail)}
+              </S.Option>
+            </>
+          )}
+          {uploadedData.verificationDetail && (
+            <S.Option>
+              {getDisplayOption(
+                getVerificationDetail[CATEGORY.type](
+                  uploadedData.verificationDetail
+                )
+              )}
+            </S.Option>
+          )}
+        </S.OptionWrapper>
         {uploadedData?.comment && (
           <S.Comment>{uploadedData?.comment}</S.Comment>
         )}

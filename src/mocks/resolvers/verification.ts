@@ -29,7 +29,6 @@ export const verification = {
       (await request.json()) as UploadVerificationContents;
     const uploadedVerification: UploadVerificationContents = {
       ...postVerification,
-      imageUrl: postVerification.imageUrl,
     };
     return HttpResponse.json(uploadedVerification);
   },
