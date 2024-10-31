@@ -5,33 +5,25 @@ import ROUTE_PATH from './shared/constants/routePath';
 import AuthProvider from './providers/AuthProvider';
 import { lazy } from 'react';
 
-const ErrorPage = lazy(async () => await import('./pages/ErrorPage'));
-const Intro = lazy(async () => await import('./pages/Intro'));
-const KakaoLogIn = lazy(async () => await import('./pages/KakaoLogIn'));
-const Register = lazy(
-  async () => await import('./pages/register/RegisterPage')
-);
-const Home = lazy(async () => await import('./pages/Home/HomePage'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage'));
+const Intro = lazy(() => import('./pages/Intro'));
+const KakaoLogIn = lazy(() => import('./pages/KakaoLogIn'));
+const Register = lazy(() => import('./pages/register/RegisterPage'));
+const Home = lazy(() => import('./pages/Home/HomePage'));
 const DetailVerification = lazy(
-  async () => await import('./pages/detailVerification/detailVerificationPage')
+  () => import('./pages/detailVerification/detailVerificationPage')
 );
-const SlidePage = lazy(async () => await import('./pages/slide/SlidePage'));
-const Grid = lazy(async () => await import('./pages/grid/GridPage'));
-const GridByUser = lazy(
-  async () => await import('./pages/grid/GridByUserPage')
-);
-const Calendar = lazy(
-  async () => await import('./pages/calendar/CalendarPage')
-);
-const Setting = lazy(async () => await import('./pages/setting/SettingPage'));
+const SlidePage = lazy(() => import('./pages/slide/SlidePage'));
+const Grid = lazy(() => import('./pages/grid/GridPage'));
+const GridByUser = lazy(() => import('./pages/grid/GridByUserPage'));
+const Calendar = lazy(() => import('./pages/calendar/CalendarPage'));
+const Setting = lazy(() => import('./pages/setting/SettingPage'));
 const SendingInvitation = lazy(
-  async () => await import('./pages/setting/SendingInvitationPage')
+  () => import('./pages/setting/SendingInvitationPage')
 );
-const FamilyList = lazy(
-  async () => await import('./pages/setting/FamilyListPage')
-);
+const FamilyList = lazy(() => import('./pages/setting/FamilyListPage'));
 const UploadVerification = lazy(
-  async () => await import('./pages/upload/UploadVerificationPage')
+  () => import('./pages/upload/UploadVerificationPage')
 );
 
 const router = createBrowserRouter([

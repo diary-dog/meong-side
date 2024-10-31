@@ -17,8 +17,8 @@ const FallbackComponent = ({ error, resetErrorBoundary }: FallbackProps) => {
         <Button
           color="SECONDARY-DASH"
           onClick={() => {
-            resetErrorBoundary();
             navigate(ROUTE_PATH.ROOT);
+            resetErrorBoundary();
           }}
         >
           홈으로 이동하기
