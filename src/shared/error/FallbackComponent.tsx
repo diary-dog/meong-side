@@ -1,16 +1,32 @@
 import styled from 'styled-components';
 import { Button } from '../ui';
 import { FallbackProps } from './ErrorBoundary';
+import { useNavigate } from 'react-router-dom';
+import ROUTE_PATH from '../constants/routePath';
 
-const FallbackComponent = ({ error, resetErrorBoundary }: FallbackProps) => (
-  <Container>
-    <h3 id="title">오류가 발생했습니다</h3>
-    {error instanceof Error && <p id="message">{error.message}</p>}
-    <Button color="SECONDARY-DASH" onClick={resetErrorBoundary}>
-      재시도
-    </Button>
-  </Container>
-);
+const FallbackComponent = ({ error, resetErrorBoundary }: FallbackProps) => {
+  const navigate = useNavigate();
+  return (
+    <Container>
+      <h3 id="title">오류가 발생했습니다</h3>
+      {error instanceof Error && <p id="message">{error.message}</p>}
+      <ButtonWrapper>
+        <Button color="SECONDARY-DASH" onClick={resetErrorBoundary}>
+          재시도
+        </Button>
+        <Button
+          color="SECONDARY-DASH"
+          onClick={() => {
+            resetErrorBoundary();
+            navigate(ROUTE_PATH.ROOT);
+          }}
+        >
+          홈으로 이동하기
+        </Button>
+      </ButtonWrapper>
+    </Container>
+  );
+};
 
 export default FallbackComponent;
 
@@ -37,4 +53,10 @@ const Container = styled.div`
     justify-content: space-around;
     font-size: 20px;
   }
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 `;
