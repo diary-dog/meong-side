@@ -63,7 +63,7 @@ const BottomBar = () => {
         />
         <S.BOTTOM.Title>모아보기</S.BOTTOM.Title>
       </S.BOTTOM.Item>
-      <S.BOTTOM.Item onClick={() => navigate(ROUTE_PATH.SETTING)}>
+      <S.BOTTOM.Item onClick={() => alert('현재 준비 중 입니다.')}>
         <SettingIcon color={activeStyling(pathname, ROUTE_PATH.SETTING)} />
         <S.BOTTOM.Title>설정</S.BOTTOM.Title>
       </S.BOTTOM.Item>
