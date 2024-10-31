@@ -2,23 +2,37 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import ROUTE_PATH from './shared/constants/routePath';
-import {
-  ErrorPage,
-  Intro,
-  Register,
-  SlidePage,
-  UploadVerification,
-  Setting,
-  Home,
-  Grid,
-  Calendar,
-  KakaoLogIn,
-  GridByUser,
-  SendingInvitation,
-  FamilyList,
-  DetailVerification,
-} from './pages';
 import AuthProvider from './providers/AuthProvider';
+import { lazy } from 'react';
+
+const ErrorPage = lazy(async () => await import('./pages/ErrorPage'));
+const Intro = lazy(async () => await import('./pages/Intro'));
+const KakaoLogIn = lazy(async () => await import('./pages/KakaoLogIn'));
+const Register = lazy(
+  async () => await import('./pages/register/RegisterPage')
+);
+const Home = lazy(async () => await import('./pages/Home/HomePage'));
+const DetailVerification = lazy(
+  async () => await import('./pages/detailVerification/detailVerificationPage')
+);
+const SlidePage = lazy(async () => await import('./pages/slide/SlidePage'));
+const Grid = lazy(async () => await import('./pages/grid/GridPage'));
+const GridByUser = lazy(
+  async () => await import('./pages/grid/GridByUserPage')
+);
+const Calendar = lazy(
+  async () => await import('./pages/calendar/CalendarPage')
+);
+const Setting = lazy(async () => await import('./pages/setting/SettingPage'));
+const SendingInvitation = lazy(
+  async () => await import('./pages/setting/SendingInvitationPage')
+);
+const FamilyList = lazy(
+  async () => await import('./pages/setting/FamilyListPage')
+);
+const UploadVerification = lazy(
+  async () => await import('./pages/upload/UploadVerificationPage')
+);
 
 const router = createBrowserRouter([
   {
