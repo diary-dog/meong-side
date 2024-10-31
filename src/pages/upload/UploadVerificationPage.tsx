@@ -12,6 +12,10 @@ import type { UploadVerificationForm } from '../../shared/types/verification';
 import transformFormData from '../../widgets/verification/lib/transFormData';
 import { useUploadVerification } from '../../entities/verification';
 import isValidUploadFormData from '../../widgets/verification/lib/validateFromData';
+import {
+  INVALID_CATEGORY,
+  INVALID_FILLED_FILED_COUNT,
+} from '../../shared/constants/message';
 
 const UPLOAD_STEP = {
   인증성공: '인증 성공',
@@ -21,7 +25,9 @@ const UPLOAD_STEP = {
 
 const UploadVerificationPage = () => {
   const { category } = useParams();
-  if (!category) throw new Error('카테고리가 존재하지 않습니다.');
+  if (!category) {
+    throw new Error(INVALID_CATEGORY);
+  }
 
   const isSkip = category === VERIFICATION.DAILY.value;
   const [Funnel, setStep] = useFunnel<
@@ -40,7 +46,7 @@ const UploadVerificationPage = () => {
       });
     } else {
       methods.setError('root', {
-        message: '최소한 하나 이상의 필드를 입력해주세요.',
+        message: INVALID_FILLED_FILED_COUNT,
       });
     }
   };

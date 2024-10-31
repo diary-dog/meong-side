@@ -1,25 +1,39 @@
+import {
+  convertToTimeOption,
+  findOptionByDetail,
+} from '../lib/getVerificationInfo';
 import { OptionWithValue } from '../types/verification';
 
 export const VERIFICATION = {
   WALK: {
     type: 'WALK',
     value: 'walk',
+    title: '산책',
+    getDisplay: (detail: number) => convertToTimeOption(detail),
   },
   MEAL: {
     type: 'MEAL',
     value: 'meal',
+    title: '식사',
+    getDisplay: (detail: number) => findOptionByDetail('MEAL', detail),
   },
   TREATS: {
     type: 'TREATS',
     value: 'treats',
+    title: '간식',
+    getDisplay: (detail: number) => findOptionByDetail('TREATS', detail),
   },
   BATH: {
     type: 'BATH',
     value: 'bath',
+    title: '목욕',
+    getDisplay: (detail: number) => findOptionByDetail('BATH', detail),
   },
   DAILY: {
     type: 'DAILY',
     value: 'daily',
+    title: '일상',
+    getDisplay: (detail: number) => detail.toString(),
   },
 } as const;
 
@@ -30,11 +44,7 @@ export const COMPLETION_STATUS = {
   DEFAULT: 0,
 } as const;
 
-export type VerificationCategoryType =
-  (typeof VERIFICATION)[keyof typeof VERIFICATION]['type'];
-export type VerificationCategoryValue =
-  (typeof VERIFICATION)[keyof typeof VERIFICATION]['value'];
-
+export type VerificationCategoryType = keyof typeof VERIFICATION;
 export const VERIFICATION_DETAILS: Record<
   VerificationCategoryType,
   OptionWithValue[]

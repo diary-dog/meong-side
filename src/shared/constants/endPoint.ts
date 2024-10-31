@@ -1,8 +1,6 @@
 const { VITE_API_BASE_URL } = import.meta.env;
 
-export const BACKEND_ENDPOINT = VITE_API_BASE_URL
-  ? VITE_API_BASE_URL
-  : window.location.origin;
+export const BACKEND_ENDPOINT = VITE_API_BASE_URL || window.location.origin;
 
 export const END_POINT = {
   PET: '/pets',

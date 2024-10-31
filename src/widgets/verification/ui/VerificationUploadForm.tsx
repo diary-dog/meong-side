@@ -5,11 +5,11 @@ import ROUTE_PATH from '../../../shared/constants/routePath';
 import { CameraIcon } from '../../../shared/ui/Icons';
 import VerificationOption from './VerificationOption';
 import { Button } from '../../../shared/ui';
-import { getVerificationValue } from '../../../shared/lib/getVerificationInfo';
+import { getVerificationMetadata } from '../../../shared/lib/getVerificationInfo';
 import type { UploadVerificationForm } from '../../../shared/types/verification';
+import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
 
 import * as S from './VerificationUploadForm.styled';
-import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
 
 const VerificationUploadForm = ({ category }: { category: string }) => {
   const navigate = useNavigate();
@@ -27,7 +27,9 @@ const VerificationUploadForm = ({ category }: { category: string }) => {
   const previewImageURL = getPreviewImageURL(previewImage);
   return (
     <S.Container>
-      <S.Title>{getVerificationValue(category)} 인증 순간 남기기</S.Title>
+      <S.Title>
+        {getVerificationMetadata(category!).title} 인증 순간 남기기
+      </S.Title>
       <S.InputContainer>
         <S.ImageWrapper $previewImageURL={previewImageURL} htmlFor="image">
           <input

@@ -1,18 +1,17 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import ROUTE_PATH from '../constants/routePath';
 
 const useNavigateBack = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const navigateBack = () => {
+  return () => {
     if (location.key === 'default') {
-      navigate('/');
+      navigate(ROUTE_PATH.ROOT);
     } else {
       navigate(-1);
     }
   };
-
-  return navigateBack;
 };
 
 export default useNavigateBack;

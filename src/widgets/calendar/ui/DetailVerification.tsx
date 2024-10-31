@@ -46,7 +46,8 @@ const DetailVerification = () => {
               <span id="option">
                 {detail.verificationDetail
                   ? getDisplayOption(
-                      getVerificationDetail[detail.category](
+                      getVerificationDetail(
+                        detail.category,
                         detail.verificationDetail
                       )
                     )

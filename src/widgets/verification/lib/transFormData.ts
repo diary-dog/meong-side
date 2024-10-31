@@ -1,4 +1,4 @@
-import { getVerificationCategoryByValue } from '../../../shared/lib/getVerificationInfo';
+import { getVerificationMetadata } from '../../../shared/lib/getVerificationInfo';
 import {
   UploadVerificationContents,
   UploadVerificationForm,
@@ -14,7 +14,7 @@ const transformFormData = (
   formDataToSend.append('petId', (1).toString());
   formDataToSend.append(
     'category',
-    getVerificationCategoryByValue(verificationCategory).type
+    getVerificationMetadata(verificationCategory).type
   );
   formDataToSend.append('comment', formData.comment);
 
