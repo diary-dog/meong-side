@@ -4,7 +4,6 @@ import { END_POINT } from '../../../shared/constants/endPoint';
 import type {
   SortType,
   UploadVerificationContents,
-  VerificationCount,
   VerificationForSlide,
   VerificationsForCalendar,
   VerificationsFroGrid,
@@ -12,26 +11,19 @@ import type {
   VerificationResponse,
 } from '../../../shared/types/verification';
 import apiClient from '../../../shared/api';
+import { Response } from '../../../shared/types';
 
 const verificationAPI = {
-  /** verification count 및 pet info 조회 */
-  getVerificationCount: async (petId: string) => {
-    const query = qs.stringify({ petId: petId }, { skipNulls: true });
-    const { data } = await apiClient.get<VerificationCount>(
-      `${END_POINT.VERIFICATIONS.COUNT()}?${query}`
-    );
-    return data;
-  },
   /** verification detail info 조회 */
   getDetailVerification: async (verificationId: string) => {
-    const { data } = await apiClient.get<VerificationResponse>(
+    const { data } = await apiClient.get<Response<VerificationResponse>>(
       END_POINT.VERIFICATIONS.DETAIL(verificationId)
     );
     return data;
   },
   /** pet verification post */
   postVerification: async (body: UploadVerificationContents) => {
-    const { data } = await apiClient.post<UploadVerificationContents>(
+    const { data } = await apiClient.post<Response<UploadVerificationContents>>(
       END_POINT.VERIFICATION,
       body
     );
@@ -46,7 +38,7 @@ const verificationAPI = {
     month: number;
   }) => {
     const query = qs.stringify({ year, month });
-    const { data } = await apiClient.get<VerificationsForCalendar>(
+    const { data } = await apiClient.get<Response<VerificationsForCalendar>>(
       `${END_POINT.VERIFICATIONS.CALENDAR()}?${query}`
     );
     return data;
@@ -54,7 +46,7 @@ const verificationAPI = {
   /** get verification for slide data */
   getVerificationForSlide: async ({ currentPage }: { currentPage: number }) => {
     const query = qs.stringify({ currentPage });
-    const { data } = await apiClient.get<VerificationForSlide>(
+    const { data } = await apiClient.get<Response<VerificationForSlide>>(
       `${END_POINT.VERIFICATIONS.SLIDE()}?${query}`
     );
     return data;
@@ -68,16 +60,16 @@ const verificationAPI = {
     currentPage: number;
   }) => {
     const query = qs.stringify({ sort, currentPage }, { skipNulls: true });
-    const { data } = await apiClient.get<VerificationsFroGrid>(
+    const { data } = await apiClient.get<Response<VerificationsFroGrid>>(
       `${END_POINT.VERIFICATIONS.GRID()}?${query}`
     );
     return data;
   },
   /** get verification for grid by uploader data  */
   getVerificationByUploaderForGrid: async () => {
-    const { data } = await apiClient.get<VerificationsForGridByUploader[]>(
-      END_POINT.GRID_BY_UPLOADER
-    );
+    const { data } = await apiClient.get<
+      Response<VerificationsForGridByUploader[]>
+    >(END_POINT.GRID_BY_UPLOADER);
     return data;
   },
   /** get verification for uploader grid data  */
@@ -91,7 +83,7 @@ const verificationAPI = {
     currentPage: number;
   }) => {
     const query = qs.stringify({ sort, currentPage }, { skipNulls: true });
-    const { data } = await apiClient.get<VerificationsFroGrid>(
+    const { data } = await apiClient.get<Response<VerificationsFroGrid>>(
       `${END_POINT.VERIFICATIONS.GRID()}/${uploaderId}?${query}`
     );
     return data;

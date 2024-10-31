@@ -9,13 +9,13 @@ export const getVerificationCategoryColor = (
   category: VerificationCategoryType | ({} & string)
 ) => {
   switch (category) {
-    case VERIFICATION.WALK:
+    case VERIFICATION.WALK.type:
       return THEME.COLORS['P-BUTTON1'];
-    case VERIFICATION.MEAL:
+    case VERIFICATION.MEAL.type:
       return THEME.COLORS['P-BUTTON2'];
-    case VERIFICATION.TREATS:
+    case VERIFICATION.TREATS.type:
       return THEME.COLORS.DECO2;
-    case VERIFICATION.BATH:
+    case VERIFICATION.BATH.type:
       return THEME.COLORS.DECO3;
     default:
       return THEME.COLORS['INACTIVE-BUTTON'];
@@ -26,9 +26,9 @@ export const getVerificationCategoryTextColor = (
   category: VerificationCategoryType | ({} & string)
 ) => {
   switch (category) {
-    case VERIFICATION.WALK:
+    case VERIFICATION.WALK.type:
       return 'white';
-    case VERIFICATION.TREATS:
+    case VERIFICATION.TREATS.type:
       return 'white';
     default:
       return 'black';

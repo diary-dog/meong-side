@@ -1,38 +1,36 @@
-import { GENDER_TYPE } from '../constants/pet';
 import { VerificationCategoryType } from '../constants/verification';
 import { User } from './user';
 
+export interface OptionWithValue {
+  label?: string;
+  value?: number;
+}
 export interface UploadVerificationContents {
+  petId: number;
   category: VerificationCategoryType;
-  imageUrl?: string;
-  comment?: string;
-  verificationOption?: string;
+  comment: string;
+  verificationDetail: number;
+  image: File | null;
 }
 
-export interface VerificationCount {
-  name: string;
-  birthYear: number;
-  gender: GENDER_TYPE;
-  imageUrl: string;
-  verification: {
-    mealCount: number;
-    walkCount: number;
-    bathCount: number;
-    treatsCount: number;
-  };
-}
-
-export interface WalkOption extends DefaultOption {
-  hour?: string;
-  minutes?: string;
+export interface WalkDetail {
+  hours: number;
+  minutes: number;
 }
 
 export interface DefaultOption {
-  verificationOption?: string;
-  comment?: string;
-  imageUrl?: File[];
+  verificationDetail: number;
+  comment: string;
+  image: File | null;
 }
-export type UploadVerificationForm = WalkOption | DefaultOption;
+
+export interface UploadVerificationForm {
+  category: VerificationCategoryType;
+  verificationDetail?: number;
+  walkDetail?: WalkDetail;
+  comment: string;
+  image: FileList;
+}
 
 export interface VerificationsForCalendar {
   year: number;
@@ -47,19 +45,14 @@ interface DateBasedVerification {
 export interface VerificationByDate {
   category: VerificationCategoryType;
   verificationCount: number;
-  verificationDetails: Array<{
-    id: string;
-    verificationOption: string;
-    createdAt: Date;
-    author: User;
-  }>;
+  verificationDetails: VerificationResponse[];
 }
 export interface VerificationResponse {
   id: string;
   createdAt: string;
   category: VerificationCategoryType;
   imageUrl: string;
-  verificationOption?: string;
+  verificationDetail?: number;
   comment: string;
   author: User;
 }

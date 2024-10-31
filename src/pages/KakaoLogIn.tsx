@@ -16,8 +16,8 @@ const KakaoLogIn = () => {
   useEffect(() => {
     (async () => {
       if (code) {
-        const data = await mutateAsync(code);
-        tokenStorage.setToken(data.accessToken);
+        console.log(code);
+        tokenStorage.setToken(code);
         navigate(ROUTE_PATH.ROOT);
       }
     })();

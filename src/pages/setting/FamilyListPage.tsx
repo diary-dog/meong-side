@@ -9,13 +9,14 @@ import ROUTE_PATH from '../../shared/constants/routePath';
 
 import * as G from './SettingPage.styled';
 import * as S from './FamilyListPage.styled';
+import Spinner from '../../shared/ui/Spinner';
 
 const FamilyListPage = () => {
   const navigate = useNavigate();
   const { data: familyMembers } = useFamilyMembers({ petId: '1' });
 
   return (
-    <Suspense fallback={<div>로딩 중</div>}>
+    <Suspense fallback={<Spinner />}>
       <S.LoggedInUserField>
         <LeftArrowIcon
           onClick={() => navigate(ROUTE_PATH.SETTING)}

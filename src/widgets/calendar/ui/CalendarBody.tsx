@@ -36,19 +36,19 @@ const CalendarBody = () => {
               <S.VerificationCircles>
                 <VerificationCategoryCircle
                   verifications={savedDate?.verifications}
-                  category={VERIFICATION.WALK}
+                  category={VERIFICATION.WALK.type}
                 />
                 <VerificationCategoryCircle
                   verifications={savedDate?.verifications}
-                  category={VERIFICATION.MEAL}
+                  category={VERIFICATION.MEAL.type}
                 />
                 <VerificationCategoryCircle
                   verifications={savedDate?.verifications}
-                  category={VERIFICATION.TREATS}
+                  category={VERIFICATION.TREATS.type}
                 />
                 <VerificationCategoryCircle
                   verifications={savedDate?.verifications}
-                  category={VERIFICATION.BATH}
+                  category={VERIFICATION.BATH.type}
                 />
               </S.VerificationCircles>
             </S.Day>

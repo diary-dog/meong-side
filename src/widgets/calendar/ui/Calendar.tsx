@@ -11,7 +11,7 @@ import useVerificationCalendar from '../../../entities/verification/api/useVerif
 const CalendarRoot = ({ children }: { children: ReactNode }) => {
   const calendar = useCalendar();
   const [year, month] = calendar.selectedDate.date.split('-').map(Number);
-  const verifications = useVerificationCalendar({
+  const { data: verifications } = useVerificationCalendar({
     year: year ?? new Date().getFullYear(),
     month: month ?? new Date().getMonth() + 1,
   });

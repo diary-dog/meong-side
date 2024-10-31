@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { ApiError } from '../api/customError';
 import { Button } from '../ui';
 import { FallbackProps } from './ErrorBoundary';
 
 const FallbackComponent = ({ error, resetErrorBoundary }: FallbackProps) => (
   <Container>
     <h3 id="title">오류가 발생했습니다</h3>
-    {error instanceof ApiError && <p id="message">{error.message}</p>}
+    {error instanceof Error && <p id="message">{error.message}</p>}
     <Button color="SECONDARY-DASH" onClick={resetErrorBoundary}>
       재시도
     </Button>

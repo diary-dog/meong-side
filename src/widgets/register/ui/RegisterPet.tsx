@@ -6,11 +6,13 @@ import { CameraIcon, Female, Male } from '../../../shared/ui/Icons';
 
 import * as S from './RegisterPet.styled';
 import * as G from './RegisterGlobal.styled';
+import { GENDER_TYPE } from '../../../shared/constants/pet';
+import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
 
 interface PetInformation {
   name: string;
   bornOfYear: number;
-  gender: '남아' | '여아';
+  gender: GENDER_TYPE;
   imageUrl: '';
 }
 const RegisterPet = ({ onPrevious }: { onPrevious: () => void }) => {
@@ -30,8 +32,7 @@ const RegisterPet = ({ onPrevious }: { onPrevious: () => void }) => {
     name: ['imageUrl', 'name', 'bornOfYear'],
     control,
   });
-  const previewImageURL =
-    previewImage && previewImage[0] ? URL.createObjectURL(previewImage[0]) : '';
+  const previewImageURL = getPreviewImageURL(previewImage);
 
   return (
     <S.Container onSubmit={handleSubmit(onValid, onInValid)}>

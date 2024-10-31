@@ -9,44 +9,47 @@ import { VERIFICATION } from '../../shared/constants/verification';
 import Spinner from '../../shared/ui/Spinner';
 
 import * as S from './HomePage.styled';
+import ErrorResetBoundaryWrapper from '../../shared/error/ErrorResetBoundaryWrapper';
 
 const HomePage = () => {
   return (
     <Layout>
       <S.Container>
         <Suspense fallback={<Spinner />}>
-          <VerificationField petId="1" />
+          <ErrorResetBoundaryWrapper>
+            <VerificationField petId="1" />
+          </ErrorResetBoundaryWrapper>
         </Suspense>
         <S.VerificationContainer>
           <S.VerificationWrapper>
             <VerificationButton
-              name={VERIFICATION.WALK}
-              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.WALK}`}
+              name={VERIFICATION.WALK.value}
+              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.WALK.value}`}
               title="산책인증"
               icon={<Walk />}
             />
             <VerificationButton
-              name={VERIFICATION.MEAL}
-              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.MEAL}`}
+              name={VERIFICATION.MEAL.value}
+              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.MEAL.value}`}
               title="식사인증"
               icon={<Meal />}
             />
             <VerificationButton
-              name={VERIFICATION.TREATS}
-              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.TREATS}`}
+              name={VERIFICATION.TREATS.value}
+              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.TREATS.value}`}
               title="간식인증"
               icon={<Treats />}
             />
             <VerificationButton
-              name={VERIFICATION.BATH}
-              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.BATH}`}
+              name={VERIFICATION.BATH.value}
+              navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.BATH.value}`}
               title="목욕인증"
               icon={<Bath />}
             />
           </S.VerificationWrapper>
           <VerificationButton
-            name={VERIFICATION.DAILY}
-            navigatePath={`${ROUTE_PATH.VERIFICATION}/${VERIFICATION.DAILY}`}
+            name={VERIFICATION.DAILY.value}
+            navigatePath={`${ROUTE_PATH.UPLOAD}/${VERIFICATION.DAILY.value}`}
             title="순간포착! 일상인증"
           />
         </S.VerificationContainer>

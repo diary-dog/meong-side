@@ -2,7 +2,11 @@ import { format } from 'date-fns';
 
 import useCalendarContext from './useCalendarContext';
 import UserImage from '../../../shared/ui/UserImage';
-import { getVerificationTitle } from '../../../shared/lib/getVerificationInfo';
+import {
+  getDisplayOption,
+  getVerificationDetail,
+  getVerificationTitle,
+} from '../../../shared/lib/getVerificationInfo';
 import removeLeadingZeros from '../../../shared/lib/removeLeadingZeros';
 
 import * as S from './DetailVerification.styled';
@@ -28,15 +32,25 @@ const DetailVerification = () => {
       {verifications.map((verification) => (
         <S.VerificationSection key={verification.category}>
           <S.VerificationTitle>
-            <S.Round type={verification.category} />
+            <S.Round $category={verification.category} />
             <span>
               {`${getVerificationTitle(verification.category)} ${verification.verificationCount}회`}
             </span>
           </S.VerificationTitle>
           {verification.verificationDetails.map((detail) => (
-            <S.VerificationItem key={detail.id}>
+            <S.VerificationItem
+              to={`/verifications/${detail.id}`}
+              key={detail.id}
+              $category={detail.category}
+            >
               <span id="option">
-                {detail.verificationOption ? detail.verificationOption : '인증'}
+                {detail.verificationDetail
+                  ? getDisplayOption(
+                      getVerificationDetail[detail.category](
+                        detail.verificationDetail
+                      )
+                    )
+                  : '인증'}
               </span>
               <span id="time">{format(detail.createdAt, 'h:m aaa')}</span>
               <UserImage size="XXS" imageUrl={detail.author.imageUrl} />

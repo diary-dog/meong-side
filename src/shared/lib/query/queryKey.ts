@@ -1,7 +1,7 @@
 import { SortType } from '../../types/verification';
 
 export const verificationKey = {
-  base: ['verification'] as const,
+  base: ['verifications'] as const,
   pet: (petId: string) => [...verificationKey.base, petId] as const,
   verification: (verificationId: string) =>
     [...verificationKey.base, verificationId] as const,

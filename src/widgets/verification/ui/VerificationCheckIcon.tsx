@@ -8,13 +8,13 @@ import {
 
 const VerificationCheckIcon = ({ category }: { category: string }) => {
   switch (category) {
-    case VERIFICATION.WALK:
+    case VERIFICATION.WALK.value:
       return <CheckedDog />;
-    case VERIFICATION.MEAL:
+    case VERIFICATION.MEAL.value:
       return <CheckedMeal />;
-    case VERIFICATION.TREATS:
+    case VERIFICATION.TREATS.value:
       return <CheckedTreats />;
-    case VERIFICATION.BATH:
+    case VERIFICATION.BATH.value:
       return <CheckedBath />;
     default:
       <></>;

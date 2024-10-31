@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getVerificationTitle } from '../../../shared/lib/getVerificationInfo';
+import { getVerificationValue } from '../../../shared/lib/getVerificationInfo';
 import VerificationCheckIcon from './VerificationCheckIcon';
 
 import * as S from './ConformVerification.styled';
@@ -21,7 +21,7 @@ const ConformVerification = ({ onNext }: { onNext: () => void }) => {
   return (
     <S.Container onClick={onNext}>
       <h2>
-        {petName}가(이) {getVerificationTitle(category!)}하는 군요!
+        {petName}가(이) {getVerificationValue(category!)}하는 군요!
       </h2>
       <VerificationCheckIcon category={category!} />
       <span>인증성공!</span>
