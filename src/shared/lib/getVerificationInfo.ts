@@ -67,3 +67,7 @@ export const getDisplayOption = (
   }
   return option.label;
 };
+
+export const isExistTimeOption = (option: TimeOptionWithValue = {}) => {
+  return Object.values(option).filter(Boolean).length > 0;
+};

@@ -9,7 +9,7 @@ import {
   getDisplayOption,
   getVerificationMetadata,
   getVerificationDetail,
-  isTimeOption,
+  isExistTimeOption,
 } from '../../../shared/lib/getVerificationInfo';
 import { UploadVerificationForm } from '../../../shared/types/verification';
 
@@ -32,15 +32,13 @@ const ConformVerificationContents = ({ category }: { category: string }) => {
           ></S.ImageWrapper>
         )}
         <S.OptionWrapper>
-          {CATEGORY === VERIFICATION.WALK.type && (
-            <>
-              <span>아이는 얼마나 산책했나요?</span>
-              <S.Option>
-                {isTimeOption(uploadedData.walkDetail) &&
-                  getDisplayOption(uploadedData.walkDetail)}
-              </S.Option>
-            </>
-          )}
+          {CATEGORY === VERIFICATION.WALK.type &&
+            isExistTimeOption(uploadedData.walkDetail) && (
+              <>
+                <span>아이는 얼마나 산책했나요?</span>
+                <S.Option>{getDisplayOption(uploadedData.walkDetail)}</S.Option>
+              </>
+            )}
           {uploadedData.verificationDetail && (
             <S.Option>
               {getDisplayOption(
