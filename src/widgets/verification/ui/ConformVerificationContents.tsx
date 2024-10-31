@@ -7,19 +7,19 @@ import { VERIFICATION } from '../../../shared/constants/verification';
 import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
 import {
   getDisplayOption,
-  getVerificationCategoryByValue,
+  getVerificationMetadata,
   getVerificationDetail,
   isTimeOption,
 } from '../../../shared/lib/getVerificationInfo';
+import { UploadVerificationForm } from '../../../shared/types/verification';
 
 import * as S from './ConformVerificationContents.styled';
-import { UploadVerificationForm } from '../../../shared/types/verification';
 
 const ConformVerificationContents = ({ category }: { category: string }) => {
   const navigate = useNavigate();
   const uploadedData = useWatch<UploadVerificationForm>();
   const previewImageURL = getPreviewImageURL(uploadedData.image ?? '');
-  const CATEGORY = getVerificationCategoryByValue(category);
+  const CATEGORY = getVerificationMetadata(category).type;
 
   return (
     <S.Container>
@@ -32,7 +32,7 @@ const ConformVerificationContents = ({ category }: { category: string }) => {
           ></S.ImageWrapper>
         )}
         <S.OptionWrapper>
-          {CATEGORY.type === VERIFICATION.WALK.type && (
+          {CATEGORY === VERIFICATION.WALK.type && (
             <>
               <span>아이는 얼마나 산책했나요?</span>
               <S.Option>
@@ -44,9 +44,7 @@ const ConformVerificationContents = ({ category }: { category: string }) => {
           {uploadedData.verificationDetail && (
             <S.Option>
               {getDisplayOption(
-                getVerificationDetail[CATEGORY.type](
-                  uploadedData.verificationDetail
-                )
+                getVerificationDetail(CATEGORY, uploadedData.verificationDetail)
               )}
             </S.Option>
           )}

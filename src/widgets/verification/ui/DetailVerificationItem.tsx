@@ -31,7 +31,8 @@ const DetailVerificationItem = ({
             {verification.verificationDetail ? (
               <p className="option">
                 {getDisplayOption(
-                  getVerificationDetail[verification.category](
+                  getVerificationDetail(
+                    verification.category,
                     verification.verificationDetail
                   )
                 )}
