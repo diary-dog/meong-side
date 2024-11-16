@@ -7,7 +7,7 @@ import { lazy } from 'react';
 
 const ErrorPage = lazy(() => import('./pages/ErrorPage'));
 const Intro = lazy(() => import('./pages/Intro'));
-const KakaoLogIn = lazy(() => import('./pages/KakaoLogIn'));
+const KakaoLogIn = lazy(() => import('./pages/auth/KakaoLogIn'));
 const Register = lazy(() => import('./pages/register/RegisterPage'));
 const Home = lazy(() => import('./pages/Home/HomePage'));
 const DetailVerification = lazy(
