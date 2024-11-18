@@ -1,14 +1,17 @@
 import { END_POINT } from '../../../shared/constants/endPoint';
 import apiClient from '../../../shared/api';
+import qs from 'qs';
+import { Response } from '../../../shared/types';
 
 const userAPI = {
   kakaoLogin: async (code: string) => {
-    const { data } = await apiClient.post<{
-      message: string;
-      accessToken: string;
-    }>(END_POINT.KAKAO_LOGIN, {
-      code,
-    });
+    const query = qs.stringify({ code });
+    const { data } = await apiClient.post<
+      Response<{
+        message: string;
+        accessToken: string;
+      }>
+    >(`${END_POINT.KAKAO_LOGIN}?${query}`);
     return data;
   },
 };
