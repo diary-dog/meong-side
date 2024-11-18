@@ -14,6 +14,11 @@ const useKakaoLogin = () => {
       tokenStorage.setToken(data.accessToken);
       navigate(ROUTE_PATH.ROOT);
     },
+    onError: (error) => {
+      console.error(error);
+      //TODO: 토스트메시지 추가
+      navigate(ROUTE_PATH.INTRO);
+    },
   });
 };
 export default useKakaoLogin;
