@@ -6,7 +6,7 @@ import { LeftArrowIcon } from '../../shared/ui/Icons';
 import Spinner from '../../shared/ui/Spinner';
 import { THEME } from '../../shared/styles/theme';
 import DetailVerificationItem from '../../widgets/verification/ui/DetailVerificationItem';
-import useDetailVerification from '../../entities/verification/api/useDetailVerification';
+import useDetailVerification from '../../entities/verification/queries/useDetailVerification';
 import useNavigateBack from '../../shared/hooks/useNavigateBack';
 
 const DetailVerification = () => {

@@ -1,10 +1,10 @@
 import UserImage from '../../../shared/ui/UserImage';
-import { VerificationResponse } from '../../../shared/types/verification';
+import { VerificationResponse } from '../../../entities/verification/verification.dto';
 import {
   getDisplayOption,
   getVerificationDetail,
   getVerificationTitle,
-} from '../../../shared/lib/getVerificationInfo';
+} from '../../../entities/verification/libs/getVerificationInfo';
 import formattedDate from '../../../shared/lib/formattedDate';
 import ROUTE_PATH from '../../../shared/constants/routePath';
 

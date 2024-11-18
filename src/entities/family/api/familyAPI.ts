@@ -1,6 +1,6 @@
-import apiClient from '../../../shared/api';
-import { END_POINT } from '../../../shared/constants/endPoint';
-import { Family } from '../../../shared/types/user';
+import apiClient from '@/shared/api';
+import { END_POINT } from '@/shared/constants/endPoint';
+import { Family } from '../family.dto';
 
 const familyAPI = {
   /** get family members */

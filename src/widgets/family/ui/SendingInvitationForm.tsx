@@ -5,7 +5,7 @@ import { LeftArrowIcon } from '../../../shared/ui/Icons';
 import ROUTE_PATH from '../../../shared/constants/routePath';
 import UserImage from '../../../shared/ui/UserImage';
 import { Button, Input } from '../../../shared/ui';
-import useInviteMember from '../../../entities/family/api/useInviteMember';
+import useInviteMember from '../../../entities/family/queries/useInviteMember';
 
 import * as G from './settingGlobal.styled';
 

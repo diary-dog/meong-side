@@ -6,7 +6,7 @@ import {
   getDisplayOption,
   getVerificationDetail,
   getVerificationTitle,
-} from '../../../shared/lib/getVerificationInfo';
+} from '../../../entities/verification/libs/getVerificationInfo';
 import removeLeadingZeros from '../../../shared/lib/removeLeadingZeros';
 
 import * as S from './DetailVerification.styled';

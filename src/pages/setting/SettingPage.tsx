@@ -8,7 +8,7 @@ import VerificationField from '../../widgets/verification/ui/VerificationField';
 import ROUTE_PATH from '../../shared/constants/routePath';
 import FamilyItemList from '../../widgets/family/ui/FamilyItemList';
 import Switch from '../../shared/ui/Switch';
-import useFamilyMembers from '../../entities/family/api/useFamilyMembers';
+import useFamilyMembers from '../../entities/family/queries/useFamilyMembers';
 import UserImage from '../../shared/ui/UserImage';
 
 import * as S from './SettingPage.styled';

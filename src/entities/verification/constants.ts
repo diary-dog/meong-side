@@ -1,8 +1,8 @@
 import {
   convertToTimeOption,
   findOptionByDetail,
-} from '../lib/getVerificationInfo';
-import { OptionWithValue } from '../types/verification';
+} from './libs/getVerificationInfo';
+import { OptionWithValue } from './verification.dto';
 
 export const VERIFICATION = {
   WALK: {

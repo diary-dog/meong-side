@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import useGridVerificationsForUploader from '../../../entities/verification/api/useGridVerificationsForUploader';
+import useGridVerificationsForUploader from '../../../entities/verification/queries/useGridVerificationsForUploader';
 import { RightArrowIcon } from '../../../shared/ui/Icons';
 import Spinner from '../../../shared/ui/Spinner';
 

@@ -4,7 +4,7 @@ import { PlusIcon } from '../../../shared/ui/Icons';
 import UserImage from '../../../shared/ui/UserImage';
 import ROUTE_PATH from '../../../shared/constants/routePath';
 
-import { User } from '../../../shared/types/user';
+import { User } from '../../../shared/dto/user.dto';
 
 import * as S from './FamilyItemList.styled';
 

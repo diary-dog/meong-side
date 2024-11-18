@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
-import familyAPI from './familyAPI';
 import { userKey } from '../../../shared/lib/query/queryKey';
 import queryClient from '../../../shared/lib/query/queryClient';
+import familyAPI from '../api/familyAPI';
 
 const useInviteMember = () => {
   return useMutation({

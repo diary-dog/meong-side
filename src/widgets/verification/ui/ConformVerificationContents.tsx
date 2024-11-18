@@ -3,15 +3,15 @@ import { useWatch } from 'react-hook-form';
 
 import { Button } from '../../../shared/ui';
 import ROUTE_PATH from '../../../shared/constants/routePath';
-import { VERIFICATION } from '../../../shared/constants/verification';
+import { VERIFICATION } from '../../../entities/verification/constants';
 import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
 import {
   getDisplayOption,
   getVerificationMetadata,
   getVerificationDetail,
   isExistTimeOption,
-} from '../../../shared/lib/getVerificationInfo';
-import { UploadVerificationForm } from '../../../shared/types/verification';
+} from '../../../entities/verification/libs/getVerificationInfo';
+import { UploadVerificationForm } from '../../../entities/verification/verification.dto';
 
 import * as S from './ConformVerificationContents.styled';
 

@@ -1,6 +1,6 @@
 import Spinner from '../../../shared/ui/Spinner';
 import useControlImageModal from '../../../shared/hooks/useControlImageModal';
-import { VerificationForGridResponse } from '../../../shared/types/verification';
+import { VerificationForGridResponse } from '../../../entities/verification/verification.dto';
 import ImageModal from './ImageModal';
 
 import * as S from './InfiniteGrid.styled';

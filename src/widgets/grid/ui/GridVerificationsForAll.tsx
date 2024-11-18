@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import InfiniteGrid from './InfiniteGrid';
 import SortButton from './SortButton';
-import { SortType } from '../../../shared/types/verification';
+import { SortType } from '../../../entities/verification/verification.dto';
 import Spinner from '../../../shared/ui/Spinner';
 import { useInfiniteVerificationsForGrid } from '../../../entities/verification';
 

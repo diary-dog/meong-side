@@ -7,8 +7,8 @@ import {
   VerificationUploadForm,
 } from '../../shared/ui';
 import { useFunnel } from '../../shared/hooks/useFunnel';
-import { VERIFICATION } from '../../shared/constants/verification';
-import type { UploadVerificationForm } from '../../shared/types/verification';
+import { VERIFICATION } from '../../entities/verification/constants';
+import type { UploadVerificationForm } from '../../entities/verification/verification.dto';
 import transformFormData from '../../widgets/verification/lib/transFormData';
 import { useUploadVerification } from '../../entities/verification';
 import isValidUploadFormData from '../../widgets/verification/lib/validateFromData';

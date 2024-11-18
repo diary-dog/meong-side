@@ -6,7 +6,7 @@ import { CameraIcon, Female, Male } from '../../../shared/ui/Icons';
 
 import * as S from './RegisterPet.styled';
 import * as G from './RegisterGlobal.styled';
-import { GENDER_TYPE } from '../../../shared/constants/pet';
+import { GENDER_TYPE } from '../../../entities/pet/constants';
 import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
 
 interface PetInformation {

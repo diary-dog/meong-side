@@ -9,9 +9,9 @@ import type {
   VerificationsFroGrid,
   VerificationsForGridByUploader,
   VerificationResponse,
-} from '../../../shared/types/verification';
+} from '../verification.dto';
 import apiClient from '../../../shared/api';
-import { Response } from '../../../shared/types';
+import { Response } from '@/shared/dto/response.dto';
 
 const verificationAPI = {
   /** verification detail info 조회 */

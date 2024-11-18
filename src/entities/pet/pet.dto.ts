@@ -1,5 +1,5 @@
-import { GENDER_TYPE } from '../constants/pet';
-import { VerificationResponse } from './verification';
+import { VerificationResponse } from '../verification/verification.dto';
+import { GENDER_TYPE } from './constants';
 
 export interface Pet {
   id: string;
