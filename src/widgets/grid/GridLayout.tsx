@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { PropsWithChildren } from 'react';
 
-import { GridType } from '../../entities/verification/verification.dto';
-import { LeftArrowIcon } from '../../shared/ui/Icons';
+import { GridType } from '@/entities/verification/verification.dto';
+import { LeftArrowIcon } from '@/shared/ui/Icons';
 
 import * as S from './ui/GridLayout.styled';
 

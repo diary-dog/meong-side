@@ -1,11 +1,11 @@
 import {
   VERIFICATION,
   VERIFICATION_DETAILS,
-} from '../../../entities/verification/constants';
+} from '@/entities/verification/constants';
 import VerificationRadioOptions from './VerificationRadioOptions';
+import WalkDetailOption from './WalkDetailOption';
 
 import * as S from './VerificationOption.styled';
-import WalkDetailOption from './WalkDetailOption';
 
 const VerificationOption = ({ category }: { category: string }) => {
   switch (category) {

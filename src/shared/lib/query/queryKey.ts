@@ -1,4 +1,4 @@
-import { SortType } from '../../../entities/verification/verification.dto';
+import { SortType } from '@/entities/verification/verification.dto';
 
 export const verificationKey = {
   base: ['verifications'] as const,

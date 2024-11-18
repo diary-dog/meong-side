@@ -1,8 +1,8 @@
-import { GENDER, GENDER_TYPE } from '../../entities/pet/constants';
+import { GENDER, GENDER_TYPE } from '@/entities/pet/constants';
 import type {
   VerificationsFroGrid,
   VerificationsForGridByUploader,
-} from '../../entities/verification/verification.dto';
+} from '@/entities/verification/verification.dto';
 import petMockImageUrl1 from './mock1.jpeg';
 import petMockImageUrl2 from './mock4.jpeg';
 import petMockImageUrl3 from './mock5.jpeg';

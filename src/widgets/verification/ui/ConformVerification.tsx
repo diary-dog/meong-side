@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getVerificationMetadata } from '../../../entities/verification/libs/getVerificationInfo';
+import { getVerificationMetadata } from '@/entities/verification/libs/getVerificationInfo';
 import VerificationCheckIcon from './VerificationCheckIcon';
 
 import * as S from './ConformVerification.styled';

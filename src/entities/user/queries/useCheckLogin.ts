@@ -2,7 +2,7 @@
 
 // import userAPI from './userAPI';
 // import { useNavigate } from 'react-router-dom';
-// import ROUTE_PATH from '../../../shared/constants/routePath';
+// import ROUTE_PATH from '@/shared/constants/routePath';
 
 // const useCheckLogin = () => {
 //   const navigate = useNavigate();

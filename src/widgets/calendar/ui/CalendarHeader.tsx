@@ -4,8 +4,8 @@ import {
   LeftTriangle,
   RightArrowIcon,
   RightTriangle,
-} from '../../../shared/ui/Icons';
-import { THEME } from '../../../shared/styles/theme';
+} from '@/shared/ui/Icons';
+import { THEME } from '@/shared/styles/theme';
 
 import * as S from './CalendarHeader.styled';
 

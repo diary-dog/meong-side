@@ -1,8 +1,7 @@
-import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
-
-import { verificationKey } from '../../../shared/lib/query/queryKey';
 import verificationAPI from '../api/verificationAPI';
-import useIntersectionObserver from '../../../shared/hooks/useIntersectionObserver';
+import { verificationKey } from '@/shared/lib/query/queryKey';
+import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
+import useIntersectionObserver from '@/shared/hooks/useIntersectionObserver';
 
 const useInfiniteVerificationsForSlide = () => {
   const { data, fetchNextPage, isFetchingNextPage } = useSuspenseInfiniteQuery({

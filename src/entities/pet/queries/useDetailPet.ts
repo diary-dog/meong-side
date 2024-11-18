@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 
-import { verificationKey } from '../../../shared/lib/query/queryKey';
 import petAPI from '../api/petAPI';
+import { verificationKey } from '@/shared/lib/query/queryKey';
 
 const useDetailPet = ({ petId }: { petId: string }) => {
   return useSuspenseQuery({

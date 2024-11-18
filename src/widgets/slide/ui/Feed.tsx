@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-import Spinner from '../../../shared/ui/Spinner';
-import useInfiniteVerificationsForSlide from '../../../entities/verification/queries/useInfiniteVerificationsForSlide';
-
-import DetailVerificationItem from '../../verification/ui/DetailVerificationItem';
+import Spinner from '@/shared/ui/Spinner';
+import useInfiniteVerificationsForSlide from '@/entities/verification/queries/useInfiniteVerificationsForSlide';
+import DetailVerificationItem from '@/widgets/verification/ui/DetailVerificationItem';
 
 const Feed = () => {
   const { data, targetItemRef, isFetchingNextPage } =

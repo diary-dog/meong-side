@@ -1,8 +1,8 @@
-import { Female, Male } from '../../../shared/ui/Icons';
-import UserImage from '../../../shared/ui/UserImage';
-import getAge from '../../../shared/lib/getAge';
-import { GENDER } from '../../../entities/pet/constants';
-import useDetailPet from '../../../entities/pet/queries/useDetailPet';
+import { Female, Male } from '@/shared/ui/Icons';
+import UserImage from '@/shared/ui/UserImage';
+import getAge from '@/shared/lib/getAge';
+import { GENDER } from '@/entities/pet/constants';
+import useDetailPet from '@/entities/pet/queries/useDetailPet';
 
 import * as S from './VerificationField.styled';
 

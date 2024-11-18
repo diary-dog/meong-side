@@ -1,7 +1,8 @@
-import { END_POINT } from '../../../shared/constants/endPoint';
-import apiClient from '../../../shared/api';
 import qs from 'qs';
-import { Response } from '../../response.dto';
+
+import apiClient from '@/shared/api';
+import { END_POINT } from '@/shared/constants/endPoint';
+import { Response } from '@/shared/dto/response.dto';
 
 const userAPI = {
   kakaoLogin: async (code: string) => {

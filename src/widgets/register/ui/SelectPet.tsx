@@ -1,4 +1,4 @@
-import { InvitationIcon, RegisterPetIcon } from '../../../shared/ui/Icons';
+import { InvitationIcon, RegisterPetIcon } from '@/shared/ui/Icons';
 
 import * as S from './SelectPet.styled';
 

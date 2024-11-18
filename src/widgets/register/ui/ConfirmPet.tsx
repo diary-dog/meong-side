@@ -1,5 +1,5 @@
-import { Button } from '../../../shared/ui';
-import UserImage from '../../../shared/ui/UserImage';
+import Button from '@/shared/ui/Button';
+import UserImage from '@/shared/ui/UserImage';
 
 import * as S from './ConfirmPet.styled';
 

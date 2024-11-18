@@ -6,7 +6,7 @@ import useCalendar from '../lib/useCalendar';
 import CalendarHeader from './CalendarHeader';
 import CalendarBody from './CalendarBody';
 import DetailVerification from './DetailVerification';
-import useVerificationCalendar from '../../../entities/verification/queries/useVerificationCalendar';
+import useVerificationCalendar from '@/entities/verification/queries/useVerificationCalendar';
 
 const CalendarRoot = ({ children }: { children: ReactNode }) => {
   const calendar = useCalendar();

@@ -1,12 +1,12 @@
-import UserImage from '../../../shared/ui/UserImage';
-import { VerificationResponse } from '../../../entities/verification/verification.dto';
+import UserImage from '@/shared/ui/UserImage';
+import { VerificationResponse } from '@/entities/verification/verification.dto';
 import {
   getDisplayOption,
   getVerificationDetail,
   getVerificationTitle,
-} from '../../../entities/verification/libs/getVerificationInfo';
-import formattedDate from '../../../shared/lib/formattedDate';
-import ROUTE_PATH from '../../../shared/constants/routePath';
+} from '@/entities/verification/libs/getVerificationInfo';
+import formattedDate from '@/shared/lib/formattedDate';
+import ROUTE_PATH from '@/shared/constants/routePath';
 
 import * as S from './DetailVerificationItem.style';
 

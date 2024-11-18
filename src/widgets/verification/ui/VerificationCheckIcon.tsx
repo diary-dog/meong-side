@@ -1,10 +1,10 @@
-import { VERIFICATION } from '../../../entities/verification/constants';
+import { VERIFICATION } from '@/entities/verification/constants';
 import {
   CheckedBath,
   CheckedDog,
   CheckedMeal,
   CheckedTreats,
-} from '../../../shared/ui/Icons';
+} from '@/shared/ui/Icons';
 
 const VerificationCheckIcon = ({ category }: { category: string }) => {
   switch (category) {

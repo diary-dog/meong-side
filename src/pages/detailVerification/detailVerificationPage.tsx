@@ -1,13 +1,13 @@
 import { Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Layout } from '../../shared/ui';
-import { LeftArrowIcon } from '../../shared/ui/Icons';
-import Spinner from '../../shared/ui/Spinner';
-import { THEME } from '../../shared/styles/theme';
-import DetailVerificationItem from '../../widgets/verification/ui/DetailVerificationItem';
-import useDetailVerification from '../../entities/verification/queries/useDetailVerification';
-import useNavigateBack from '../../shared/hooks/useNavigateBack';
+import { LeftArrowIcon } from '@/shared/ui/Icons';
+import Spinner from '@/shared/ui/Spinner';
+import { THEME } from '@/shared/styles/theme';
+import Layout from '@/shared/ui/Layout';
+import useNavigateBack from '@/shared/hooks/useNavigateBack';
+import DetailVerificationItem from '@/widgets/verification/ui/DetailVerificationItem';
+import useDetailVerification from '@/entities/verification/queries/useDetailVerification';
 
 const DetailVerification = () => {
   const { verificationId } = useParams();

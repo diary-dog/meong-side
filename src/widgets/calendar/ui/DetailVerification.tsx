@@ -1,13 +1,13 @@
 import { format } from 'date-fns';
 
 import useCalendarContext from './useCalendarContext';
-import UserImage from '../../../shared/ui/UserImage';
+import UserImage from '@/shared/ui/UserImage';
 import {
   getDisplayOption,
   getVerificationDetail,
   getVerificationTitle,
-} from '../../../entities/verification/libs/getVerificationInfo';
-import removeLeadingZeros from '../../../shared/lib/removeLeadingZeros';
+} from '@/entities/verification/libs/getVerificationInfo';
+import removeLeadingZeros from '@/shared/lib/removeLeadingZeros';
 
 import * as S from './DetailVerification.styled';
 

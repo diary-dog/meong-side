@@ -3,8 +3,8 @@ import {
   RegisterPet,
   SelectPet,
   InputInvitationLink,
-} from '../../widgets/register';
-import { useFunnel } from '../../shared/hooks/useFunnel';
+} from '@/widgets/register';
+import { useFunnel } from '@/shared/hooks/useFunnel';
 
 interface Pet {
   name: string;

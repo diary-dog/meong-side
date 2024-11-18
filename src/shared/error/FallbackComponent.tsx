@@ -1,8 +1,9 @@
-import styled from 'styled-components';
-import { Button } from '../ui';
-import { FallbackProps } from './ErrorBoundary';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
+import { FallbackProps } from './ErrorBoundary';
 import ROUTE_PATH from '../constants/routePath';
+import Button from '../ui/Button';
 
 const FallbackComponent = ({ error, resetErrorBoundary }: FallbackProps) => {
   const navigate = useNavigate();

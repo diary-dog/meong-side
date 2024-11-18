@@ -2,7 +2,7 @@ import { ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 
-import { CloseIcon } from '../../../shared/ui/Icons';
+import { CloseIcon } from '@/shared/ui/Icons';
 
 const ImageModal = ({
   children,

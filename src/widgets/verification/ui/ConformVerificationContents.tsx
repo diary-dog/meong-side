@@ -1,17 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 import { useWatch } from 'react-hook-form';
 
-import { Button } from '../../../shared/ui';
-import ROUTE_PATH from '../../../shared/constants/routePath';
-import { VERIFICATION } from '../../../entities/verification/constants';
-import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
+import ROUTE_PATH from '@/shared/constants/routePath';
+import { VERIFICATION } from '@/entities/verification/constants';
+import getPreviewImageURL from '@/shared/lib/getPreviewImageURL';
+import Button from '@/shared/ui/Button';
 import {
   getDisplayOption,
   getVerificationMetadata,
   getVerificationDetail,
   isExistTimeOption,
-} from '../../../entities/verification/libs/getVerificationInfo';
-import { UploadVerificationForm } from '../../../entities/verification/verification.dto';
+} from '@/entities/verification/libs/getVerificationInfo';
+import { UploadVerificationForm } from '@/entities/verification/verification.dto';
 
 import * as S from './ConformVerificationContents.styled';
 
