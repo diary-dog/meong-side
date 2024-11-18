@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 
 import ROUTE_PATH from '@/shared/constants/routePath';
-import Layout from '@/shared/ui/Layout';
-import { Bath, Meal, Treats, Walk } from '@/shared/ui/Icons';
-import VerificationButton from '@/widgets/verification/ui/VerificationButton';
-import VerificationField from '@/widgets/verification/ui/VerificationField';
+import Layout from '@/widgets/common/Layout';
+import { Bath, Meal, Treats, Walk } from '@/widgets/common/Icons';
+import VerificationButton from '@/entities/verification/ui/main/VerificationButton';
+import VerificationField from '@/entities/verification/ui/main/VerificationField';
 import { VERIFICATION } from '@/entities/verification/constants';
-import Spinner from '@/shared/ui/Spinner';
+import Spinner from '@/widgets/common/Spinner';
 
 import * as S from './HomePage.styled';
 import ErrorResetBoundaryWrapper from '@/shared/error/ErrorResetBoundaryWrapper';

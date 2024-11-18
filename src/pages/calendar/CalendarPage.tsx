@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 
-import Layout from '@/shared/ui/Layout';
-import Spinner from '@/shared/ui/Spinner';
+import Layout from '@/widgets/common/Layout';
+import Spinner from '@/widgets/common/Spinner';
 import { Calendar as VerificationCalendar } from '@/widgets/calendar';
 
 import * as S from './CalendarPage.styled';

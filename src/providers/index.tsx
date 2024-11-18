@@ -5,7 +5,7 @@ import QueryProvider from './QueryProvider';
 import ThemeProvider from './ThemeProvider';
 import ErrorBoundary from '../shared/error/ErrorBoundary';
 import FallbackComponent from '../shared/error/FallbackComponent';
-import Spinner from '../shared/ui/Spinner';
+import Spinner from '../widgets/common/Spinner';
 import router from '../router';
 
 const Providers = () => {

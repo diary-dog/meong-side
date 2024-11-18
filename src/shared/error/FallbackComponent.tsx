@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { FallbackProps } from './ErrorBoundary';
 import ROUTE_PATH from '../constants/routePath';
-import Button from '../ui/Button';
+import Button from '../../widgets/common/Button';
 
 const FallbackComponent = ({ error, resetErrorBoundary }: FallbackProps) => {
   const navigate = useNavigate();

@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { LeftArrowIcon } from '@/shared/ui/Icons';
-import Spinner from '@/shared/ui/Spinner';
+import { LeftArrowIcon } from '@/widgets/common/Icons';
+import Spinner from '@/widgets/common/Spinner';
 import { THEME } from '@/shared/styles/theme';
-import Layout from '@/shared/ui/Layout';
+import Layout from '@/widgets/common/Layout';
 import useNavigateBack from '@/shared/hooks/useNavigateBack';
-import DetailVerificationItem from '@/widgets/verification/ui/DetailVerificationItem';
+import DetailVerificationItem from '@/entities/verification/ui/detail/DetailVerificationItem';
 import useDetailVerification from '@/entities/verification/queries/useDetailVerification';
 
 const DetailVerification = () => {
