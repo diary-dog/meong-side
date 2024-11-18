@@ -1,6 +1,6 @@
-import Button from '@/shared/ui/Button';
+import Button from '@/widgets/common/Button';
 import ROUTE_PATH from '../shared/constants/routePath';
-import { Dog, Ellipse, HeartCircle, KaKaoIcon } from '../shared/ui/Icons';
+import { Dog, Ellipse, HeartCircle, KaKaoIcon } from '../widgets/common/Icons';
 
 import * as S from './Intro.styled';
 

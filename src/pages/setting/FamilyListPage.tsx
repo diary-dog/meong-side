@@ -2,14 +2,14 @@ import { useNavigate } from 'react-router-dom';
 import { Suspense } from 'react';
 
 import useFamilyMembers from '@/entities/family/queries/useFamilyMembers';
-import UserImage from '@/shared/ui/UserImage';
-import { LeftArrowIcon } from '@/shared/ui/Icons';
-import FamilyItemList from '@/widgets/family/ui/FamilyItemList';
+import UserImage from '@/widgets/common/UserImage';
+import { LeftArrowIcon } from '@/widgets/common/Icons';
+import FamilyItemList from '@/entities/family/ui/FamilyItemList';
 import ROUTE_PATH from '@/shared/constants/routePath';
 
 import * as G from './SettingPage.styled';
 import * as S from './FamilyListPage.styled';
-import Spinner from '@/shared/ui/Spinner';
+import Spinner from '@/widgets/common/Spinner';
 
 const FamilyListPage = () => {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 
 import useCalendarContext from './useCalendarContext';
-import UserImage from '@/shared/ui/UserImage';
+import UserImage from '@/widgets/common/UserImage';
 import {
   getDisplayOption,
   getVerificationDetail,

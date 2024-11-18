@@ -1,9 +1,7 @@
-import {
-  ConfirmPet,
-  RegisterPet,
-  SelectPet,
-  InputInvitationLink,
-} from '@/widgets/register';
+import ConfirmPet from '@/entities/verification/ui/register/ConfirmPet';
+import InputInvitationLink from '@/entities/verification/ui/register/InputInvitationLink';
+import RegisterPet from '@/entities/verification/ui/register/RegisterPet';
+import SelectPet from '@/entities/verification/ui/register/SelectPet';
 import { useFunnel } from '@/shared/hooks/useFunnel';
 
 interface Pet {

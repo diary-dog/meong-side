@@ -2,12 +2,14 @@ import { Suspense } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import ROUTE_PATH from '@/shared/constants/routePath';
-import { SlideIcon } from '@/shared/ui/Icons';
-import Spinner from '@/shared/ui/Spinner';
-import Layout from '@/shared/ui/Layout';
-import { GridLayout, SortButton, InfiniteGrid } from '@/widgets/grid';
+import { SlideIcon } from '@/widgets/common/Icons';
+import Spinner from '@/widgets/common/Spinner';
+import Layout from '@/widgets/common/Layout';
 import { SortType } from '@/entities/verification/verification.dto';
 import useUploaderGridVerifications from '@/entities/verification/queries/useUploaderGridVerifications';
+import SortButton from '@/entities/verification/ui/grid/SortButton';
+import InfiniteGrid from '@/entities/verification/ui/grid/InfiniteGrid';
+import GridLayout from '@/entities/verification/ui/grid/GridLayout';
 
 import * as S from './GridByUserPage.styled';
 

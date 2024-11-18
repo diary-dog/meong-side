@@ -7,13 +7,13 @@ import {
   INVALID_FILLED_FILED_COUNT,
 } from '@/shared/constants/message';
 import { VERIFICATION } from '@/entities/verification/constants';
-import transformFormData from '@/widgets/verification/lib/transFormData';
-import { VerificationUploadForm } from '@/widgets/verification';
-import isValidUploadFormData from '@/widgets/verification/lib/validateFromData';
-import ConformVerification from '@/widgets/verification/ui/ConformVerification';
-import ConformVerificationContents from '@/widgets/verification/ui/ConformVerificationContents';
+import transformFormData from '@/entities/verification/libs/transFormData';
+import isValidUploadFormData from '@/entities/verification/libs/validateFromData';
+import ConformVerification from '@/entities/verification/ui/upload/ConformVerification';
+import ConformVerificationContents from '@/entities/verification/ui/upload/ConformVerificationContents';
 import { UploadVerificationForm } from '@/entities/verification/verification.dto';
 import useUploadVerification from '@/entities/verification/mutations/useUploadVerification';
+import VerificationUploadForm from '@/entities/verification/ui/upload/VerificationUploadForm';
 
 const UPLOAD_STEP = {
   인증성공: '인증 성공',

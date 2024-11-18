@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
-import SendingInvitationForm from '@/widgets/family/ui/SendingInvitationForm';
-import SuccessInvitation from '@/widgets/family/ui/SuccessInvitation';
+import SendingInvitationForm from '@/entities/family/ui/SendingInvitationForm';
+import SuccessInvitation from '@/entities/family/ui/SuccessInvitation';
 import { useFunnel } from '@/shared/hooks/useFunnel';
 import ROUTE_PATH from '@/shared/constants/routePath';
 

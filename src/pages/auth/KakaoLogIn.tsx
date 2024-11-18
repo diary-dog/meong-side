@@ -2,7 +2,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
-import Spinner from '@/shared/ui/Spinner';
+import Spinner from '@/widgets/common/Spinner';
 import useKakaoLogin from '@/entities/user/mutations/useKakaoLogin';
 import ROUTE_PATH from '@/shared/constants/routePath';
 
