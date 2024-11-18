@@ -1,11 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import { LeftArrowIcon } from '../../../shared/ui/Icons';
-import ROUTE_PATH from '../../../shared/constants/routePath';
-import UserImage from '../../../shared/ui/UserImage';
-import { Button, Input } from '../../../shared/ui';
-import useInviteMember from '../../../entities/family/queries/useInviteMember';
+import { LeftArrowIcon } from '@/shared/ui/Icons';
+import ROUTE_PATH from '@/shared/constants/routePath';
+import UserImage from '@/shared/ui/UserImage';
+import useInviteMember from '@/entities/family/queries/useInviteMember';
+import Input from '@/shared/ui/Input';
+import Button from '@/shared/ui/Button';
 
 import * as G from './settingGlobal.styled';
 

@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 import InfiniteGrid from './InfiniteGrid';
 import SortButton from './SortButton';
-import { SortType } from '../../../entities/verification/verification.dto';
-import Spinner from '../../../shared/ui/Spinner';
-import { useInfiniteVerificationsForGrid } from '../../../entities/verification';
+import { SortType } from '@/entities/verification/verification.dto';
+import Spinner from '@/shared/ui/Spinner';
+import useInfiniteVerificationsForGrid from '@/entities/verification/queries/useInfiniteVerificationsForGrid';
 
 import * as S from './GridVerificationsForAll.styled';
 

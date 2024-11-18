@@ -1,8 +1,8 @@
 import { useMutation } from '@tanstack/react-query';
 
 import verificationAPI from '../api/verificationAPI';
-import queryClient from '../../../shared/lib/query/queryClient';
-import { verificationKey } from '../../../shared/lib/query/queryKey';
+import queryClient from '@/shared/lib/query/queryClient';
+import { verificationKey } from '@/shared/lib/query/queryKey';
 
 const useUploadVerification = () => {
   return useMutation({

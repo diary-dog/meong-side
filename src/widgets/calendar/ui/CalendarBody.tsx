@@ -1,7 +1,7 @@
 import useCalendarContext from './useCalendarContext';
-import { VERIFICATION } from '../../../entities/verification/constants';
 
 import VerificationCategoryCircle from './VerificationCategoryCircle';
+import { VERIFICATION } from '@/entities/verification/constants';
 
 import * as S from './CalendarBody.styled';
 

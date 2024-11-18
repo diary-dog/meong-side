@@ -1,8 +1,8 @@
 import { http } from 'msw';
 
-import { END_POINT } from '../../shared/constants/endPoint';
+import { END_POINT } from '@/shared/constants/endPoint';
 import { family } from '../resolvers/family';
-import { baseURL } from '../../shared/lib/mswUtils';
+import { baseURL } from '@/shared/lib/mswUtils';
 import withAuth from '../middleware/withAuth';
 
 export const familyHandler = [

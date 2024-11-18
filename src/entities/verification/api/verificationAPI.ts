@@ -1,17 +1,17 @@
 import qs from 'qs';
 
-import { END_POINT } from '../../../shared/constants/endPoint';
-import type {
+import { Response } from '@/shared/dto/response.dto';
+import apiClient from '@/shared/api';
+import {
   SortType,
   UploadVerificationContents,
   VerificationForSlide,
-  VerificationsForCalendar,
-  VerificationsFroGrid,
-  VerificationsForGridByUploader,
   VerificationResponse,
+  VerificationsForCalendar,
+  VerificationsForGridByUploader,
+  VerificationsFroGrid,
 } from '../verification.dto';
-import apiClient from '../../../shared/api';
-import { Response } from '@/shared/dto/response.dto';
+import { END_POINT } from '@/shared/constants/endPoint';
 
 const verificationAPI = {
   /** verification detail info 조회 */

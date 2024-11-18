@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 
-import { Layout } from '../../shared/ui';
-import Spinner from '../../shared/ui/Spinner';
-import Feed from '../../widgets/slide/ui/Feed';
+import Layout from '@/shared/ui/Layout';
+import Spinner from '@/shared/ui/Spinner';
+import Feed from '@/widgets/slide/ui/Feed';
 
 const SlidePage = () => {
   return (

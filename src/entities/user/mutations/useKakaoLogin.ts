@@ -2,8 +2,8 @@ import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 
 import userAPI from '../api/userAPI';
-import ROUTE_PATH from '../../../shared/constants/routePath';
-import { tokenStorage } from '../../../shared/lib/tokenStorage';
+import { tokenStorage } from '@/shared/lib/tokenStorage';
+import ROUTE_PATH from '@/shared/constants/routePath';
 
 const useKakaoLogin = () => {
   const navigate = useNavigate();

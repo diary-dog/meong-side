@@ -1,14 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 
-import { PlusIcon } from '../../../shared/ui/Icons';
-import UserImage from '../../../shared/ui/UserImage';
-import ROUTE_PATH from '../../../shared/constants/routePath';
-
-import { User } from '../../../shared/dto/user.dto';
+import { PlusIcon } from '@/shared/ui/Icons';
+import UserImage from '@/shared/ui/UserImage';
+import ROUTE_PATH from '@/shared/constants/routePath';
+import { UserType } from '@/shared/dto/user.dto';
 
 import * as S from './FamilyItemList.styled';
 
-const FamilyItemList = ({ family }: { family?: User[] }) => {
+const FamilyItemList = ({ family }: { family?: UserType[] }) => {
   const navigate = useNavigate();
   return (
     <S.FamilyWrapper>

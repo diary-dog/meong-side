@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { VerificationCategoryType } from '../../../entities/verification/constants';
+import { VerificationCategoryType } from '@/entities/verification/constants';
 import {
   getVerificationCategoryColor,
   getVerificationCategoryTextColor,
-} from '../../../entities/verification/libs/getVerificationCategoryColor';
+} from '@/entities/verification/libs/getVerificationCategoryColor';
 
 export const FeedItemWrapper = styled(Link)`
   display: flex;

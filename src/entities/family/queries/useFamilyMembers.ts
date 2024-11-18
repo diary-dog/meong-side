@@ -1,5 +1,6 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { userKey } from '../../../shared/lib/query/queryKey';
+
+import { userKey } from '@/shared/lib/query/queryKey';
 import familyAPI from '../api/familyAPI';
 
 const useFamilyMembers = ({ petId }: { petId: string }) => {

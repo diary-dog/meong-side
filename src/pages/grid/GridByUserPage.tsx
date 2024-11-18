@@ -1,15 +1,15 @@
 import { Suspense } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
-import ROUTE_PATH from '../../shared/constants/routePath';
-import { Layout } from '../../shared/ui';
-import { SlideIcon } from '../../shared/ui/Icons';
-import Spinner from '../../shared/ui/Spinner';
-import { GridLayout, SortButton, InfiniteGrid } from '../../widgets/grid';
-import { SortType } from '../../entities/verification/verification.dto';
+import ROUTE_PATH from '@/shared/constants/routePath';
+import { SlideIcon } from '@/shared/ui/Icons';
+import Spinner from '@/shared/ui/Spinner';
+import Layout from '@/shared/ui/Layout';
+import { GridLayout, SortButton, InfiniteGrid } from '@/widgets/grid';
+import { SortType } from '@/entities/verification/verification.dto';
+import useUploaderGridVerifications from '@/entities/verification/queries/useUploaderGridVerifications';
 
 import * as S from './GridByUserPage.styled';
-import { useUploaderGridVerifications } from '../../entities/verification';
 
 const UploaderGridVerifications = () => {
   const { userId } = useParams();

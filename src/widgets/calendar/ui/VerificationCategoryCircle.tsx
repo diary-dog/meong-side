@@ -1,5 +1,5 @@
-import { VerificationCategoryType } from '../../../entities/verification/constants';
-import { VerificationByDate } from '../../../entities/verification/verification.dto';
+import { VerificationCategoryType } from '@/entities/verification/constants';
+import { VerificationByDate } from '@/entities/verification/verification.dto';
 
 import { CategoryCircle } from './CalendarBody.styled';
 

@@ -1,15 +1,15 @@
 import { Suspense, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Spinner from '../../shared/ui/Spinner';
+import Spinner from '@/shared/ui/Spinner';
 
-import { Layout } from '../../shared/ui';
-import { Message, RightArrowIcon } from '../../shared/ui/Icons';
-import VerificationField from '../../widgets/verification/ui/VerificationField';
-import ROUTE_PATH from '../../shared/constants/routePath';
-import FamilyItemList from '../../widgets/family/ui/FamilyItemList';
-import Switch from '../../shared/ui/Switch';
-import useFamilyMembers from '../../entities/family/queries/useFamilyMembers';
-import UserImage from '../../shared/ui/UserImage';
+import Layout from '@/shared/ui/Layout';
+import { Message, RightArrowIcon } from '@/shared/ui/Icons';
+import VerificationField from '@/widgets/verification/ui/VerificationField';
+import ROUTE_PATH from '@/shared/constants/routePath';
+import FamilyItemList from '@/widgets/family/ui/FamilyItemList';
+import Switch from '@/shared/ui/Switch';
+import useFamilyMembers from '@/entities/family/queries/useFamilyMembers';
+import UserImage from '@/shared/ui/UserImage';
 
 import * as S from './SettingPage.styled';
 

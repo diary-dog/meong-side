@@ -1,9 +1,9 @@
 import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
 
-import useIntersectionObserver from '../../../shared/hooks/useIntersectionObserver';
 import verificationAPI from '../api/verificationAPI';
-import { verificationKey } from '../../../shared/lib/query/queryKey';
 import { SortType } from '../verification.dto';
+import { verificationKey } from '@/shared/lib/query/queryKey';
+import useIntersectionObserver from '@/shared/hooks/useIntersectionObserver';
 
 const useUploaderGridVerifications = ({
   uploaderId,

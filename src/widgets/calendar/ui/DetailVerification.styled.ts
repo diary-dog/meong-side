@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
   getVerificationCategoryColor,
   getVerificationCategoryTextColor,
-} from '../../../entities/verification/libs/getVerificationCategoryColor';
+} from '@/entities/verification/libs/getVerificationCategoryColor';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`

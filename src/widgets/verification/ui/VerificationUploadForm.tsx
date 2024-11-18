@@ -1,13 +1,13 @@
 import { useFormContext, useWatch } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import ROUTE_PATH from '../../../shared/constants/routePath';
-import { CameraIcon } from '../../../shared/ui/Icons';
+import ROUTE_PATH from '@/shared/constants/routePath';
+import { CameraIcon } from '@/shared/ui/Icons';
 import VerificationOption from './VerificationOption';
-import { Button } from '../../../shared/ui';
-import { getVerificationMetadata } from '../../../entities/verification/libs/getVerificationInfo';
-import type { UploadVerificationForm } from '../../../entities/verification/verification.dto';
-import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
+import { getVerificationMetadata } from '@/entities/verification/libs/getVerificationInfo';
+import getPreviewImageURL from '@/shared/lib/getPreviewImageURL';
+import Button from '@/shared/ui/Button';
+import type { UploadVerificationForm } from '@/entities/verification/verification.dto';
 
 import * as S from './VerificationUploadForm.styled';
 

@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 
-import { Layout } from '../../shared/ui';
-import Spinner from '../../shared/ui/Spinner';
-import { Calendar as VerificationCalendar } from '../../widgets/calendar';
+import Layout from '@/shared/ui/Layout';
+import Spinner from '@/shared/ui/Spinner';
+import { Calendar as VerificationCalendar } from '@/widgets/calendar';
 
 import * as S from './CalendarPage.styled';
 

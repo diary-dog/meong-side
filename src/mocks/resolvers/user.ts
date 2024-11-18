@@ -1,7 +1,7 @@
 import { HttpResponse } from 'msw';
 import qs from 'qs';
 
-import { MSWResolvers } from '../../shared/lib/mswUtils';
+import { MSWResolvers } from '@/shared/lib/mswUtils';
 import axios from 'axios';
 
 const {

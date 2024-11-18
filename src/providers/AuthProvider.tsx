@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-import ROUTE_PATH from '../shared/constants/routePath';
-import { tokenStorage } from '../shared/lib/tokenStorage';
+import ROUTE_PATH from '@/shared/constants/routePath';
+import { tokenStorage } from '@/shared/lib/tokenStorage';
 
 const AuthProvider = () => {
   if (!tokenStorage.getToken()) return <Navigate to={ROUTE_PATH.INTRO} />;

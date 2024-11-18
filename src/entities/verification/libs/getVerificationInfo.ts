@@ -1,7 +1,4 @@
-import {
-  INVALID_CATEGORY,
-  INVALID_CONTENTS,
-} from '../../../shared/constants/message';
+import { INVALID_CATEGORY, INVALID_CONTENTS } from '@/shared/constants/message';
 import {
   VERIFICATION,
   VERIFICATION_DETAILS,

@@ -1,8 +1,8 @@
-import { getVerificationMetadata } from '../../../entities/verification/libs/getVerificationInfo';
+import { getVerificationMetadata } from '@/entities/verification/libs/getVerificationInfo';
 import {
   UploadVerificationContents,
   UploadVerificationForm,
-} from '../../../entities/verification/verification.dto';
+} from '@/entities/verification/verification.dto';
 
 const transformFormData = (
   formData: UploadVerificationForm,

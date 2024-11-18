@@ -1,6 +1,6 @@
-import UserImage from '../../../shared/ui/UserImage';
-import { Deco1, Deco2 } from '../../../shared/ui/Icons';
-import { Button } from '../../../shared/ui';
+import UserImage from '@/shared/ui/UserImage';
+import { Deco1, Deco2 } from '@/shared/ui/Icons';
+import Button from '@/shared/ui/Button';
 
 import * as G from './settingGlobal.styled';
 import * as S from './SuccessInvitation.styled';

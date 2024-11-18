@@ -10,8 +10,8 @@ import {
   detailVerificationData,
 } from '../datas/verification';
 
-import type { UploadVerificationContents } from '../../entities/verification/verification.dto';
-import { MSWResolvers } from '../../shared/lib/mswUtils';
+import type { UploadVerificationContents } from '@/entities/verification/verification.dto';
+import { MSWResolvers } from '@/shared/lib/mswUtils';
 
 export const verification = {
   getDetailVerification: async () => {

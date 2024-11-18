@@ -1,7 +1,7 @@
 import { http } from 'msw';
-import { END_POINT } from '../../shared/constants/endPoint';
+import { END_POINT } from '@/shared/constants/endPoint';
 import { verification } from '../resolvers/verification';
-import { baseURL } from '../../shared/lib/mswUtils';
+import { baseURL } from '@/shared/lib/mswUtils';
 import withAuth from '../middleware/withAuth';
 
 export const verificationHandler = [

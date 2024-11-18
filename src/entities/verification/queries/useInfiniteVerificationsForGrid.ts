@@ -1,9 +1,9 @@
 import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
 
-import useIntersectionObserver from '../../../shared/hooks/useIntersectionObserver';
-import verificationAPI from '../api/verificationAPI';
-import { verificationKey } from '../../../shared/lib/query/queryKey';
+import { verificationKey } from '@/shared/lib/query/queryKey';
+import useIntersectionObserver from '@/shared/hooks/useIntersectionObserver';
 import { SortType } from '../verification.dto';
+import verificationAPI from '../api/verificationAPI';
 
 const useInfiniteVerificationsForGrid = (sort: SortType) => {
   const { data, fetchNextPage, isFetchingNextPage } = useSuspenseInfiniteQuery({

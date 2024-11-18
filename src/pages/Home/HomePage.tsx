@@ -1,15 +1,15 @@
 import { Suspense } from 'react';
 
-import ROUTE_PATH from '../../shared/constants/routePath';
-import { Layout } from '../../shared/ui';
-import { Bath, Meal, Treats, Walk } from '../../shared/ui/Icons';
-import VerificationButton from '../../widgets/verification/ui/VerificationButton';
-import VerificationField from '../../widgets/verification/ui/VerificationField';
-import { VERIFICATION } from '../../entities/verification/constants';
-import Spinner from '../../shared/ui/Spinner';
+import ROUTE_PATH from '@/shared/constants/routePath';
+import Layout from '@/shared/ui/Layout';
+import { Bath, Meal, Treats, Walk } from '@/shared/ui/Icons';
+import VerificationButton from '@/widgets/verification/ui/VerificationButton';
+import VerificationField from '@/widgets/verification/ui/VerificationField';
+import { VERIFICATION } from '@/entities/verification/constants';
+import Spinner from '@/shared/ui/Spinner';
 
 import * as S from './HomePage.styled';
-import ErrorResetBoundaryWrapper from '../../shared/error/ErrorResetBoundaryWrapper';
+import ErrorResetBoundaryWrapper from '@/shared/error/ErrorResetBoundaryWrapper';
 
 const HomePage = () => {
   return (

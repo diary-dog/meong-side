@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { THEME } from '../../../shared/styles/theme';
+import { THEME } from '@/shared/styles/theme';
 import { VERIFICATION, VerificationCategoryType } from '../constants';
 
 export const getVerificationCategoryColor = (

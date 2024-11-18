@@ -1,5 +1,5 @@
+import { getVerificationCategoryColor } from '@/entities/verification/libs/getVerificationCategoryColor';
 import styled from 'styled-components';
-import { getVerificationCategoryColor } from '../../../entities/verification/libs/getVerificationCategoryColor';
 
 export const Container = styled.div`
   display: flex;

@@ -1,13 +1,14 @@
 import { FieldErrors, useForm, useWatch } from 'react-hook-form';
 
-import { Button, Input } from '../../../shared/ui';
-import UserImage from '../../../shared/ui/UserImage';
-import { CameraIcon, Female, Male } from '../../../shared/ui/Icons';
+import UserImage from '@/shared/ui/UserImage';
+import { CameraIcon, Female, Male } from '@/shared/ui/Icons';
+import { GENDER_TYPE } from '@/entities/pet/constants';
+import getPreviewImageURL from '@/shared/lib/getPreviewImageURL';
+import Input from '@/shared/ui/Input';
+import Button from '@/shared/ui/Button';
 
 import * as S from './RegisterPet.styled';
 import * as G from './RegisterGlobal.styled';
-import { GENDER_TYPE } from '../../../entities/pet/constants';
-import getPreviewImageURL from '../../../shared/lib/getPreviewImageURL';
 
 interface PetInformation {
   name: string;

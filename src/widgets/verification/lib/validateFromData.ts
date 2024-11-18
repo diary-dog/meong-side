@@ -1,4 +1,4 @@
-import { UploadVerificationForm } from '../../../entities/verification/verification.dto';
+import { UploadVerificationForm } from '@/entities/verification/verification.dto';
 
 export default function isValidUploadFormData(
   formData: UploadVerificationForm

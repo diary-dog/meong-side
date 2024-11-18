@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { ReactNode } from 'react';
 
-import { VERIFICATION } from '../../../entities/verification/constants';
+import { VERIFICATION } from '@/entities/verification/constants';
 
 import * as S from './VerificationButton.styled';
 
