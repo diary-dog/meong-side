@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 
-import verificationAPI from './verificationAPI';
+import verificationAPI from '../api/verificationAPI';
 import queryClient from '../../../shared/lib/query/queryClient';
 import { verificationKey } from '../../../shared/lib/query/queryKey';
 

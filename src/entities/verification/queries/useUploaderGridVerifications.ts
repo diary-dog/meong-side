@@ -1,15 +1,22 @@
 import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
 
 import useIntersectionObserver from '../../../shared/hooks/useIntersectionObserver';
-import verificationAPI from './verificationAPI';
+import verificationAPI from '../api/verificationAPI';
 import { verificationKey } from '../../../shared/lib/query/queryKey';
-import { SortType } from '../../../shared/types/verification';
+import { SortType } from '../verification.dto';
 
-const useInfiniteVerificationsForGrid = (sort: SortType) => {
+const useUploaderGridVerifications = ({
+  uploaderId,
+  sort,
+}: {
+  uploaderId: string;
+  sort: SortType;
+}) => {
   const { data, fetchNextPage, isFetchingNextPage } = useSuspenseInfiniteQuery({
-    queryKey: verificationKey.allGrid(sort),
+    queryKey: verificationKey.uploaderGrid(uploaderId, sort),
     queryFn: ({ pageParam }) =>
-      verificationAPI.getAllGridVerifications({
+      verificationAPI.getGridVerificationsForUploader({
+        uploaderId,
         sort,
         currentPage: pageParam,
       }),
@@ -24,4 +31,4 @@ const useInfiniteVerificationsForGrid = (sort: SortType) => {
 
   return { data: gridData, targetItemRef, isFetchingNextPage };
 };
-export default useInfiniteVerificationsForGrid;
+export default useUploaderGridVerifications;

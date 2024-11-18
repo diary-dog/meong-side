@@ -1,10 +1,13 @@
-import { INVALID_CATEGORY, INVALID_CONTENTS } from '../constants/message';
+import {
+  INVALID_CATEGORY,
+  INVALID_CONTENTS,
+} from '../../../shared/constants/message';
 import {
   VERIFICATION,
   VERIFICATION_DETAILS,
   VerificationCategoryType,
-} from '../constants/verification';
-import { OptionWithValue } from '../types/verification';
+} from '../constants';
+import { OptionWithValue } from '../verification.dto';
 
 export const getVerificationMetadata = (string: string) => {
   const category = string.toUpperCase() as VerificationCategoryType;

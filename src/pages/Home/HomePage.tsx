@@ -5,7 +5,7 @@ import { Layout } from '../../shared/ui';
 import { Bath, Meal, Treats, Walk } from '../../shared/ui/Icons';
 import VerificationButton from '../../widgets/verification/ui/VerificationButton';
 import VerificationField from '../../widgets/verification/ui/VerificationField';
-import { VERIFICATION } from '../../shared/constants/verification';
+import { VERIFICATION } from '../../entities/verification/constants';
 import Spinner from '../../shared/ui/Spinner';
 
 import * as S from './HomePage.styled';

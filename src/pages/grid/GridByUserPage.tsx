@@ -6,7 +6,7 @@ import { Layout } from '../../shared/ui';
 import { SlideIcon } from '../../shared/ui/Icons';
 import Spinner from '../../shared/ui/Spinner';
 import { GridLayout, SortButton, InfiniteGrid } from '../../widgets/grid';
-import { SortType } from '../../shared/types/verification';
+import { SortType } from '../../entities/verification/verification.dto';
 
 import * as S from './GridByUserPage.styled';
 import { useUploaderGridVerifications } from '../../entities/verification';

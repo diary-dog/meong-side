@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import Spinner from '../../../shared/ui/Spinner';
-import useInfiniteVerificationsForSlide from '../../../entities/verification/api/useInfiniteVerificationsForSlide';
+import useInfiniteVerificationsForSlide from '../../../entities/verification/queries/useInfiniteVerificationsForSlide';
 
 import DetailVerificationItem from '../../verification/ui/DetailVerificationItem';
 

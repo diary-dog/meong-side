@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Suspense } from 'react';
 
-import useFamilyMembers from '../../entities/family/api/useFamilyMembers';
+import useFamilyMembers from '../../entities/family/queries/useFamilyMembers';
 import UserImage from '../../shared/ui/UserImage';
 import { LeftArrowIcon } from '../../shared/ui/Icons';
 import FamilyItemList from '../../widgets/family/ui/FamilyItemList';

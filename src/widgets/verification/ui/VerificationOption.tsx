@@ -1,7 +1,7 @@
 import {
   VERIFICATION,
   VERIFICATION_DETAILS,
-} from '../../../shared/constants/verification';
+} from '../../../entities/verification/constants';
 import VerificationRadioOptions from './VerificationRadioOptions';
 
 import * as S from './VerificationOption.styled';

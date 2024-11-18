@@ -1,7 +1,7 @@
 import { END_POINT } from '../../../shared/constants/endPoint';
 import apiClient from '../../../shared/api';
-import { Pet } from '../../../shared/types/pet';
-import { Response } from '../../../shared/types';
+import { Response } from '../../../shared/dto/response.dto';
+import { Pet } from '../pet.dto';
 
 const petAPI = {
   /** pet detail info 조회 */

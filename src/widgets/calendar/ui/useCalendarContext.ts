@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { VerificationsForCalendar } from '../../../shared/types/verification';
+import { VerificationsForCalendar } from '../../../entities/verification/verification.dto';
 
 interface DateInfo {
   year: string;

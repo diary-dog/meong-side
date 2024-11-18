@@ -1,5 +1,5 @@
-import { VerificationCategoryType } from '../constants/verification';
-import { User } from './user';
+import { UserType } from '@/shared/dto/user.dto';
+import { VerificationCategoryType } from './constants';
 
 export interface OptionWithValue {
   label?: string;
@@ -54,7 +54,7 @@ export interface VerificationResponse {
   imageUrl: string;
   verificationDetail?: number;
   comment: string;
-  author: User;
+  author: UserType;
 }
 
 export interface VerificationForSlide {
@@ -76,7 +76,7 @@ export interface VerificationForGridResponse {
   id: string;
   createdAt: string;
   imageUrl: string;
-  author: User;
+  author: UserType;
 }
 
 export type GridType = 'all' | 'uploader';
@@ -88,5 +88,5 @@ export interface VerificationsForGridByUploader {
     createdAt: string;
     imageUrl: string;
   }>;
-  author: User;
+  author: UserType;
 }

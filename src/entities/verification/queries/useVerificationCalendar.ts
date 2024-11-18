@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { verificationKey } from '../../../shared/lib/query/queryKey';
-import verificationAPI from './verificationAPI';
+import verificationAPI from '../api/verificationAPI';
 
 const useVerificationCalendar = ({
   year,

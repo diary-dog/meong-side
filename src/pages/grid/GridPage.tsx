@@ -8,7 +8,7 @@ import {
   GridLayout,
   GridVerificationsByUploader,
 } from '../../widgets/grid';
-import { GridType } from '../../shared/types/verification';
+import { GridType } from '../../entities/verification/verification.dto';
 
 const GridPage = () => {
   const navigate = useNavigate();

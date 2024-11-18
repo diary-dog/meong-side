@@ -1,7 +1,7 @@
 import QueryString from 'qs';
 import { useNavigate } from 'react-router-dom';
 
-import { SortType } from '../../../shared/types/verification';
+import { SortType } from '../../../entities/verification/verification.dto';
 import Switch from '../../../shared/ui/Switch';
 
 import * as S from './SortButton.styled';

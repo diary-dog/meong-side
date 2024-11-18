@@ -1,5 +1,5 @@
 import useCalendarContext from './useCalendarContext';
-import { VERIFICATION } from '../../../shared/constants/verification';
+import { VERIFICATION } from '../../../entities/verification/constants';
 
 import VerificationCategoryCircle from './VerificationCategoryCircle';
 

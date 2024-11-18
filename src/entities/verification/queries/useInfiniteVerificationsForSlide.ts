@@ -1,7 +1,7 @@
 import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
 
 import { verificationKey } from '../../../shared/lib/query/queryKey';
-import verificationAPI from './verificationAPI';
+import verificationAPI from '../api/verificationAPI';
 import useIntersectionObserver from '../../../shared/hooks/useIntersectionObserver';
 
 const useInfiniteVerificationsForSlide = () => {

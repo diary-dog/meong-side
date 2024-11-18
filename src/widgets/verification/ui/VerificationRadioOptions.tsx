@@ -4,11 +4,11 @@ import { Fragment } from 'react/jsx-runtime';
 import {
   COMPLETION_STATUS,
   VERIFICATION_DETAIL,
-} from '../../../shared/constants/verification';
+} from '../../../entities/verification/constants';
 import {
   OptionWithValue,
   UploadVerificationForm,
-} from '../../../shared/types/verification';
+} from '../../../entities/verification/verification.dto';
 
 import * as S from './VerificationRadioOptions.styled';
 
