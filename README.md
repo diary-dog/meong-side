@@ -28,11 +28,9 @@
 
 ### 프로젝트 상세 내용
 
-- [기능명세서](https://www.figma.com/file/HDEK7KrWQSJK8Cjlb9oycx/%EB%A9%8D%EC%8A%A4%ED%86%A0%EB%A6%AC?type=whiteboard&node-id=0-1&t=skrDaMrDQeMiUW4o-0)
 - [페이지 흐름을 Funnel 컴포넌트로 추상화](https://github.com/meong-story/meong-story-FE/pull/20)하고 재사용 가능하도록 커스텀 훅 생성
 - 병렬적 개발을 위해 MSW를 이용한 **모의 API 환경 구성**
-- 세부적인 에러 핸들링을 위하여 커스텀 에러와 Error boundary 를 활용
-  - [Api Error boundary와 QueryErrorResetBoundary을 결합하여 ErrorResetBoundaryWrapper 생성](https://github.com/meong-story/meong-story-FE/pull/87)
+- Lazy 로딩을 사용하여 많은 페이지 컴포넌트를 필요 시 로드하는 방식으로 최적화하여 초기 번들 크기를 줄이고 로딩 속도를 개선
 - 리스트 항목은 사용자 편의를 위하여, intersection observer API를 사용한 무한스크롤 구현
 
 ## 배포
