@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.29.0",
+    "@tanstack/react-query-devtools": "^5.61.3",
     "@types/qs": "^6.9.14",
     "axios": "^1.6.8",
     "date-fns": "^3.6.0",
