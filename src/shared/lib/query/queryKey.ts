@@ -16,7 +16,7 @@ export const verificationKey = {
 };
 
 export const userKey = {
-  base: ['user'],
-  user: (userId: string) => [...userKey.base, userId] as const,
+  base: ['users'] as const,
+  user: () => [...userKey.base] as const,
   family: (petId: string) => [...userKey.base, petId, 'family'] as const,
 };
