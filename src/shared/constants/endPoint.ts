@@ -21,6 +21,7 @@ export const END_POINT = {
   FAMILY: (petId: string) => `/family/${petId}`,
   INVITE_MEMBER: (petId: string) => `/family/${petId}/member`,
   KAKAO_LOGIN: '/auth/kakao-login',
+  LOGGED_IN_USER: '/users',
 };
 
 export function createPath(...pathArray: string[]) {
