@@ -2,16 +2,18 @@ import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 
 import userAPI from '../api/userAPI';
-import { tokenStorage } from '@/shared/lib/tokenStorage';
 import ROUTE_PATH from '@/shared/constants/routePath';
+import { prefetchQueryLoggedInUser } from '../queries/useLoggedInUserQuery';
+import { tokenStorage } from '@/shared/lib/tokenStorage';
 
 const useKakaoLogin = () => {
   const navigate = useNavigate();
 
   return useMutation({
     mutationFn: (code: string) => userAPI.kakaoLogin(code),
-    onSuccess: ({ data }) => {
+    onSuccess: async ({ data }) => {
       tokenStorage.setToken(data.accessToken);
+      await prefetchQueryLoggedInUser();
       navigate(ROUTE_PATH.ROOT);
     },
     onError: (error) => {
