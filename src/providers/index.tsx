@@ -7,6 +7,7 @@ import ErrorBoundary from '../shared/error/ErrorBoundary';
 import FallbackComponent from '../shared/error/FallbackComponent';
 import Spinner from '../widgets/common/Spinner';
 import router from '../router';
+import AuthProvider from './AuthProvider';
 
 const Providers = () => {
   return (
@@ -14,7 +15,9 @@ const Providers = () => {
       <QueryProvider>
         <ThemeProvider>
           <Suspense fallback={<Spinner />}>
-            <RouterProvider router={router} />
+            <AuthProvider>
+              <RouterProvider router={router} />
+            </AuthProvider>
           </Suspense>
         </ThemeProvider>
       </QueryProvider>

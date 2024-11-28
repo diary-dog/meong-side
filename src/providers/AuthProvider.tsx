@@ -1,14 +1,25 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { ReactNode, useEffect } from 'react';
 
-import ROUTE_PATH from '@/shared/constants/routePath';
-import { tokenStorage } from '@/shared/lib/tokenStorage';
+import { useUserStore } from '@/app/model/useUserStore';
+import { useLoggedInUserQuery } from '@/entities/user/queries/useLoggedInUserQuery';
+import Spinner from '@/widgets/common/Spinner';
 
-const AuthProvider = () => {
-  if (!tokenStorage.getToken()) return <Navigate to={ROUTE_PATH.INTRO} />;
+const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const { data, isLoading } = useLoggedInUserQuery();
+  const loggedInUser = useUserStore((state) => state.loggedInUser);
+  const setLoggedInUser = useUserStore((state) => state.setLoggedInUser);
 
-  // 펫 등록 여부에 따라서 다르게 리디렉션 해줄 것
+  useEffect(() => {
+    if (data && !loggedInUser) {
+      setLoggedInUser(data);
+    }
+  }, [data, loggedInUser, setLoggedInUser]);
 
-  return <Outlet />;
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  return children;
 };
 
 export default AuthProvider;
