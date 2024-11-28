@@ -1,8 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import App from '../App';
 import ROUTE_PATH from '../shared/constants/routePath';
-import AuthProvider from '../providers/AuthProvider';
 import {
   CalendarPage,
   DetailVerificationPage,
@@ -19,29 +17,23 @@ import {
   SlidePage,
   UploadVerificationPage,
 } from './lazy';
+import ProtectedRoute from '@/providers/ProtectedRoute';
+import PetOwnerRoute from '@/providers/RegisterPetRoute';
+import PublicRoute from '@/providers/PublicRoute';
 
 const router = createBrowserRouter([
   {
-    element: <App />,
+    element: <ProtectedRoute />,
     errorElement: <ErrorPage />,
-    path: ROUTE_PATH.ROOT,
     children: [
       {
-        element: <IntroPage />,
-        path: ROUTE_PATH.INTRO,
-      },
-      {
-        element: <KakaoLogInPage />,
-        path: ROUTE_PATH.KAKAO_LOGIN,
-      },
-      {
-        element: <AuthProvider />,
-        path: ROUTE_PATH.ROOT,
         children: [
-          {
-            element: <RegisterPage />,
-            path: ROUTE_PATH.REGISTER_PET,
-          },
+          { element: <RegisterPage />, path: ROUTE_PATH.REGISTER_PET },
+        ],
+      },
+      {
+        element: <PetOwnerRoute />,
+        children: [
           {
             element: <HomePage />,
             path: ROUTE_PATH.ROOT,
@@ -83,6 +75,20 @@ const router = createBrowserRouter([
             path: ROUTE_PATH.UPLOAD_VERIFICATION,
           },
         ],
+      },
+    ],
+  },
+  {
+    element: <PublicRoute />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        element: <IntroPage />,
+        path: ROUTE_PATH.INTRO,
+      },
+      {
+        element: <KakaoLogInPage />,
+        path: ROUTE_PATH.KAKAO_LOGIN,
       },
     ],
   },
